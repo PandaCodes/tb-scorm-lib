@@ -117,6 +117,9 @@ window.SCORMApi = (function(){
 	};
 	
 	
+	
+	
+	
 	const init = ({ 
 		postUrl, 
 		version = '2004',
@@ -129,12 +132,23 @@ window.SCORMApi = (function(){
 		needLogging = debug === true ? true : false;
 		
 		// clone default cmi
-		cmi = Object.assign({}, cmiDefault); 
-		if (callbacks && callbacks.preInitialize) { callbacks.preInitialize(); }
+		//or download the old one
+		// Promise ??
+		if (postUrl) {
+			fetch(postUrl).then(responce => {
+				const storedCmi = JSON.parse(responce);
+				cmi = Object.assign({}, cmiDefault, storedCmi); 
+			}).catch(console.log);
+		} else {
+			cmi = Object.assign({}, cmiDefault); 
+		}
+		
+		if (callbacks && callbacks.preInitialize) { callbacks.preInitialize(cmi); }
 		
 		const fnms = version === '1.2' ? functionNames['1.2'] : functionNames['2004'];
 		const API = {};
 		
+		//auto commit
 		let lastCommit = Date.now();
 		if (typeof autoCommitInterval === "number"  && autoCommitInterval > 0) {
 			setInterval(() => {
@@ -142,7 +156,7 @@ window.SCORMApi = (function(){
 				if (now - lastCommit > autoCommitInterval * 1000) {
 					API[fnms['Commit']]();
 				}
-			}, autoCommitInterval * 1000 / 2)
+			}, autoCommitInterval * 1000 / 2);
 		}
 		
 		// SCO RTE functions
@@ -230,6 +244,7 @@ window.SCORMApi = (function(){
 			return error;
 		};
 		
+		// global api object set
 		if (version === '1.2') {
 			window.API = API;
 		} else {
