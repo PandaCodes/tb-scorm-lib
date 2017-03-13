@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="./scorm-player.js"></script>
+  <script type="text/javascript" src="./scorm-api.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      var player = new SCORMPlayer({
+        wrapper : document.getElementById('scorm_player'), 
+        rootUrl : 'https://tb-scorm-lib-akam.c9users.io/resources/1',
+        postUrl : 'https://tb-scorm-lib-akam.c9users.io:8081/api/scorm/results',
+        debug: true
+      });
+    };
+  </script>
+</head>
+<body>
+
+  <div id="scorm_player"></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "tb-scorm-backend",
+  "version": "1.0.0",
+  "description": "Backend for scorm api requests.",
+  "main": "src/server.js",
+  "author": "Alexander Kaminskiy<alex.kaminsky.11@gmail.com>",
+  "scripts": {},
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.13.3"
+  }
+}
