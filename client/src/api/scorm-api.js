@@ -121,7 +121,7 @@ window.SCORMApi = (function(){
 		postUrl, 
 		version = '2004',
 		debug = false,
-		autoCommit = false,
+		autoCommitInterval = -1, //in seconds
 		callbacks
 	}) => {
 		//Pre init
@@ -134,6 +134,16 @@ window.SCORMApi = (function(){
 		
 		const fnms = version === '1.2' ? functionNames['1.2'] : functionNames['2004'];
 		const API = {};
+		
+		let lastCommit = Date.now();
+		if (typeof autoCommitInterval === "number"  && autoCommitInterval > 0) {
+			setInterval(() => {
+				const now = Date.now();
+				if (now - lastCommit > autoCommitInterval * 1000) {
+					API[fnms['Commit']]();
+				}
+			}, autoCommitInterval * 1000 / 2)
+		}
 		
 		// SCO RTE functions
 		API[fnms['Initialize']] = function() {
@@ -192,13 +202,14 @@ window.SCORMApi = (function(){
 			_log("LMS Commit", _valuesChanged);
 			if (!_checkRunning(142, 143)) return "false";
 			Object.assign(cmi, _valuesChanged);
-			
+//TODO: Promise, errors				
 			if (postUrl) {
 				fetch(postUrl, { method: 'POST', body: JSON.stringify(cmi) })
 				.catch(e => error = 1000);
 			}
 			if (callbacks && callbacks.Commit) { callbacks.Commit(cmi); }
-	
+			lastCommit = Date.now();
+
 			_valuesChanged = {}; // clean changed values
 			return "true";
 		};
