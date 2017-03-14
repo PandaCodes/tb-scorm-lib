@@ -34,7 +34,7 @@ window.SCORMApi = (function () {
     407: 'Data Model Element Value Out Of Range',
     408: 'Data Model Dependency Not Established',
 		// Implementation-defined Errors 1000-65535
-    1000: 'General communication failure (Ajax)',
+    1000: 'General communication failure',
   };
   const functionNames = {
     2004: {
@@ -81,7 +81,7 @@ window.SCORMApi = (function () {
   let state = null;
   let error = 0;
   let cmi = null;
-  let _valuesChanged = {};
+  let changedValues = {};
 
   const _valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 
@@ -212,28 +212,28 @@ window.SCORMApi = (function () {
       if (!_valueNameSecurityCheck(name)) return 'false';
       if (!_valueNameCheckReadOnly(name)) return 'false';
 
-      _valuesChanged[name] = value;
+      changedValues[name] = value;
       return 'true';
     },
 
 		API[fnms.Commit] = () => {
-  _log('LMS Commit', _valuesChanged);
-  if (!_checkRunning(142, 143)) return 'false';
+		  _log('LMS Commit', changedValues);
+		  if (!_checkRunning(142, 143)) return 'false';
 
-  Object.assign(cmi, _valuesChanged);
-// TODO: Promise, errors
-  if (dataUrl) {
-    fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) })
-				.catch(console.log);
-  }
+		  Object.assign(cmi, changedValues);
+		  // TODO: Promise, errors
+		  if (dataUrl) {
+		    fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) })
+						.catch(console.log);
+		  }
 
-  let callbackResult = 'true';
-  if (callbacks && callbacks.Commit) { callbackResult = callbacks.Commit(cmi, _valuesChanged); }
-  if (callbackResult === 'false') return 'false';
+		  let callbackResult = 'true';
+		  if (callbacks && callbacks.Commit) { callbackResult = callbacks.Commit(); }
+		  if (callbackResult === 'false') return 'false';
 
-  lastCommit = Date.now();
-  _valuesChanged = {}; // clean changed values
-  return 'true';
+		  lastCommit = Date.now();
+		  changedValues = {}; // clean changed values
+		  return 'true';
 };
 
     API[fnms.GetDiagnostic] = (errCode) => {
@@ -260,6 +260,8 @@ window.SCORMApi = (function () {
     }
   };
 
-  return { init };
+  const getDataModel = () => Object.assign({}, cmi);
+
+  return { init, getDataModel };
 }());
 

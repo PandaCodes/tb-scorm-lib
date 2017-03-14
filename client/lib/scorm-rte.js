@@ -121,7 +121,7 @@ window.SCORMApi = function () {
     407: 'Data Model Element Value Out Of Range',
     408: 'Data Model Dependency Not Established',
     // Implementation-defined Errors 1000-65535
-    1000: 'General communication failure (Ajax)'
+    1000: 'General communication failure'
   };
   var functionNames = {
     2004: {
@@ -168,7 +168,7 @@ window.SCORMApi = function () {
   var state = null;
   var error = 0;
   var cmi = null;
-  var _valuesChanged = {};
+  var changedValues = {};
 
   var _valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 
@@ -311,13 +311,13 @@ window.SCORMApi = function () {
       if (!_valueNameSecurityCheck(name)) return 'false';
       if (!_valueNameCheckReadOnly(name)) return 'false';
 
-      _valuesChanged[name] = value;
+      changedValues[name] = value;
       return 'true';
     }, API[fnms.Commit] = function () {
-      _log('LMS Commit', _valuesChanged);
+      _log('LMS Commit', changedValues);
       if (!_checkRunning(142, 143)) return 'false';
 
-      Object.assign(cmi, _valuesChanged);
+      Object.assign(cmi, changedValues);
       // TODO: Promise, errors
       if (dataUrl) {
         fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) }).catch(console.log);
@@ -325,12 +325,12 @@ window.SCORMApi = function () {
 
       var callbackResult = 'true';
       if (callbacks && callbacks.Commit) {
-        callbackResult = callbacks.Commit(cmi, _valuesChanged);
+        callbackResult = callbacks.Commit();
       }
       if (callbackResult === 'false') return 'false';
 
       lastCommit = Date.now();
-      _valuesChanged = {}; // clean changed values
+      changedValues = {}; // clean changed values
       return 'true';
     };
 
@@ -358,7 +358,11 @@ window.SCORMApi = function () {
     }
   };
 
-  return { init: init };
+  var getDataModel = function getDataModel() {
+    return Object.assign({}, cmi);
+  };
+
+  return { init: init, getDataModel: getDataModel };
 }();
 
 /***/ }),

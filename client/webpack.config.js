@@ -5,7 +5,7 @@ const libraryName = 'scorm-rte';
 module.exports = {
   entry: {
     'scorm-api' : ['./src/api/scorm-api.js', 'whatwg-fetch'],
-    'scorm' : ['./src/player/scorm-player.js', './src/api/scorm-api.js', 'whatwg-fetch']
+    'scorm-rte' : ['./src/player/scorm-player.js', './src/api/scorm-api.js', 'whatwg-fetch']
   },
   output: {
     path: __dirname + '/lib',

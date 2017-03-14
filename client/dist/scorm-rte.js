@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -121,7 +121,7 @@ window.SCORMApi = function () {
     407: 'Data Model Element Value Out Of Range',
     408: 'Data Model Dependency Not Established',
     // Implementation-defined Errors 1000-65535
-    1000: 'General communication failure (Ajax)'
+    1000: 'General communication failure'
   };
   var functionNames = {
     2004: {
@@ -168,7 +168,7 @@ window.SCORMApi = function () {
   var state = null;
   var error = 0;
   var cmi = null;
-  var _valuesChanged = {};
+  var changedValues = {};
 
   var _valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 
@@ -311,13 +311,13 @@ window.SCORMApi = function () {
       if (!_valueNameSecurityCheck(name)) return 'false';
       if (!_valueNameCheckReadOnly(name)) return 'false';
 
-      _valuesChanged[name] = value;
+      changedValues[name] = value;
       return 'true';
     }, API[fnms.Commit] = function () {
-      _log('LMS Commit', _valuesChanged);
+      _log('LMS Commit', changedValues);
       if (!_checkRunning(142, 143)) return 'false';
 
-      Object.assign(cmi, _valuesChanged);
+      Object.assign(cmi, changedValues);
       // TODO: Promise, errors
       if (dataUrl) {
         fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) }).catch(console.log);
@@ -325,12 +325,12 @@ window.SCORMApi = function () {
 
       var callbackResult = 'true';
       if (callbacks && callbacks.Commit) {
-        callbackResult = callbacks.Commit(cmi, _valuesChanged);
+        callbackResult = callbacks.Commit();
       }
       if (callbackResult === 'false') return 'false';
 
       lastCommit = Date.now();
-      _valuesChanged = {}; // clean changed values
+      changedValues = {}; // clean changed values
       return 'true';
     };
 
@@ -358,7 +358,11 @@ window.SCORMApi = function () {
     }
   };
 
-  return { init: init };
+  var getDataModel = function getDataModel() {
+    return Object.assign({}, cmi);
+  };
+
+  return { init: init, getDataModel: getDataModel };
 }();
 
 /***/ }),
@@ -829,10 +833,89 @@ window.SCORMApi = function () {
 
 
 /***/ }),
-/* 2 */,
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+window.SCORMPlayer = function (_ref) {
+  var wrapper = _ref.wrapper,
+      rootUrl = _ref.rootUrl,
+      dataUrl = _ref.dataUrl,
+      debug = _ref.debug;
+
+  var error_strings = {
+    PARSE_XML: 'Error occured while parsing imsmanifest.xml',
+    FORMAT_XML: 'Wrong imsmanifest.xml format'
+  };
+  var loaded = false;
+  var manifest = null;
+  var iframe = null;
+  var resources = null;
+  var organization = null;
+  var currentItem = null;
+
+  iframe = document.createElement('iframe');
+  wrapper.appendChild(iframe);
+  fetch(rootUrl + '/imsmanifest.xml').then(function (responce) {
+    return responce.text().then(function (xmlText) {
+      var parser = new DOMParser();
+      manifest = parser.parseFromString(xmlText, 'text/xml');
+
+      if (manifest.documentElement.nodeName === 'parsererror') {}
+
+      // xml validation??? error throws
+      // Find version info and load API
+      var schemaVersion = manifest.getElementsByTagName('schemaversion')[0].childNodes[0].nodeValue;
+      console.log(schemaVersion);
+      var version = schemaVersion === '1.2' ? '1.2' : '2004';
+      SCORMApi.init({ version: version, dataUrl: dataUrl, debug: debug });
+      // <resourses>
+      resources = manifest.getElementsByTagName('resources')[0].getElementsByTagName('resource');
+      // <organization>
+      organization = manifest.getElementsByTagName('organization')[0].getElementsByTagName('item');
+
+      var firstIdRef = organization[0].getAttribute('identifierref');
+
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = resources[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var res = _step.value;
+
+          if (res.getAttribute('identifier') === firstIdRef) {
+            iframe.src = rootUrl + '/' + res.getAttribute('href');
+          }
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+    });
+  });
+
+  return this;
+};
+
+/***/ }),
+/* 3 */,
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(2);
 __webpack_require__(0);
 module.exports = __webpack_require__(1);
 
