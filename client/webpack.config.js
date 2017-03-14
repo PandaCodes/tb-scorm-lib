@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const path = require('path');
 
 const libraryName = 'scorm-rte';
 
