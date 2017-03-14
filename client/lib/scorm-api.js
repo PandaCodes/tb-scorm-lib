@@ -84,283 +84,281 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 window.SCORMApi = function () {
-	var _this = this;
+  var _this = this;
 
-	// predefined constants
-	var LMSVersion = "1.0";
+  // predefined constants
+  var LMSVersion = '1.0';
 
-	var error_strings = {
-		0: "No error",
-		// General Errors 100-199
-		101: "General Exception",
-		102: "General Initialization Failure",
-		103: "Already Initialized",
-		104: "Content Instance Terminated",
-		111: "General Termination Failure",
-		112: "Termination Before Initialization",
-		113: "Termination After Termination",
-		122: "Retrieve Data Before Initialization",
-		123: "Retrieve Data After Termination",
-		132: "Store Data Before Initialization",
-		133: "Store Data After Termination",
-		142: "Commit Before Initialization",
-		143: "Commit After Termination",
-		// Syntax Errors 200-299
-		201: "General Argument Error",
-		// RTS (LMS) Errors 300-399
-		301: "General Get Failure",
-		351: "General Set Failure",
-		391: "General Commit Failure",
-		// Data Model Errors 400-499
-		401: "Undefined Data Model Element",
-		402: "Unimplemented Data Model Element",
-		403: "Data Model Element Value Not Initialized",
-		404: "Data Model Element Is Read Only",
-		405: "Data Model Element Is Write Only",
-		406: "Data Model Element Type Mismatch",
-		407: "Data Model Element Value Out Of Range",
-		408: "Data Model Dependency Not Established",
-		// Implementation-defined Errors 1000-65535
-		1000: "General communication failure (Ajax)"
-	};
-	var functionNames = {
-		'2004': {
-			'Initialize': 'Initialize',
-			'Terminate': 'Terminate',
-			'GetValue': 'GetValue',
-			'SetValue': 'SetValue',
-			'Commit': 'Commit',
-			'GetLastError': 'GetLastError',
-			'GetErrorString': 'GetErrorString',
-			'GetDiagnostic': 'GetDiagnostic'
-		},
-		'1.2': {
-			'Initialize': 'LMSInitialize',
-			'Terminate': 'LMSFinish',
-			'GetValue': 'LMSGetValue',
-			'SetValue': 'LMSSetValue',
-			'Commit': 'LMSCommit',
-			'GetLastError': 'LMSGetLastError',
-			'GetErrorString': 'LMSGetErrorString',
-			'GetDiagnostic': 'LMSGetDiagnostic'
-		}
-	};
-	var STATE = {
-		NOT_INITIALIZED: "Not Initialized",
-		RUNNING: "Running",
-		TERMINATED: "Terminated"
-	};
-	var cmiDefault = {
-		"cmi._version": LMSVersion,
-		"cmi.mode": "normal",
-		"cmi.credit": "no-credit",
-		"cmi.entry": "ab-initio",
-		"cmi.location": "",
-		"cmi.success_status": "unknown",
-		"cmi.completion_status": "incomplete",
-		"cmi.score._children": "scaled,min,max,raw",
-		"cmi.interactions._children": "",
-		//"id,type,objectives,timestamp,correct_responses,weighting,learner_response,result,latency,description",
-		"cmi.interactions._count": "0"
-	};
+  var error_strings = {
+    0: 'No error',
+    // General Errors 100-199
+    101: 'General Exception',
+    102: 'General Initialization Failure',
+    103: 'Already Initialized',
+    104: 'Content Instance Terminated',
+    111: 'General Termination Failure',
+    112: 'Termination Before Initialization',
+    113: 'Termination After Termination',
+    122: 'Retrieve Data Before Initialization',
+    123: 'Retrieve Data After Termination',
+    132: 'Store Data Before Initialization',
+    133: 'Store Data After Termination',
+    142: 'Commit Before Initialization',
+    143: 'Commit After Termination',
+    // Syntax Errors 200-299
+    201: 'General Argument Error',
+    // RTS (LMS) Errors 300-399
+    301: 'General Get Failure',
+    351: 'General Set Failure',
+    391: 'General Commit Failure',
+    // Data Model Errors 400-499
+    401: 'Undefined Data Model Element',
+    402: 'Unimplemented Data Model Element',
+    403: 'Data Model Element Value Not Initialized',
+    404: 'Data Model Element Is Read Only',
+    405: 'Data Model Element Is Write Only',
+    406: 'Data Model Element Type Mismatch',
+    407: 'Data Model Element Value Out Of Range',
+    408: 'Data Model Dependency Not Established',
+    // Implementation-defined Errors 1000-65535
+    1000: 'General communication failure (Ajax)'
+  };
+  var functionNames = {
+    2004: {
+      Initialize: 'Initialize',
+      Terminate: 'Terminate',
+      GetValue: 'GetValue',
+      SetValue: 'SetValue',
+      Commit: 'Commit',
+      GetLastError: 'GetLastError',
+      GetErrorString: 'GetErrorString',
+      GetDiagnostic: 'GetDiagnostic'
+    },
+    1.2: {
+      Initialize: 'LMSInitialize',
+      Terminate: 'LMSFinish',
+      GetValue: 'LMSGetValue',
+      SetValue: 'LMSSetValue',
+      Commit: 'LMSCommit',
+      GetLastError: 'LMSGetLastError',
+      GetErrorString: 'LMSGetErrorString',
+      GetDiagnostic: 'LMSGetDiagnostic'
+    }
+  };
+  var STATE = {
+    NOT_INITIALIZED: 'Not Initialized',
+    RUNNING: 'Running',
+    TERMINATED: 'Terminated'
+  };
+  var cmiDefault = {
+    'cmi._version': LMSVersion,
+    'cmi.mode': 'normal',
+    'cmi.credit': 'no-credit',
+    'cmi.entry': 'ab-initio',
+    'cmi.location': '',
+    'cmi.success_status': 'unknown',
+    'cmi.completion_status': 'incomplete',
+    'cmi.score._children': 'scaled,min,max,raw',
+    'cmi.interactions._children': '',
+    // "id,type,objectives,timestamp,correct_responses,weighting,learner_response,result,latency,description",
+    'cmi.interactions._count': '0'
+  };
 
-	var needLogging = false;
-	var state = null;
-	var error = 0;
-	var cmi = null;
-	var _valuesChanged = {};
+  var needLogging = false;
+  var state = null;
+  var error = 0;
+  var cmi = null;
+  var _valuesChanged = {};
 
-	var _valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
+  var _valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 
-	// help functions
-	var _stringEndsWith = function _stringEndsWith(str, suffix) {
-		return str.length >= suffix.length && str.substr(str.length - suffix.length) == suffix;
-	};
-	var _valueNameSecurityCheck = function _valueNameSecurityCheck(name) {
-		error = name.search(_valueNameSecurityCheckRe) === 0 ? 0 : 401;
-		return error === 0;
-	};
-	var _valueNameCheckReadOnly = function _valueNameCheckReadOnly(name) {
-		error = 0;
-		if (_stringEndsWith(name, "._children")) {
-			error = 403;
-		}
-		return error === 0;
-	};
-	var _checkRunning = function _checkRunning(errBefore, errAfter) {
-		if (state === STATE.NOT_INITIALIZED) {
-			error = errBefore;
-		} else if (state === STATE.TERMINATED) {
-			error = errAfter;
-		} else {
-			error = 0;
-		}
-		return error === 0;
-	};
-	var _log = function _log() {
-		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-			args[_key] = arguments[_key];
-		}
+  // help functions
+  var _stringEndsWith = function _stringEndsWith(str, suffix) {
+    return str.length >= suffix.length && str.substr(str.length - suffix.length) == suffix;
+  };
+  var _valueNameSecurityCheck = function _valueNameSecurityCheck(name) {
+    error = name.search(_valueNameSecurityCheckRe) === 0 ? 0 : 401;
+    return error === 0;
+  };
+  var _valueNameCheckReadOnly = function _valueNameCheckReadOnly(name) {
+    error = 0;
+    if (_stringEndsWith(name, '._children')) {
+      error = 403;
+    }
+    return error === 0;
+  };
+  var _checkRunning = function _checkRunning(errBefore, errAfter) {
+    if (state === STATE.NOT_INITIALIZED) {
+      error = errBefore;
+    } else if (state === STATE.TERMINATED) {
+      error = errAfter;
+    } else {
+      error = 0;
+    }
+    return error === 0;
+  };
+  var _log = function _log() {
+    if (needLogging && console) {
+      var _console;
 
-		if (needLogging && console) {
-			console.log.apply(console, args);
-		}
-	};
+      (_console = console).log.apply(_console, arguments);
+    }
+  };
 
-	var init = function init(_ref) {
-		var dataUrl = _ref.dataUrl,
-		    _ref$version = _ref.version,
-		    version = _ref$version === undefined ? '2004' : _ref$version,
-		    _ref$debug = _ref.debug,
-		    debug = _ref$debug === undefined ? false : _ref$debug,
-		    _ref$autoCommitInterv = _ref.autoCommitInterval,
-		    autoCommitInterval = _ref$autoCommitInterv === undefined ? -1 : _ref$autoCommitInterv,
-		    callbacks = _ref.callbacks;
+  var init = function init(_ref) {
+    var dataUrl = _ref.dataUrl,
+        _ref$version = _ref.version,
+        version = _ref$version === undefined ? '2004' : _ref$version,
+        _ref$debug = _ref.debug,
+        debug = _ref$debug === undefined ? false : _ref$debug,
+        _ref$autoCommitInterv = _ref.autoCommitInterval,
+        autoCommitInterval = _ref$autoCommitInterv === undefined ? -1 : _ref$autoCommitInterv,
+        callbacks = _ref.callbacks;
 
-		//Pre init
-		state = STATE.NOT_INITIALIZED;
-		needLogging = debug === true ? true : false;
+    // Pre init
+    state = STATE.NOT_INITIALIZED;
+    needLogging = debug === true;
 
-		// clone default cmi
-		//or download the old one
-		// Promise ??
-		if (dataUrl) {
-			fetch(dataUrl).then(function (responce) {
-				var storedCmi = JSON.parse(responce);
-				cmi = Object.assign({}, cmiDefault, storedCmi);
-			}).catch(console.log);
-		} else {
-			cmi = Object.assign({}, cmiDefault);
-		}
+    // clone default cmi
+    // or download the old one
+    // Promise ??
+    if (dataUrl) {
+      fetch(dataUrl).then(function (responce) {
+        var storedCmi = JSON.parse(responce);
+        cmi = Object.assign({}, cmiDefault, storedCmi);
+      }).catch(console.log);
+    } else {
+      cmi = Object.assign({}, cmiDefault);
+    }
 
-		if (callbacks && callbacks.preInitialize) {
-			callbacks.preInitialize(cmi);
-		}
+    if (callbacks && callbacks.preInitialize) {
+      callbacks.preInitialize(cmi);
+    }
 
-		var fnms = version === '1.2' ? functionNames['1.2'] : functionNames['2004'];
-		var API = {};
+    var fnms = version === '1.2' ? functionNames['1.2'] : functionNames['2004'];
+    var API = {};
 
-		//auto commit
-		var lastCommit = Date.now();
-		var commitInterval = null;
-		if (typeof autoCommitInterval === "number" && autoCommitInterval > 0) {
-			commitInterval = setInterval(function () {
-				var now = Date.now();
-				if (now - lastCommit > autoCommitInterval * 1000) {
-					API[fnms['Commit']]();
-				}
-			}, autoCommitInterval * 1000 / 2);
-		}
+    // auto commit
+    var lastCommit = Date.now();
+    var commitInterval = null;
+    if (typeof autoCommitInterval === 'number' && autoCommitInterval > 0) {
+      commitInterval = setInterval(function () {
+        var now = Date.now();
+        if (now - lastCommit > autoCommitInterval * 1000) {
+          API[fnms.Commit]();
+        }
+      }, autoCommitInterval * 1000 / 2);
+    }
 
-		// SCO RTE functions
-		API[fnms['Initialize']] = function () {
-			_log("LMS Initialize");
-			if (state === STATE.RUNNING) {
-				error = 103;
-				return "false";
-			}
-			if (state === STATE.TERMINATED) {
-				error = 103;
-				return "false";
-			}
-			state = STATE.RUNNING;
-			error = 0;
-			var callbackResult = "true";
-			if (callbacks && callbacks.Initialize) {
-				callbackResult = callbacks.Initialize();
-			}
-			if (callbackResult === "false") return "false";
+    // SCO RTE functions
+    API[fnms.Initialize] = function () {
+      _log('LMS Initialize');
+      if (state === STATE.RUNNING) {
+        error = 103;
+        return 'false';
+      }
+      if (state === STATE.TERMINATED) {
+        error = 103;
+        return 'false';
+      }
+      state = STATE.RUNNING;
+      error = 0;
+      var callbackResult = 'true';
+      if (callbacks && callbacks.Initialize) {
+        callbackResult = callbacks.Initialize();
+      }
+      if (callbackResult === 'false') return 'false';
 
-			return "true";
-		};
+      return 'true';
+    };
 
-		API[fnms['Terminate']] = function () {
-			_log("LMS Terminate");
-			if (!_checkRunning(112, 113)) return "false";
+    API[fnms.Terminate] = function () {
+      _log('LMS Terminate');
+      if (!_checkRunning(112, 113)) return 'false';
 
-			_this[fnms['Commit']]();
-			state = STATE.TERMINATED;
-			clearInterval(commitInterval);
+      _this[fnms.Commit]();
+      state = STATE.TERMINATED;
+      clearInterval(commitInterval);
 
-			var callbackResult = "true";
-			if (callbacks && callbacks.Terminate) {
-				callbackResult = callbacks.Terminate();
-			}
-			if (callbackResult === "false") return "false";
+      var callbackResult = 'true';
+      if (callbacks && callbacks.Terminate) {
+        callbackResult = callbacks.Terminate();
+      }
+      if (callbackResult === 'false') return 'false';
 
-			return "true";
-		};
+      return 'true';
+    };
 
-		API[fnms['GetValue']] = function (name) {
-			_log("LMS GetValue", name);
-			if (!_checkRunning(122, 123)) {
-				return "";
-			}
-			if (!_valueNameSecurityCheck(name)) return "";
+    API[fnms.GetValue] = function (name) {
+      _log('LMS GetValue', name);
+      if (!_checkRunning(122, 123)) {
+        return '';
+      }
+      if (!_valueNameSecurityCheck(name)) return '';
 
-			var retval = cmi[name];
-			if (typeof retval == "undefined") {
-				retval = "";
-			}
+      var retval = cmi[name];
+      if (typeof retval === 'undefined') {
+        retval = '';
+      }
 
-			_log("LMS GetValue return: ", retval);
-			return retval;
-		};
+      _log('LMS GetValue return: ', retval);
+      return retval;
+    };
 
-		API[fnms['SetValue']] = function (name, value) {
-			_log("LMS SetValue", name, value);
-			if (!_checkRunning(132, 133)) return "false";
-			if (!_valueNameSecurityCheck(name)) return "false";
-			if (!_valueNameCheckReadOnly(name)) return "false";
+    API[fnms.SetValue] = function (name, value) {
+      _log('LMS SetValue', name, value);
+      if (!_checkRunning(132, 133)) return 'false';
+      if (!_valueNameSecurityCheck(name)) return 'false';
+      if (!_valueNameCheckReadOnly(name)) return 'false';
 
-			_valuesChanged[name] = value;
-			return "true";
-		}, API[fnms['Commit']] = function () {
-			_log("LMS Commit", _valuesChanged);
-			if (!_checkRunning(142, 143)) return "false";
+      _valuesChanged[name] = value;
+      return 'true';
+    }, API[fnms.Commit] = function () {
+      _log('LMS Commit', _valuesChanged);
+      if (!_checkRunning(142, 143)) return 'false';
 
-			Object.assign(cmi, _valuesChanged);
-			//TODO: Promise, errors 				
-			if (dataUrl) {
-				fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) }).catch(console.log);
-			}
+      Object.assign(cmi, _valuesChanged);
+      // TODO: Promise, errors
+      if (dataUrl) {
+        fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) }).catch(console.log);
+      }
 
-			var callbackResult = "true";
-			if (callbacks && callbacks.Commit) {
-				callbackResult = callbacks.Commit(cmi, _valuesChanged);
-			}
-			if (callbackResult === "false") return "false";
+      var callbackResult = 'true';
+      if (callbacks && callbacks.Commit) {
+        callbackResult = callbacks.Commit(cmi, _valuesChanged);
+      }
+      if (callbackResult === 'false') return 'false';
 
-			lastCommit = Date.now();
-			_valuesChanged = {}; // clean changed values
-			return "true";
-		};
+      lastCommit = Date.now();
+      _valuesChanged = {}; // clean changed values
+      return 'true';
+    };
 
-		API[fnms['GetDiagnostic']] = function (errCode) {
-			_log("LMS GetDiagnostic", errCode);
-			if (!errCode) return _this[fnms['GetLastError']]();
-			return error_strings[errCode] ? error_strings[errCode] : 'Uknown errCode.';
-		};
+    API[fnms.GetDiagnostic] = function (errCode) {
+      _log('LMS GetDiagnostic', errCode);
+      if (!errCode) return _this[fnms.GetLastError]();
+      return error_strings[errCode] ? error_strings[errCode] : 'Uknown errCode.';
+    };
 
-		API[fnms['GetErrorString']] = function (errCode) {
-			_log("LMS GetErrorString", errCode);
-			return error_strings[errCode] ? error_strings[errCode] : '';
-		};
+    API[fnms.GetErrorString] = function (errCode) {
+      _log('LMS GetErrorString', errCode);
+      return error_strings[errCode] ? error_strings[errCode] : '';
+    };
 
-		API[fnms['GetLastError']] = function () {
-			if (error != 0) _log("LMS GetLastError return", error);
-			return error;
-		};
+    API[fnms.GetLastError] = function () {
+      if (error != 0) _log('LMS GetLastError return', error);
+      return error;
+    };
 
-		// global api object set
-		if (version === '1.2') {
-			window.API = API;
-		} else {
-			window.API_1484_11 = API;
-		}
-	};
+    // global api object set
+    if (version === '1.2') {
+      window.API = API;
+    } else {
+      window.API_1484_11 = API;
+    }
+  };
 
-	return { init: init };
+  return { init: init };
 }();
 
 /***/ }),
