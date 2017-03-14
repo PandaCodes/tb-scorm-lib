@@ -86,21 +86,21 @@ window.SCORMApi = (function(){
 	const _valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 	
 	// help functions
-	const _stringEndsWith = function(str, suffix) {
+	const _stringEndsWith = (str, suffix) => {
 		return str.length >= suffix.length && str.substr(str.length - suffix.length) == suffix;
 	};
-	const _valueNameSecurityCheck = function(name) {
+	const _valueNameSecurityCheck = name => {
 		error = name.search(_valueNameSecurityCheckRe) === 0 ? 0 : 401;
 		return error === 0;
 	};
-	const _valueNameCheckReadOnly = function(name) {
+	const _valueNameCheckReadOnly = name => {
 		error = 0;
 		if (_stringEndsWith(name, "._children")) {
 			error = 403;
 		}
 		return error === 0;
 	};
-	const _checkRunning = function(errBefore, errAfter) {
+	const _checkRunning = (errBefore, errAfter) => {
 		if (state === STATE.NOT_INITIALIZED) {
 			error = errBefore;
 		} else if (state === STATE.TERMINATED) {
@@ -117,11 +117,8 @@ window.SCORMApi = (function(){
 	};
 	
 	
-	
-	
-	
 	const init = ({ 
-		postUrl, 
+		dataUrl, 
 		version = '2004',
 		debug = false,
 		autoCommitInterval = -1, //in seconds
@@ -134,8 +131,8 @@ window.SCORMApi = (function(){
 		// clone default cmi
 		//or download the old one
 		// Promise ??
-		if (postUrl) {
-			fetch(postUrl).then(responce => {
+		if (dataUrl) {
+			fetch(dataUrl).then(responce => {
 				const storedCmi = JSON.parse(responce);
 				cmi = Object.assign({}, cmiDefault, storedCmi); 
 			}).catch(console.log);
@@ -150,8 +147,9 @@ window.SCORMApi = (function(){
 		
 		//auto commit
 		let lastCommit = Date.now();
+		let commitInterval = null;
 		if (typeof autoCommitInterval === "number"  && autoCommitInterval > 0) {
-			setInterval(() => {
+			commitInterval = setInterval(() => {
 				const now = Date.now();
 				if (now - lastCommit > autoCommitInterval * 1000) {
 					API[fnms['Commit']]();
@@ -160,7 +158,7 @@ window.SCORMApi = (function(){
 		}
 		
 		// SCO RTE functions
-		API[fnms['Initialize']] = function() {
+		API[fnms['Initialize']] = () => {
 			_log("LMS Initialize");
 			if (state === STATE.RUNNING) {
 				error = 103;
@@ -172,21 +170,29 @@ window.SCORMApi = (function(){
 			}
 			state = STATE.RUNNING;
 			error = 0;
+			let callbackResult = "true";
+			if (callbacks && callbacks.Initialize) { callbackResult = callbacks.Initialize(); }
+			if (callbackResult === "false") return "false";
 	
 			return "true";
 		};
 	
-		API[fnms['Terminate']] = function() {
+		API[fnms['Terminate']] = () => {
 			_log("LMS Terminate");
 			if (!_checkRunning(112, 113)) return "false";
 	
-			this[fnms['Commit']](); //?
+			this[fnms['Commit']]();
 			state = STATE.TERMINATED;
+			clearInterval(commitInterval);
+			
+			let callbackResult = "true";
+			if (callbacks && callbacks.Terminate) { callbackResult = callbacks.Terminate(); }
+			if (callbackResult === "false") return "false";
 			
 			return "true";
 		};
 	
-	  API[fnms['GetValue']] = function(name) {
+	  API[fnms['GetValue']] = name => {
 			_log("LMS GetValue", name);
 			if (!_checkRunning(122, 123)) {
 				return "";
@@ -202,7 +208,7 @@ window.SCORMApi = (function(){
 			return retval;
 		};
 	
-		API[fnms['SetValue']] =  function(name, value) {
+		API[fnms['SetValue']] = (name, value) => {
 			_log("LMS SetValue", name, value);
 			if (!_checkRunning(132, 133)) return "false";
 			if (!_valueNameSecurityCheck(name)) return "false";
@@ -212,34 +218,38 @@ window.SCORMApi = (function(){
 			return "true";
 		},
 	
-		API[fnms['Commit']] =  function() {
+		API[fnms['Commit']] = () => {
 			_log("LMS Commit", _valuesChanged);
 			if (!_checkRunning(142, 143)) return "false";
+
 			Object.assign(cmi, _valuesChanged);
-//TODO: Promise, errors				
-			if (postUrl) {
-				fetch(postUrl, { method: 'POST', body: JSON.stringify(cmi) })
+//TODO: Promise, errors 				
+			if (dataUrl) {
+				fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) })
 				.catch(e => error = 1000);
 			}
-			if (callbacks && callbacks.Commit) { callbacks.Commit(cmi); }
+			
+			let callbackResult = "true";
+			if (callbacks && callbacks.Commit) { callbackResult = callbacks.Commit(cmi, _valuesChanged); }
+			if (callbackResult === "false") return "false";
+			
 			lastCommit = Date.now();
-
 			_valuesChanged = {}; // clean changed values
 			return "true";
 		};
 	
-		API[fnms['GetDiagnostic']] =  function(errCode) {
+		API[fnms['GetDiagnostic']] = errCode => {
 			_log("LMS GetDiagnostic", errCode);
-			// if (!errCode) return this.GetLastError();
+			if (!errCode) return this[fnms['GetLastError']]();
 			return error_strings[errCode] ? error_strings[errCode] : 'Uknown errCode.';
 		};
 	
-		API[fnms['GetErrorString']] =  function(errCode) {
+		API[fnms['GetErrorString']] =  errCode => {
 			_log("LMS GetErrorString", errCode);
 			return error_strings[errCode] ? error_strings[errCode] : '';
 		};
 	
-		API[fnms['GetLastError']] =  function() {
+		API[fnms['GetLastError']] = () => {
 			if (error != 0) _log("LMS GetLastError return", error);
 			return error;
 		};
@@ -250,9 +260,7 @@ window.SCORMApi = (function(){
 		} else {
 			window.API_1484_11 = API;
 		}
-		
 	};
-	
 	
   return { init };
 }());

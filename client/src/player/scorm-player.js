@@ -1,4 +1,4 @@
-window.SCORMPlayer = function({ wrapper, rootUrl, postUrl, debug }) {
+window.SCORMPlayer = function({ wrapper, rootUrl, dataUrl, debug }) {
   const error_strings = {
     PARSE_XML : "Error occured while parsing imsmanifest.xml",
     FORMAT_XML : "Wrong imsmanifest.xml format"
@@ -27,7 +27,7 @@ window.SCORMPlayer = function({ wrapper, rootUrl, postUrl, debug }) {
         const schemaVersion = manifest.getElementsByTagName('schemaversion')[0].childNodes[0].nodeValue;
         console.log(schemaVersion)
         const version = schemaVersion === '1.2' ? '1.2' : '2004';
-        SCORMApi.init({ version, postUrl, debug });
+        SCORMApi.init({ version, dataUrl, debug });
         //<resourses>
         resources = manifest.getElementsByTagName('resources')[0].getElementsByTagName('resource');
         //<organization>
