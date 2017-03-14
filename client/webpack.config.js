@@ -1,18 +1,17 @@
 const webpack = require('webpack');
 
-const libraryName = 'scorm-rte';
+const libraryName = 'scormRte';
 
+process.traceDeprecation = true;
 module.exports = {
   entry: {
-    'scorm-api' : ['./src/api/scorm-api.js', 'whatwg-fetch'],
-    'scorm-rte' : ['./src/player/scorm-player.js', './src/api/scorm-api.js', 'whatwg-fetch']
+    //'scorm-api' : ['./src/api/scorm-api.js'],
+    'scorm-rte' : ['./src/player/scorm-player.js'] //, 'whatwg-fetch']
   },
   output: {
-    path: __dirname + '/lib',
+    path: __dirname + '/dist',
     filename: "[name].js",
     library: libraryName,
-    libraryTarget: 'umd',
-    umdNamedDefine: true
   },
   module: {
     loaders: [
@@ -21,7 +20,8 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015']
+          presets: ['es2015'],
+          plugins: ['add-module-exports']
         }
       },
       {

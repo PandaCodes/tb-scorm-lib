@@ -1,20 +1,25 @@
-window.SCORMPlayer = function ({ wrapper, rootUrl, dataUrl, debug }) {
-  const error_strings = {
-    PARSE_XML: 'Error occured while parsing imsmanifest.xml',
-    FORMAT_XML: 'Wrong imsmanifest.xml format',
-  };
-  const loaded = false;
-  let manifest = null;
-  let iframe = null;
-  let resources = null;
-  let organization = null;
-  const currentItem = null;
+import scormApi from '../api/scorm-api';
 
-  iframe = document.createElement('iframe');
-  wrapper.appendChild(iframe);
-  fetch(`${rootUrl}/imsmanifest.xml`)
-    .then(responce =>
-      responce.text().then((xmlText) => {
+const errorStrings = {
+  PARSE_XML: 'Error occured while parsing imsmanifest.xml',
+  FORMAT_XML: 'Wrong imsmanifest.xml format',
+};
+const loaded = false;
+let manifest = null;
+let iframe = null;
+let resources = null;
+let organization = null;
+const currentItem = null;
+
+export default class {
+  constructor() {
+    iframe = document.createElement('iframe');
+  }
+
+  init({ wrapper, rootUrl, dataUrl, debug }) {
+    wrapper.appendChild(iframe);
+    fetch(`${rootUrl}/imsmanifest.xml`)
+      .then(responce => responce.text().then((xmlText) => {
         const parser = new DOMParser();
         manifest = parser.parseFromString(xmlText, 'text/xml');
 
@@ -22,15 +27,15 @@ window.SCORMPlayer = function ({ wrapper, rootUrl, dataUrl, debug }) {
 
         }
 
-        // xml validation??? error throws
-        // Find version info and load API
+          // xml validation??? error throws
+          // Find version info and load API
         const schemaVersion = manifest.getElementsByTagName('schemaversion')[0].childNodes[0].nodeValue;
-        console.log(schemaVersion);
+        if (debug) { console.log('schema version', schemaVersion); }
         const version = schemaVersion === '1.2' ? '1.2' : '2004';
-        SCORMApi.init({ version, dataUrl, debug });
-        // <resourses>
+        scormApi.init({ version, dataUrl, debug });
+          // <resourses>
         resources = manifest.getElementsByTagName('resources')[0].getElementsByTagName('resource');
-        // <organization>
+          // <organization>
         organization = manifest.getElementsByTagName('organization')[0].getElementsByTagName('item');
 
         const firstIdRef = organization[0].getAttribute('identifierref');
@@ -41,8 +46,5 @@ window.SCORMPlayer = function ({ wrapper, rootUrl, dataUrl, debug }) {
           }
         }
       }));
-
-
-  return this;
-};
-
+  }
+}
