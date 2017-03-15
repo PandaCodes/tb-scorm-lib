@@ -1,0 +1,7 @@
+//no save results
+LMS SetValue cmi.exit   
+LMS SetValue adl.nav.request exitAll  
+
+//save rslts
+LMS SetValue cmi.exit suspend 
+LMS SetValue adl.nav.request suspendAll  

@@ -18,9 +18,10 @@ export default class {
 
   init({ wrapper, rootUrl, dataUrl, debug }) {
     wrapper.appendChild(iframe);
-    fetch(`${rootUrl}/imsmanifest.xml`)
+    return fetch(`${rootUrl}/imsmanifest.xml`)
       .then(responce => responce.text().then((xmlText) => {
         const parser = new DOMParser();
+        // opera mini works bad with parseFromString
         manifest = parser.parseFromString(xmlText, 'text/xml');
 
         if (manifest.documentElement.nodeName === 'parsererror') {
@@ -32,19 +33,20 @@ export default class {
         const schemaVersion = manifest.getElementsByTagName('schemaversion')[0].childNodes[0].nodeValue;
         if (debug) { console.log('schema version', schemaVersion); }
         const version = schemaVersion === '1.2' ? '1.2' : '2004';
-        scormApi.init({ version, dataUrl, debug });
-          // <resourses>
-        resources = manifest.getElementsByTagName('resources')[0].getElementsByTagName('resource');
-          // <organization>
-        organization = manifest.getElementsByTagName('organization')[0].getElementsByTagName('item');
+        return scormApi.init({ version, dataUrl, debug }).then(() => {
+            // <resourses>
+          resources = manifest.getElementsByTagName('resources')[0].getElementsByTagName('resource');
+            // <organization>
+          organization = manifest.getElementsByTagName('organization')[0].getElementsByTagName('item');
 
-        const firstIdRef = organization[0].getAttribute('identifierref');
+          const firstIdRef = organization[0].getAttribute('identifierref');
 
-        for (const res of resources) {
-          if (res.getAttribute('identifier') === firstIdRef) {
-            iframe.src = `${rootUrl}/${res.getAttribute('href')}`;
+          for (const res of resources) {
+            if (res.getAttribute('identifier') === firstIdRef) {
+              iframe.src = `${rootUrl}/${res.getAttribute('href')}`;
+            }
           }
-        }
+        });
       }));
   }
 }

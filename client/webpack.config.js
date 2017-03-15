@@ -2,7 +2,8 @@ const webpack = require('webpack');
 
 const libraryName = 'scormRte';
 
-process.traceDeprecation = true;
+//TODO: add whatwg-fetch and, mayby, promise-polyfill
+
 module.exports = {
   entry: {
     //'scorm-api' : ['./src/api/scorm-api.js'],
