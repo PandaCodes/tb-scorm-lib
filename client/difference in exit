@@ -5,3 +5,8 @@ LMS SetValue adl.nav.request exitAll
 //save rslts
 LMS SetValue cmi.exit suspend 
 LMS SetValue adl.nav.request suspendAll  
+
+cmi.entry (ab_initio, resume, “”, RO) Asserts whether the learner has previously accessed the SCO
+cmi.exit (timeout, suspend, logout, normal, “”, WO) Indicates how or why the learner left the SCO 
+suspend = save data 
+"" = clear data

@@ -106,6 +106,10 @@ const checkRunning = (errBefore, errAfter) => {
   }
   return error === 0;
 };
+const post = (dataUrl, body) => 
+  dataUrl 
+  ? fetch(dataUrl, { method: 'POST', body })
+  : Promise.resolve();
 const log = (...args) => {
   if (needLogging && console) {
     console.log(...args);
@@ -183,8 +187,14 @@ export default {
         if (!checkRunning(112, 113)) return 'false';
   
   
+        // ugly?
+        if (changedValues["cmi.exit"] === "") { post(dataUrl, {}).catch(log); }
+        if (changedValues["cmi.exit"] === "suspend") {
+          changedValues["cmi.entry"] = "resume";
+          API[fnms.Commit]();
+        }
+        //other? TODO
         
-        API[fnms.Commit](); // ??
         state = STATE.TERMINATED;
         clearInterval(commitInterval);
   
@@ -226,11 +236,8 @@ export default {
         if (!checkRunning(142, 143)) return 'false';
   
         Object.assign(cmi, changedValues);
-        // TODO: Promise, errors
-        if (dataUrl) {
-          fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) })
-              .catch(log);
-        }
+        // TODO: Errors (like "Bad connection, sorry..")
+        post(dataUrl, JSON.stringify(cmi)).catch(log);
   
         let callbackResult = 'true';
         if (callbacks && callbacks.onCommit) { callbackResult = callbacks.onCommit(); }
