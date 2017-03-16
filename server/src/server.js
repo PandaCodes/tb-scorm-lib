@@ -12,6 +12,7 @@ let cache = {};
 
 app.get('/api/scorm/manifest/:id', (req, res) => {
     console.log(req.params);
+    
     // returns manifest url, which lies in the root of scorm course
     res.json({
       manifestUrl : 'https://tb-scorm-lib-akam.c9users.io' + '/resources/' + req.params.id 
@@ -20,7 +21,9 @@ app.get('/api/scorm/manifest/:id', (req, res) => {
 });
 
 app.get('/api/scorm/results', (req, res) => {
-  res.json(cache);
+  res.set("Access-Control-Allow-Origin", "*");  // becouse of PORT difference..
+  res.set('Content-Type', 'text/plain');
+  res.send(JSON.stringify(cache));
   res.end();
 });
 
