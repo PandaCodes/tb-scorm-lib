@@ -106,8 +106,8 @@ const checkRunning = (errBefore, errAfter) => {
   }
   return error === 0;
 };
-const post = (dataUrl, body) => 
-  dataUrl 
+const post = (dataUrl, body) =>
+  dataUrl
   ? fetch(dataUrl, { method: 'POST', body })
   : Promise.resolve();
 const log = (...args) => {
@@ -124,11 +124,11 @@ export default {
     autoCommitInterval = -1, // in seconds
     callbacks,
     modelInit,
-  }){
+  }) {
     // Pre init
     state = STATE.NOT_INITIALIZED;
     needLogging = debug === true;
-  
+
     // clone default cmi
     // or download the old one
     cmi = Object.assign({}, cmiDefault, modelInit);
@@ -141,13 +141,13 @@ export default {
         cmi = Object.assign({}, cmiDefault, storedCmi);
       }).catch(log)
       : Promise.resolve();
-  
+
     return initCmi.then(() => {
       if (callbacks && callbacks.preInitialize) { callbacks.preInitialize(); }
-  
+
       const fnms = version === '1.2' ? functionNames['1.2'] : functionNames['2004'];
       const API = {};
-  
+
       // auto commit
       let lastCommit = Date.now();
       let commitInterval = null;
@@ -161,7 +161,7 @@ export default {
           }
         }, autoCommitInterval * 1000 / 2);
       }
-  
+
         // SCO RTE functions
       API[fnms.Initialize] = () => {
         log('LMS Initialize');
@@ -178,92 +178,92 @@ export default {
         let callbackResult = 'true';
         if (callbacks && callbacks.onInitialize) { callbackResult = callbacks.onInitialize(); }
         if (callbackResult === 'false') return 'false';
-  
+
         return 'true';
       };
-  
+
       API[fnms.Terminate] = () => {
         log('LMS Terminate');
         if (!checkRunning(112, 113)) return 'false';
-  
-  
+
+
         // ugly?
-        if (changedValues["cmi.exit"] === "") { post(dataUrl, {}).catch(log); }
-        if (changedValues["cmi.exit"] === "suspend") {
-          changedValues["cmi.entry"] = "resume";
+        if (changedValues['cmi.exit'] === '') { post(dataUrl, {}).catch(log); }
+        if (changedValues['cmi.exit'] === 'suspend') {
+          changedValues['cmi.entry'] = 'resume';
           API[fnms.Commit]();
         }
-        //other? TODO
-        
+        // other? TODO
+
         state = STATE.TERMINATED;
         clearInterval(commitInterval);
-  
+
         let callbackResult = 'true';
         if (callbacks && callbacks.onTerminate) { callbackResult = callbacks.onTerminate(); }
         if (callbackResult === 'false') return 'false';
-  
+
         return 'true';
       };
-  
+
       API[fnms.GetValue] = (name) => {
         log('LMS GetValue', name);
         if (!checkRunning(122, 123)) {
           return '';
         }
         if (!valueNameSecurityCheck(name)) return '';
-  
+
         let retval = cmi[name];
         if (typeof (retval) === 'undefined') {
           retval = '';
         }
-  
+
         log('LMS GetValue return: ', retval);
         return retval;
       };
-  
+
       API[fnms.SetValue] = (name, value) => {
         log('LMS SetValue', name, value);
         if (!checkRunning(132, 133)) return 'false';
         if (!valueNameSecurityCheck(name)) return 'false';
         if (!valueNameCheckReadOnly(name)) return 'false';
-  
+
         changedValues[name] = value;
         return 'true';
       },
-  
+
       API[fnms.Commit] = () => {
         log('LMS Commit', changedValues);
         if (!checkRunning(142, 143)) return 'false';
-  
+
         Object.assign(cmi, changedValues);
         // TODO: Errors (like "Bad connection, sorry..")
         post(dataUrl, JSON.stringify(cmi)).catch(log);
-  
+
         let callbackResult = 'true';
         if (callbacks && callbacks.onCommit) { callbackResult = callbacks.onCommit(); }
         if (callbackResult === 'false') return 'false';
-  
+
         lastCommit = Date.now();
         changedValues = {}; // clean changed values
         return 'true';
-       };
-  
+      };
+
       API[fnms.GetDiagnostic] = (errCode) => {
         log('LMS GetDiagnostic', errCode);
         if (!errCode) return API[fnms.GetLastError]();
         return errorStrings[errCode] ? errorStrings[errCode] : 'Uknown errCode.';
       };
-  
+
       API[fnms.GetErrorString] = (errCode) => {
         log('LMS GetErrorString', errCode);
         return errorStrings[errCode] ? errorStrings[errCode] : '';
       };
-  
+
       API[fnms.GetLastError] = () => {
         if (error !== 0) log('LMS GetLastError return', error);
         return error;
       };
-  
+
         // global api object set
       if (version === '1.2') {
         window.API = API;
@@ -272,9 +272,9 @@ export default {
       }
     });
   },
-  
-  getDataModel : () => Object.assign({}, cmi)
 
-  
+  getDataModel: () => Object.assign({}, cmi),
+
+
 };
 
