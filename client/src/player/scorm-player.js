@@ -17,7 +17,7 @@ export default class {
   }
 
   init({ wrapper, rootUrl, dataUrl, debug }) {
-    wrapper.appendChild(iframe);
+    document.getElementById(wrapper).appendChild(iframe);
     return fetch(`${rootUrl}/imsmanifest.xml`)
       .then(responce => responce.text().then((xmlText) => {
         const parser = new DOMParser();
