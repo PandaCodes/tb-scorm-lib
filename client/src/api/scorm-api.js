@@ -81,22 +81,22 @@ let error = 0;
 let cmi = null;
 let changedValues = {};
 
-const _valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
+const valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 
   // help functions
 const _stringEndsWith = (str, suffix) => str.length >= suffix.length && str.substr(str.length - suffix.length) == suffix;
-const _valueNameSecurityCheck = (name) => {
-  error = name.search(_valueNameSecurityCheckRe) === 0 ? 0 : 401;
+const valueNameSecurityCheck = (name) => {
+  error = name.search(valueNameSecurityCheckRe) === 0 ? 0 : 401;
   return error === 0;
 };
-const _valueNameCheckReadOnly = (name) => {
+const valueNameCheckReadOnly = (name) => {
   error = 0;
   if (_stringEndsWith(name, '._children')) {
     error = 403;
   }
   return error === 0;
 };
-const _checkRunning = (errBefore, errAfter) => {
+const checkRunning = (errBefore, errAfter) => {
   if (state === STATE.NOT_INITIALIZED) {
     error = errBefore;
   } else if (state === STATE.TERMINATED) {
@@ -172,7 +172,7 @@ const init = ({
       state = STATE.RUNNING;
       error = 0;
       let callbackResult = 'true';
-      if (callbacks && callbacks.Initialize) { callbackResult = callbacks.Initialize(); }
+      if (callbacks && callbacks.onInitialize) { callbackResult = callbacks.onInitialize(); }
       if (callbackResult === 'false') return 'false';
 
       return 'true';
@@ -180,14 +180,16 @@ const init = ({
 
     API[fnms.Terminate] = () => {
       log('LMS Terminate');
-      if (!_checkRunning(112, 113)) return 'false';
+      if (!checkRunning(112, 113)) return 'false';
 
+
+      
       API[fnms.Commit](); // ??
       state = STATE.TERMINATED;
       clearInterval(commitInterval);
 
       let callbackResult = 'true';
-      if (callbacks && callbacks.Terminate) { callbackResult = callbacks.Terminate(); }
+      if (callbacks && callbacks.onTerminate) { callbackResult = callbacks.onTerminate(); }
       if (callbackResult === 'false') return 'false';
 
       return 'true';
@@ -195,10 +197,10 @@ const init = ({
 
     API[fnms.GetValue] = (name) => {
       log('LMS GetValue', name);
-      if (!_checkRunning(122, 123)) {
+      if (!checkRunning(122, 123)) {
         return '';
       }
-      if (!_valueNameSecurityCheck(name)) return '';
+      if (!valueNameSecurityCheck(name)) return '';
 
       let retval = cmi[name];
       if (typeof (retval) === 'undefined') {
@@ -211,33 +213,33 @@ const init = ({
 
     API[fnms.SetValue] = (name, value) => {
       log('LMS SetValue', name, value);
-      if (!_checkRunning(132, 133)) return 'false';
-      if (!_valueNameSecurityCheck(name)) return 'false';
-      if (!_valueNameCheckReadOnly(name)) return 'false';
+      if (!checkRunning(132, 133)) return 'false';
+      if (!valueNameSecurityCheck(name)) return 'false';
+      if (!valueNameCheckReadOnly(name)) return 'false';
 
       changedValues[name] = value;
       return 'true';
     },
 
-      API[fnms.Commit] = () => {
-        log('LMS Commit', changedValues);
-        if (!_checkRunning(142, 143)) return 'false';
+    API[fnms.Commit] = () => {
+      log('LMS Commit', changedValues);
+      if (!checkRunning(142, 143)) return 'false';
 
-        Object.assign(cmi, changedValues);
-        // TODO: Promise, errors
-        if (dataUrl) {
-          fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) })
-              .catch(log);
-        }
+      Object.assign(cmi, changedValues);
+      // TODO: Promise, errors
+      if (dataUrl) {
+        fetch(dataUrl, { method: 'POST', body: JSON.stringify(cmi) })
+            .catch(log);
+      }
 
-        let callbackResult = 'true';
-        if (callbacks && callbacks.Commit) { callbackResult = callbacks.Commit(); }
-        if (callbackResult === 'false') return 'false';
+      let callbackResult = 'true';
+      if (callbacks && callbacks.onCommit) { callbackResult = callbacks.onCommit(); }
+      if (callbackResult === 'false') return 'false';
 
-        lastCommit = Date.now();
-        changedValues = {}; // clean changed values
-        return 'true';
-      };
+      lastCommit = Date.now();
+      changedValues = {}; // clean changed values
+      return 'true';
+     };
 
     API[fnms.GetDiagnostic] = (errCode) => {
       log('LMS GetDiagnostic', errCode);
