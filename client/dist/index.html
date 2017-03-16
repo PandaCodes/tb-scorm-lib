@@ -8,10 +8,8 @@
   
     window.onload = function() {
       console.log(scormRte)
-      var player = new scormRte();
-      player.init({
-        wrapper : 'scorm_player', 
-        rootUrl : 'https://tb-scorm-lib-akam.c9users.io/resources/1',
+      scormRte.init('scorm_player', 'https://tb-scorm-lib-akam.c9users.io/resources/1',
+      {
         dataUrl : 'https://tb-scorm-lib-akam.c9users.io:8081/api/scorm/results',
         debug: true,
         autoCommitInterval : 2,

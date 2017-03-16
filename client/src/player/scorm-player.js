@@ -11,12 +11,9 @@ let resources = null;
 let organization = null;
 const currentItem = null;
 
-export default class {
-  constructor() {
+export default {
+  init(wrapper, rootUrl, options) {
     iframe = document.createElement('iframe');
-  }
-
-  init({ wrapper, rootUrl, dataUrl, debug }) {
     document.getElementById(wrapper).appendChild(iframe);
     return fetch(`${rootUrl}/imsmanifest.xml`)
       .then(responce => responce.text().then((xmlText) => {
@@ -31,9 +28,9 @@ export default class {
           // xml validation??? error throws
           // Find version info and load API
         const schemaVersion = manifest.getElementsByTagName('schemaversion')[0].childNodes[0].nodeValue;
-        if (debug) { console.log('schema version', schemaVersion); }
-        const version = schemaVersion === '1.2' ? '1.2' : '2004';
-        return scormApi.init({ version, dataUrl, debug }).then(() => {
+        if (options.debug) { console.log('schema version', schemaVersion); }
+        options.version = schemaVersion === '1.2' ? '1.2' : '2004';
+        return scormApi.init(options).then(() => {
             // <resourses>
           resources = manifest.getElementsByTagName('resources')[0].getElementsByTagName('resource');
             // <organization>
@@ -49,4 +46,4 @@ export default class {
         });
       }));
   }
-}
+};
