@@ -45,12 +45,9 @@ export default {
           organization = manifest.getElementsByTagName('organization')[0].getElementsByTagName('item');
 
           const firstIdRef = organization[0].getAttribute('identifierref');
-
-          for (const res of resources) {
-            if (res.getAttribute('identifier') === firstIdRef) {
-              iframe.src = `${rootUrl}/${res.getAttribute('href')}`;
-            }
-          }
+          
+          const firstRes = resources.find(res => res.getAttribute('identifier') === firstIdRef);
+          iframe.src = `${rootUrl}/${firstRes.getAttribute('href')}`;
         });
       }));
   },

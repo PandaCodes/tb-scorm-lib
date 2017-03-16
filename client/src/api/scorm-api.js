@@ -1,4 +1,4 @@
-  // predefined constants
+// predefined constants
 const LMSVersion = '1.0';
 const	errorStrings = {
   0: 'No error',
@@ -70,8 +70,6 @@ const cmiDefault = {
   'cmi.success_status': 'unknown',
   'cmi.completion_status': 'incomplete',
   'cmi.score._children': 'scaled,min,max,raw',
-  'cmi.interactions._children': '',
-    // "id,type,objectives,timestamp,correct_responses,weighting,learner_response,result,latency,description",
   'cmi.interactions._count': '0',
 };
 
@@ -84,14 +82,15 @@ let changedValues = {};
 const valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 
   // help functions
-const _stringEndsWith = (str, suffix) => str.length >= suffix.length && str.substr(str.length - suffix.length) == suffix;
+const stringEndsWith = (str, suffix) => 
+  str.length >= suffix.length && str.substr(str.length - suffix.length) === suffix;
 const valueNameSecurityCheck = (name) => {
   error = name.search(valueNameSecurityCheckRe) === 0 ? 0 : 401;
   return error === 0;
 };
 const valueNameCheckReadOnly = (name) => {
   error = 0;
-  if (_stringEndsWith(name, '._children')) {
+  if (stringEndsWith(name, '._children')) {
     error = 403;
   }
   return error === 0;
@@ -148,7 +147,7 @@ export default {
       const fnms = version === '1.2' ? functionNames['1.2'] : functionNames['2004'];
       const API = {};
 
-      // auto commit
+      //Auto commit
       let lastCommit = Date.now();
       let commitInterval = null;
       if (typeof autoCommitInterval === 'number' && autoCommitInterval > 0) {
@@ -187,7 +186,7 @@ export default {
         if (!checkRunning(112, 113)) return 'false';
 
 
-        // ugly?
+        // ugly? TODO: to think
         if (changedValues['cmi.exit'] === '') { post(dataUrl, {}).catch(log); }
         if (changedValues['cmi.exit'] === 'suspend') {
           changedValues['cmi.entry'] = 'resume';
@@ -211,6 +210,7 @@ export default {
           return '';
         }
         if (!valueNameSecurityCheck(name)) return '';
+        //TODO: initialized check (_children) ?
 
         let retval = cmi[name];
         if (typeof (retval) === 'undefined') {
@@ -227,6 +227,7 @@ export default {
         if (!valueNameSecurityCheck(name)) return 'false';
         if (!valueNameCheckReadOnly(name)) return 'false';
 
+        // TODO: _children set
         changedValues[name] = value;
         return 'true';
       },
