@@ -9,12 +9,20 @@ let manifest = null;
 let iframe = null;
 let resources = null;
 let organization = null;
+let debug = false;
 const currentItem = null;
+
+const log = (...args) => {
+  if (debug && console) {
+    console.log(...args);
+  }
+};
 
 export default {
   init(wrapper, rootUrl, options) {
     iframe = document.createElement('iframe');
     document.getElementById(wrapper).appendChild(iframe);
+    debug = options.debug;
     return fetch(`${rootUrl}/imsmanifest.xml`)
       .then(responce => responce.text().then((xmlText) => {
         const parser = new DOMParser();
@@ -22,13 +30,13 @@ export default {
         manifest = parser.parseFromString(xmlText, 'text/xml');
 
         if (manifest.documentElement.nodeName === 'parsererror') {
-
+          log(errorStrings.PARSE_XML);
         }
 
           // xml validation??? error throws
           // Find version info and load API
         const schemaVersion = manifest.getElementsByTagName('schemaversion')[0].childNodes[0].nodeValue;
-        if (options.debug) { console.log('schema version', schemaVersion); }
+        log('schema version', schemaVersion);
         options.version = schemaVersion === '1.2' ? '1.2' : '2004';
         return scormApi.init(options).then(() => {
             // <resourses>

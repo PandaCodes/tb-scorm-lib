@@ -117,7 +117,7 @@ export default {
     dataUrl,
     version = '2004',
     debug = false,
-    autoCommitInterval = -1, // in seconds ?? doesn't set
+    autoCommitInterval = -1, // in seconds
     callbacks,
     modelInit,
   }){
