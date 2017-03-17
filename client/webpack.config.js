@@ -2,16 +2,14 @@ const webpack = require('webpack');
 
 const libraryName = 'scormRte';
 
-//TODO: add whatwg-fetch and, mayby, promise-polyfill
-
 module.exports = {
   entry: {
     //'scorm-api' : ['./src/api/scorm-api.js'],
-    'scorm-rte' : ['./src/player/scorm-player.js'] //, 'whatwg-fetch']
+    'scorm-rte' : ['./src/player/scorm-player.js']
   },
   output: {
     path: __dirname + '/dist',
-    filename: "[name].js",
+    filename: "[name].min.js",
     library: libraryName,
   },
   module: {
@@ -36,8 +34,9 @@ module.exports = {
       }
     ]
   },
-  plugins: [new webpack.optimize.UglifyJsPlugin()],
+  //plugins: [new webpack.optimize.UglifyJsPlugin()],
   resolve: {
     extensions: ['.js']
-  }
+  },
+  //devtool: 'source-map'
 };

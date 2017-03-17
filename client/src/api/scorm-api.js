@@ -1,6 +1,7 @@
+// import 'whatwg-fetch';
 // predefined constants
 const LMSVersion = '1.0';
-const	errorStrings = {
+const errorStrings = {
   0: 'No error',
     // General Errors 100-199
   101: 'General Exception',
@@ -56,7 +57,7 @@ const functionNames = {
     GetDiagnostic: 'LMSGetDiagnostic',
   },
 };
-const	STATE = {
+const STATE = {
   NOT_INITIALIZED: 'Not Initialized',
   RUNNING: 'Running',
   TERMINATED: 'Terminated',
@@ -82,7 +83,7 @@ let changedValues = {};
 const valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 
   // help functions
-const stringEndsWith = (str, suffix) => 
+const stringEndsWith = (str, suffix) =>
   str.length >= suffix.length && str.substr(str.length - suffix.length) === suffix;
 const valueNameSecurityCheck = (name) => {
   error = name.search(valueNameSecurityCheckRe) === 0 ? 0 : 401;
@@ -106,9 +107,9 @@ const checkRunning = (errBefore, errAfter) => {
   return error === 0;
 };
 const post = (dataUrl, body) =>
-  dataUrl
+  (dataUrl
   ? fetch(dataUrl, { method: 'POST', body })
-  : Promise.resolve();
+  : Promise.resolve());
 const log = (...args) => {
   if (needLogging && console) {
     console.log(...args);
@@ -138,7 +139,8 @@ export default {
       .then((storedCmi) => {
         log('Fetched cmi from server', storedCmi);
         cmi = Object.assign({}, cmiDefault, storedCmi);
-      }).catch(log)
+      })
+      .catch(log)
       : Promise.resolve();
 
     return initCmi.then(() => {
@@ -147,18 +149,18 @@ export default {
       const fnms = version === '1.2' ? functionNames['1.2'] : functionNames['2004'];
       const API = {};
 
-      //Auto commit
+      // Auto commit
       let lastCommit = Date.now();
       let commitInterval = null;
       if (typeof autoCommitInterval === 'number' && autoCommitInterval > 0) {
         log('Auto-commit enabled');
         commitInterval = setInterval(() => {
           console.log('Ai');// ?? TODO
-          const now = Date.now();
+          /* const now = Date.now();
           if (now - lastCommit > autoCommitInterval * 1000) {
             API[fnms.Commit]();
-          }
-        }, autoCommitInterval * 1000 / 2);
+          }*/
+        }, autoCommitInterval * 100);
       }
 
         // SCO RTE functions
@@ -210,7 +212,7 @@ export default {
           return '';
         }
         if (!valueNameSecurityCheck(name)) return '';
-        //TODO: initialized check (_children) ?
+        // TODO: initialized check (_children) ?
 
         let retval = cmi[name];
         if (typeof (retval) === 'undefined') {
@@ -230,7 +232,7 @@ export default {
         // TODO: _children set
         changedValues[name] = value;
         return 'true';
-      },
+      };
 
       API[fnms.Commit] = () => {
         log('LMS Commit', changedValues);
