@@ -153,9 +153,9 @@ export default {
       let lastCommit = Date.now();
       let commitInterval = null;
       if (typeof autoCommitInterval === 'number' && autoCommitInterval > 0) {
-        log('Auto-commit enabled');
+        log('Auto-commit enabled', setInterval);
         commitInterval = setInterval(() => {
-          console.log('Ai');// ?? TODO
+          console.log('Ai');// ?? TODO doesn't work(
           /* const now = Date.now();
           if (now - lastCommit > autoCommitInterval * 1000) {
             API[fnms.Commit]();
