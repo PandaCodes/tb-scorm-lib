@@ -1,7 +1,7 @@
 // import 'whatwg-fetch';
 // predefined constants
 import * as d from './dictionary';
-import { stringEndsWith, post } from './utils';
+import * as cmi from './cmi';
 
 const STATE = {
   NOT_INITIALIZED: 'Not Initialized',
@@ -9,13 +9,13 @@ const STATE = {
   TERMINATED: 'Terminated',
 };
 
-let needLogging = false; // bad name (variable duplication)
 let state = null;
 let error = 0;
-let cmi = null;
-let changedValues = {};
 
 const valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
+
+export const stringEndsWith = (str, suffix) =>
+  str.length >= suffix.length && str.substr(str.length - suffix.length) === suffix;
 
 // Check error functions
 const valueNameSecurityCheck = (name) => {
@@ -40,12 +40,6 @@ const stateCheck = (errBefore, errAfter) => {
   return error === 0;
 };
 
-const log = (...args) => {
-  if (needLogging && console) {
-    console.log(...args);
-  }
-};
-
 export default {
   init({
     dataUrl,
@@ -57,31 +51,42 @@ export default {
   }) {
     // Pre init
     state = STATE.NOT_INITIALIZED;
-    needLogging = debug === true;
-    d.setSchemaVersion(schemaVersion);
-    const cmiDefault = d.getCmiDefault();
-    const cmiInit = d.createModel(initModel);
-    log('Init model', cmiInit);
+    // debug
+    const log = (...args) => {
+      if (debug && console) {
+        console.log(...args);
+      }
+    };
+    // Post - store cmi && results if the dataUrl is present
+    const post = dataUrl
+      ? (storeCmi = true) =>
+        fetch(dataUrl, {
+          method: 'POST',
+          body: JSON.stringify({
+            cmi: storeCmi ? cmi.getJSONString() : '',
+            results: cmi.getResults(),
+          }),
+        })
+      : Promise.resolve;
 
-    // clone default cmi
-    // or download the old one
-    cmi = Object.assign({}, cmiDefault, cmiInit);
-    const initCmi = dataUrl ?
+    cmi.init(schemaVersion, initModel);
+
+    const loadCmi = dataUrl ?
       fetch(dataUrl)
       .then(responce => responce.json())
       .then(json => JSON.parse(json))
       .then((storedCmi) => {
         log('Fetched cmi from server', storedCmi);
-        cmi = Object.assign({}, cmiDefault, cmiInit, storedCmi);
+        cmi.load(storedCmi);
       })
       .catch(log)
       : Promise.resolve();
 
-    return initCmi.then(() => {
+    return loadCmi.then(() => {
       if (callbacks && callbacks.preInitialize) { callbacks.preInitialize(); }
 
-      const errorStrings = d.getErrorStrings();
-      const fnms = d.getFunctionNames();
+      const errorStrings = d.getErrorStrings(schemaVersion);
+      const fnms = d.getFunctionNames(schemaVersion);
       const API = {};
 
       // Auto commit
@@ -123,10 +128,10 @@ export default {
         if (!stateCheck(112, 113)) return 'false';
 
         // ugly? TODO: to think
-        if (changedValues[d.exit()] === '') { post(dataUrl, '').catch(log); }
-        if (changedValues[d.exit()] === 'suspend' || changedValues[d.exit()] === 'time-out') {
-          // changedValues[d.entry()] = 'resume';
-          API[fnms.Commit]();
+        if (cmi.exit() === '') { post(false).catch(log); }
+        if (cmi.exit() === 'suspend' || cmi.exit() === 'time-out') {
+          cmi.entry('resume');
+          post().catch(log);
         }
         // other? TODO
 
@@ -149,7 +154,7 @@ export default {
         if (!valueNameSecurityCheck(name)) return '';
         // TODO: initialized check (_children) ?
 
-        let retval = cmi[name];
+        let retval = cmi.get(name);
         if (typeof (retval) === 'undefined') {
           retval = '';
           error = 403;
@@ -165,25 +170,23 @@ export default {
         if (!valueNameSecurityCheck(name)) return 'false';
         if (!valueNameReadOnlyCheck(name)) return 'false';
 
-        // TODO: _children set
-        changedValues[name] = value;
+        // TODO: _children
+        cmi.set(name, value);
         return 'true';
       };
 
       API[fnms.Commit] = () => {
-        log('LMS Commit', changedValues);
+        log('LMS Commit');
         if (!stateCheck(142, 143)) return 'false';
 
-        Object.assign(cmi, changedValues);
         // TODO: Errors (like "Bad connection, sorry..")
-        post(dataUrl, JSON.stringify(cmi)).catch(log);
+        post().catch((e) => { error = 1000; });
 
         let callbackResult = 'true';
         if (callbacks && callbacks.onCommit) { callbackResult = callbacks.onCommit(); }
         if (callbackResult === 'false') return 'false';
 
         lastCommit = Date.now();
-        changedValues = {}; // clean changed values
         return 'true';
       };
 
@@ -212,14 +215,12 @@ export default {
     });
   },
 
-  getDataModel: () => Object.assign({}, cmi),
+  getCmi: () => cmi,
 
   // for 2004 schema only
-  getProgressMeasure: () => cmi['cmi.progress_measure'],
+  getProgressMeasure: () => cmi.get('cmi.progress_measure'),
 
-  getResults: () => {
-
-  },
+  getResults: () => cmi.getResults(),
 
 
 };

@@ -57,7 +57,11 @@ export default {
         log('Schema version', sv);
         const schemaVersion = sv === '1.2' || sv === '1.1' ? '1.2' : '2004';
 
-        return scormApi.init(Object.assign({}, options, { schemaVersion, initModel: { objectives } })).then(() => {
+        return scormApi.init(Object.assign({}, options, {
+          schemaVersion,
+          initModel: { objectives },
+          callbacks: { onTerminate: () => { iframe.src = ''; } }, // what if... (check time sequencing)
+        })).then(() => {
           const firstIdRef = items[0].getAttribute('identifierref');
           const firstRes = [].find.call(resources, res => res.getAttribute('identifier') === firstIdRef);
           iframe.src = `${rootUrl}/${firstRes.getAttribute('href')}`;
