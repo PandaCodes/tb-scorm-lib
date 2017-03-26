@@ -1,14 +1,16 @@
 const gulp = require('gulp');
-var webpack = require('gulp-webpack');
+const shell = require('gulp-shell');
 
-gulp.task('default', ['compile-api', 'compile-player']);
+gulp.task('default', ['compile']);
 
 
 gulp.task('watch', ['watch-api', 'watch-player']);
-gulp.task('watch-player', () => gulp.watch('src/player/*.js', ['compile-player']));
-gulp.task('watch-api', () => gulp.watch('src/api/*.js', ['compile-api']));
+gulp.task('watch-player', () => gulp.watch('src/player/*.js', ['compile']));
+gulp.task('watch-api', () => gulp.watch('src/api/*.js', ['compile']));
 
-gulp.task('compile-api', () => 
+gulp.task('compile', shell.task(['npm run compile']));
+
+/*gulp.task('compile-api', () => 
   gulp.src('src/api/scorm-api.js')
     .pipe(webpack(require("./webpack.config.js")))
     .on('error', console.error.bind(console))
@@ -21,3 +23,4 @@ gulp.task('compile-player', () =>
     .pipe(gulp.dest('dist'))
 );
 
+*/
