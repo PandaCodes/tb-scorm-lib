@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Created with iSpring --><!-- 744 644 --><!--type flash --><!--mainFolder ../ --><!--universal -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+	<title>История  Пива (Аудио) ver_1.0_для Тичбейс</title>
+	<script src="lms.js"></script>
+<script src="data/isplayer.js"></script>
+
+	<style>
+		html, body {
+			background-color: #8a8a8a;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+<div id="content"></div>
+<script>
+	(function(){
+		var ldr = new ispring.presenter.loader.FlashPresentationLoaderWithAPI((function(start){
+	var params = {
+		presentationId: "",
+		slidesToView: 0,
+		slidesWeight: 1,
+		quizzes: [],
+		scenarios: [],
+		totalScore: 100,
+		passingScore: 0,
+		timeLimit: 3600,
+		exitOnTimeout: false,
+		showMessageOnTimeout: false,
+		timeoutMessage: "",
+		flags: 0,
+		resumeMode: "prompt",  
+		tincan:
+		{
+			endPoint: "",
+			auth:
+			{
+				type: "",
+				key: "",
+				login: "",
+				password: "",
+				name: "",
+				email: ""
+			},
+			i18n:{
+}
+		},
+		scorm2004:
+		{
+			edition: ""
+		}
+	};
+
+	var lms = iSpring.LMS.create("ISPRING_LMS_ID", "1.2", params);
+	lms.initialize(start);
+})
+);
+		ldr.playerInitEvent().addHandler(function(player){
+			(function(player){
+	(function(player){
+	var lms = iSpring.LMS.instance();
+	lms.start(player);
+
+	window.onunload = window.onbeforeunload = function()
+	{
+		lms.closeLms();
+	};
+})(player);
+
+})(player);
+		});
+		ldr.load("data/player.swf", "content", "FlashPresentation", undefined, undefined);
+	})();
+</script>
+</body>
+</html>

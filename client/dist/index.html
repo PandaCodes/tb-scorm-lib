@@ -8,17 +8,17 @@
   
     window.onload = function() {
       console.log(scormRte)
-      scormRte.init('scorm_player', 'https://tb-scorm-lib-akam.c9users.io/resources/1',
+      scormRte.init('scorm_player', 'https://tb-scorm-lib-akam.c9users.io/resources/advancedCalls2004',
       {
         dataUrl : 'https://tb-scorm-lib-akam.c9users.io:8081/api/scorm/results',
         debug: true,
-        autoCommitInterval : 2,
+        //autoCommitInterval : 2,
       });
     };
   </script>
 </head>
 <body>
 
-  <div id="scorm_player"></div>
+  <div style="width:100%; height: 700px" id="scorm_player"></div>
 </body>
 </html>

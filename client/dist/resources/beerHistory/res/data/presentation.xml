@@ -1,0 +1,1036 @@
+<?xml version="1.0"?>
+<presentation title="История  Пива (Аудио) ver_1.0_для Тичбейс" width="720.0000000" height="540.0000000" thmbWidth="78.0000000" thmbHeight="59.0000000" frameRate="24.0000000" looping="0" startingSlideShow="" pptVersion="2010" type="compound" hasExternalAudio="0" uid="{F82AEDFD-381C-4B28-B65C-4B350E562C89}">
+	<presenters>
+		<presenter name="Сергей Букса" title="Менеджер по обучению" email="sbuksa@mosbrew.ru" web="" phone="" photoAssetId="">
+			<bio/>
+		</presenter>
+	</presenters>
+	<references/>
+	<soundAssets>
+		<soundAsset id="sndAsset0" src="sound1.mp3" embedded="0" size="283212" duration="35396"/>
+		<soundAsset id="sndAsset1" src="sound2.mp3" embedded="0" size="215920" duration="26984"/>
+		<soundAsset id="sndAsset2" src="sound3.mp3" embedded="0" size="308080" duration="38504"/>
+		<soundAsset id="sndAsset3" src="sound4.mp3" embedded="0" size="331904" duration="41482"/>
+		<soundAsset id="sndAsset4" src="sound5.mp3" embedded="0" size="281749" duration="35213"/>
+		<soundAsset id="sndAsset5" src="sound6.mp3" embedded="0" size="423228" duration="52898"/>
+		<soundAsset id="sndAsset6" src="sound7.mp3" embedded="0" size="248939" duration="31112"/>
+		<soundAsset id="sndAsset7" src="sound8.mp3" embedded="0" size="182484" duration="22805"/>
+		<soundAsset id="sndAsset8" src="sound9.mp3" embedded="0" size="273599" duration="34194"/>
+		<soundAsset id="sndAsset9" src="sound10.mp3" embedded="0" size="206725" duration="25835"/>
+		<soundAsset id="sndAsset10" src="sound11.mp3" embedded="0" size="463561" duration="57940"/>
+		<soundAsset id="sndAsset11" src="sound12.mp3" embedded="0" size="218219" duration="27272"/>
+		<soundAsset id="sndAsset12" src="sound13.mp3" embedded="0" size="724368" duration="90540"/>
+		<soundAsset id="sndAsset13" src="sound14.mp3" embedded="0" size="394807" duration="49345"/>
+		<soundAsset id="sndAsset14" src="sound15.mp3" embedded="0" size="408182" duration="51017"/>
+		<soundAsset id="sndAsset15" src="sound16.mp3" embedded="0" size="241834" duration="30224"/>
+		<soundAsset id="sndAsset16" src="sound17.mp3" embedded="0" size="230340" duration="28787"/>
+		<soundAsset id="sndAsset17" src="sound18.mp3" embedded="0" size="364714" duration="45584"/>
+		<soundAsset id="sndAsset18" src="sound19.mp3" embedded="0" size="574947" duration="71863"/>
+		<soundAsset id="sndAsset19" src="sound20.mp3" embedded="0" size="359071" duration="44878"/>
+		<soundAsset id="sndAsset20" src="sound21.mp3" embedded="0" size="260433" duration="32549"/>
+		<soundAsset id="sndAsset21" src="sound22.mp3" embedded="0" size="223862" duration="27977"/>
+		<soundAsset id="sndAsset22" src="sound23.mp3" embedded="0" size="265867" duration="33228"/>
+		<soundAsset id="sndAsset23" src="sound24.mp3" embedded="0" size="341726" duration="42710"/>
+		<soundAsset id="sndAsset24" src="sound25.mp3" embedded="0" size="179140" duration="22387"/>
+		<soundAsset id="sndAsset25" src="sound26.mp3" embedded="0" size="382268" duration="47778"/>
+		<soundAsset id="sndAsset26" src="sound27.mp3" embedded="0" size="157615" duration="19696"/>
+	</soundAssets>
+	<sharedAssetsLibrary src="assets.swf"/>
+	<graphicAssets>
+		<graphicAsset id="imgAsset0" src="thmb1.swf" embedded="0"/>
+		<graphicAsset id="imgAsset1" src="thmb2.swf" embedded="0"/>
+		<graphicAsset id="imgAsset2" src="thmb3.swf" embedded="0"/>
+		<graphicAsset id="imgAsset3" src="thmb4.swf" embedded="0"/>
+		<graphicAsset id="imgAsset4" src="thmb5.swf" embedded="0"/>
+		<graphicAsset id="imgAsset5" src="thmb6.swf" embedded="0"/>
+		<graphicAsset id="imgAsset6" src="thmb7.swf" embedded="0"/>
+		<graphicAsset id="imgAsset7" src="thmb8.swf" embedded="0"/>
+		<graphicAsset id="imgAsset8" src="thmb9.swf" embedded="0"/>
+		<graphicAsset id="imgAsset9" src="thmb10.swf" embedded="0"/>
+		<graphicAsset id="imgAsset10" src="thmb11.swf" embedded="0"/>
+		<graphicAsset id="imgAsset11" src="thmb12.swf" embedded="0"/>
+		<graphicAsset id="imgAsset12" src="thmb13.swf" embedded="0"/>
+		<graphicAsset id="imgAsset13" src="thmb14.swf" embedded="0"/>
+		<graphicAsset id="imgAsset14" src="thmb15.swf" embedded="0"/>
+		<graphicAsset id="imgAsset15" src="thmb16.swf" embedded="0"/>
+		<graphicAsset id="imgAsset16" src="thmb17.swf" embedded="0"/>
+		<graphicAsset id="imgAsset17" src="thmb18.swf" embedded="0"/>
+		<graphicAsset id="imgAsset18" src="thmb19.swf" embedded="0"/>
+		<graphicAsset id="imgAsset19" src="thmb20.swf" embedded="0"/>
+		<graphicAsset id="imgAsset20" src="thmb21.swf" embedded="0"/>
+		<graphicAsset id="imgAsset21" src="thmb22.swf" embedded="0"/>
+		<graphicAsset id="imgAsset22" src="thmb23.swf" embedded="0"/>
+		<graphicAsset id="imgAsset23" src="thmb24.swf" embedded="0"/>
+		<graphicAsset id="imgAsset24" src="thmb25.swf" embedded="0"/>
+		<graphicAsset id="imgAsset25" src="thmb26.swf" embedded="0"/>
+		<graphicAsset id="imgAsset26" src="thmb27.swf" embedded="0"/>
+		<graphicAsset id="imgAsset27" src="thmb28.swf" embedded="0"/>
+		<graphicAsset id="imgAsset28" src="thmb29.swf" embedded="0"/>
+	</graphicAssets>
+	<playlists/>
+	<narration/>
+	<settings>
+		<navigation>
+			<keyboard enabled="0">
+				<actions>
+					<action name="playPause">
+						<shortcut code="32" control="0" shift="0"/>
+					</action>
+					<action name="nextSlide">
+						<shortcut code="34" control="0" shift="0"/>
+					</action>
+					<action name="previousSlide">
+						<shortcut code="33" control="0" shift="0"/>
+					</action>
+					<action name="nextStep">
+						<shortcut code="13" control="0" shift="0"/>
+					</action>
+					<action name="previousStep">
+						<shortcut code="13" control="0" shift="1"/>
+					</action>
+					<action name="firstSlide">
+						<shortcut code="36" control="1" shift="0"/>
+					</action>
+					<action name="lastSlide">
+						<shortcut code="35" control="1" shift="0"/>
+					</action>
+					<action name="lastViewedSlide">
+						<shortcut code="8" control="0" shift="0"/>
+					</action>
+					<action name="slideStart">
+						<shortcut code="36" control="0" shift="0"/>
+					</action>
+					<action name="slideEnd">
+						<shortcut code="35" control="0" shift="0"/>
+					</action>
+					<action name="seekForward">
+						<shortcut code="39" control="0" shift="0"/>
+					</action>
+					<action name="seekBackward">
+						<shortcut code="37" control="0" shift="0"/>
+					</action>
+					<action name="volumeUp">
+						<shortcut code="38" control="0" shift="0"/>
+					</action>
+					<action name="volumeDown">
+						<shortcut code="40" control="0" shift="0"/>
+					</action>
+					<action name="toggleFullscreen">
+						<shortcut code="70" control="1" shift="0"/>
+					</action>
+				</actions>
+			</keyboard>
+			<mouse enabled="0" target="step"/>
+			<gesture zoom="1"/>
+		</navigation>
+		<skin>
+			<colorSettings>
+				<color id="button.content.normal">#FFFFFF</color>
+				<color id="button.content.over">#FFFFFF</color>
+				<color id="button.face.normal">#777777</color>
+				<color id="button.face.over">#575757</color>
+				<color id="companyLogo.background">#FFFFFF</color>
+				<color id="hyperlink">#097CE7</color>
+				<color id="listItem.face.over">#E8E8E8</color>
+				<color id="listItem.face.pressed">#6E6E6E</color>
+				<color id="listItem.label.over">#000000</color>
+				<color id="listItem.label.pressed">#FFFFFF</color>
+				<color id="listItem.label.visited">#A1A1A1</color>
+				<color id="page.background">#8A8A8A</color>
+				<color id="panel.background">#F7F7F7</color>
+				<color id="panel.text">#323232</color>
+				<color id="player.background">#D4D4D4</color>
+				<color id="popup.background">#FFFFFF</color>
+				<color id="progress.background">#6E6E6E</color>
+				<color id="progress.loading">#D0D0D0</color>
+				<color id="progress.playback">#A1A1A1</color>
+				<color id="text">#4D4D4D</color>
+			</colorSettings>
+			<controlPanelSettings>
+				<visible>true</visible>
+				<showOutline>false</showOutline>
+				<showPlayPause>true</showPlayPause>
+				<showRewind>true</showRewind>
+				<showVolumeControl>false</showVolumeControl>
+				<showCCButton>false</showCCButton>
+				<showPrevButton>false</showPrevButton>
+				<showNextButton>true</showNextButton>
+				<showSlideOnlyButton>true</showSlideOnlyButton>
+				<progressBar>
+					<visible>true</visible>
+					<enabled>false</enabled>
+					<showLabels>true</showLabels>
+					<mode>slideTimeline</mode>
+				</progressBar>
+				<navigationMode>bySlides</navigationMode>
+			</controlPanelSettings>
+			<titlePanelSettings>
+				<showLogo>false</showLogo>
+				<visible>true</visible>
+				<buttons>
+					<button type="attachments" visible="false"/>
+					<button type="presenterInfo" visible="false"/>
+					<button type="markerTools" visible="false"/>
+					<button type="notes" visible="false"/>
+					<button type="outline" visible="true"/>
+				</buttons>
+			</titlePanelSettings>
+			<outlinePanelSettings>
+				<numberEntries>true</numberEntries>
+				<highlightViewedEntries>true</highlightViewedEntries>
+				<thumbnails>true</thumbnails>
+				<search>false</search>
+				<multilevel>true</multilevel>
+			</outlinePanelSettings>
+			<sidePanelSettings>
+				<showAtLeft>false</showAtLeft>
+				<showLogo>false</showLogo>
+				<showPresenterInfo>false</showPresenterInfo>
+				<showPresenterVideo>false</showPresenterVideo>
+				<visible>false</visible>
+				<tabsPanel>
+					<showOutline>false</showOutline>
+					<showNotes>true</showNotes>
+				</tabsPanel>
+			</sidePanelSettings>
+		</skin>
+		<appearance fullScreen="1" showSlidePreloader="1"/>
+		<playback autoStart="1" syncWithVideoNarration="1" enableVideoControl="1" resumePresentationPlayback="prompt"/>
+	</settings>
+	<slides embedded="0">
+		<slide index="0" title="" titleNormalized="" src="slide1.swf" size="15692" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset0">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>История Пива
+Электронный курс</text>
+			<metaCommands>
+				<command name="changeLayout">
+					<param name="type" value="NoSidebar"/>
+				</command>
+			</metaCommands>
+		</slide>
+		<slide index="1" title="" titleNormalized="" src="slide2.swf" size="24261" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset1">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="29.9990000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Для запуска курса нажмите эту клавишу, повторное нажатие установит курс на паузу. Для возобновления просмотра снова нажмите на клавишу
+Для перехода к следующему слайду нажмите «ДАЛЕЕ»
+Слайды можно переключать лишь по прошествии определенного времени. Если вы видите такое сообщение нажмите ОК и продолжите просмотр 
+Эта клавиша позволяет просмотреть слайд заново
+УПРАВЛЕНИЕ КУРСОМ
+Шкала показывает, сколько времени осталось до того момента, когда можно переключить слайд
+клавиша громкости
+клавиша «полноэкранного» режима
+Вы можете прервать изучение материала и выйти из программы. При каждом следующем входе вы будете видеть следующее сообщение. Это означает, что вы можете продолжить просмотр материала с места последней остановки или с самого начала.</text>
+		</slide>
+		<slide index="2" title="" titleNormalized="" src="slide3.swf" size="57867" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset2">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="29.9990000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>После некоторых текстовых блоков будет появляться значок динамика. Нажав на него курсором вы можете прослушать аудио комментарий или небольшую историю (легенду) по теме. Повторное нажатие включит режим паузы. Для возобновления просмотра текста снова нажмите клавишу 
+
+УПРАВЛЕНИЕ КУРСОМ
+На слайдах включена «анимация» - текст появляется автоматически. Однако после появления значка Для возобновления просмотра текста нужно на жать клавишу на панели управления.</text>
+		</slide>
+		<slide index="3" title="Древний мир. Вавилон" titleNormalized="древний мир. вавилон" src="slide4.swf" size="73736" advanceOnTime="0" framesCount="1125" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset3">
+			<sounds>
+				<sound id="sound0" soundAssetId="sndAsset0" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound1" soundAssetId="sndAsset0" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound2" soundAssetId="sndAsset1" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound3" soundAssetId="sndAsset2" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound4" soundAssetId="sndAsset0" hasTriggerEffects="1" effect="1"/>
+				<sound id="sound5" soundAssetId="sndAsset1" hasTriggerEffects="1" effect="1"/>
+				<sound id="sound6" soundAssetId="sndAsset3" hasTriggerEffects="1" effect="1"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="468" playTime="19.5000000"/>
+				<step start="469" end="985" playTime="21.5000000"/>
+				<step start="986" end="1124" playTime="5.7500000" pauseTime="1.7500000"/>
+			</animationSteps>
+			<notes>Аудио. 
+СКРИПТ 1 Как известно, пиво – продукт сделанный на основе зерна. Возможно, пиво произошло благодаря приготовлению хлеба. Одна из легенд повествует о том, что как-то раз женщиной, хранительницей очага под открытым небом была забыта тарелка с хлебом. Прошел дождь и хлеб намок. А спустя какое-то время, ее обнаружил некто, очень хотевший пить. Утолив жажду дождевой водой из этой посуды он  приятно захмелел, так и появился напиток который является прообразом современного пива.
+
+СКРИПТ 2 Огромные пивные кувшины накрывались сверху керамической плитой с отверстием посредине. Предполагается, что пить пиво через трубочку приходилось из-за обильной пены на поверхности, в которой были взвешены частицы дробленого солода, а также из-за осадка на дне сосудов. Трубочкой удавалось тянуть пиво из срединной части кувшина, где не было твердых частиц.
+
+Скрипт 3: Стандартизацию правил изготовления и продажи пива ввел вавилонский царь Хаммурапи. Они были изданы в известном своде законов дошедшем до нас в виде клинописи изображенной на диоритовой стелле  – свод законов содержит два параграфа, касающихся непосредственно изготовления и продажи пива. Одним из отраженных моментов было ограничение стоимости пива в переводе на стоимость зерна, а так же наказание, в виде смерти, пивоваров, изготовляющих некачественное пиво, или продавцов, разбавляющих его водой</notes>
+			<notesNormalized>аудио. 
+скрипт 1 как известно, пиво – продукт сделанный на основе зерна. возможно, пиво произошло благодаря приготовлению хлеба. одна из легенд повествует о том, что как-то раз женщиной, хранительницей очага под открытым небом была забыта тарелка с хлебом. прошел дождь и хлеб намок. а спустя какое-то время, ее обнаружил некто, очень хотевший пить. утолив жажду дождевой водой из этой посуды он  приятно захмелел, так и появился напиток который является прообразом современного пива.
+
+скрипт 2 огромные пивные кувшины накрывались сверху керамической плитой с отверстием посредине. предполагается, что пить пиво через трубочку приходилось из-за обильной пены на поверхности, в которой были взвешены частицы дробленого солода, а также из-за осадка на дне сосудов. трубочкой удавалось тянуть пиво из срединной части кувшина, где не было твердых частиц.
+
+скрипт 3: стандартизацию правил изготовления и продажи пива ввел вавилонский царь хаммурапи. они были изданы в известном своде законов дошедшем до нас в виде клинописи изображенной на диоритовой стелле – свод законов содержит два параграфа, касающихся непосредственно изготовления и продажи пива. одним из отраженных моментов было ограничение стоимости пива в переводе на стоимость зерна, а так же наказание, в виде смерти, пивоваров, изготовляющих некачественное пиво, или продавцов, разбавляющих его водой</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;&lt;u&gt;Аудио. &lt;/u&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 1 Как известно, пиво – продукт сделанный на основе зерна. Возможно, пиво произошло благодаря приготовлению хлеба. Одна из легенд повествует о том, что как-то раз женщиной, хранительницей очага под открытым небом была забыта тарелка с хлебом. Прошел дождь и хлеб намок. А спустя какое-то время, ее обнаружил некто, очень хотевший пить. Утолив жажду дождевой водой из этой посуды он  приятно захмелел, так и появился напиток который является прообразом современного пива.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 2 Огромные пивные кувшины накрывались сверху керамической плитой с отверстием посредине. Предполагается, что пить пиво через трубочку приходилось из-за обильной пены на поверхности, в которой были взвешены частицы дробленого солода, а также из-за осадка на дне сосудов. Трубочкой удавалось тянуть пиво из срединной части кувшина, где не было твердых частиц.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;&lt;b&gt;Скрипт 3&lt;/b&gt;: Стандартизацию правил изготовления и продажи пива ввел вавилонский царь Хаммурапи. Они были изданы в известном своде законов дошедшем до нас в виде клинописи изображенной на диоритовой стелле  – свод законов содержит два параграфа, касающихся непосредственно изготовления и продажи пива. Одним из отраженных моментов было ограничение стоимости пива в переводе на стоимость зерна, а так же наказание, в виде смерти, пивоваров, изготовляющих некачественное пиво, или продавцов, разбавляющих его водой&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Древний мир. Вавилон
+ПИВО (на всех славянских языках пиво означает „пить”) – старейший напиток в мире, поэтому достоверно определить, кто же и когда первым сварил пиво практически невозможно. Известно, что первое пиво было сварено в эпоху неолита, когда люди начали выращивать зерновые культуры. К тому же ученые считают, что в появлении пива и вовсе виновен случай…..
+
+4
+По мнению археологов, пиво было распространено уже в Вавилоне, то есть 6000-8000 лет назад. 
+Вавилоняне растирали зерна ячменя и спельты (вид злака, от которого произошла пшеница) между камнями, заливали их водой, добавляли душистые травы, сбраживали эту смесь, и через несколько дней получался вкусный освежающий напиток, который был отдаленно похож на то, что сейчас мы называем пивом. Пили его через соломинку или тростниковую трубочку...
+Стелла с кодексом вавилонского царя Хаммурапи
+ (1792-1750 г.г. до н.э.), хранящаяся в Лувре…..</text>
+		</slide>
+		<slide index="4" title="Древний мир. египет" titleNormalized="древний мир. египет" src="slide5.swf" size="78660" advanceOnTime="0" framesCount="1119" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset4">
+			<sounds>
+				<sound id="sound7" soundAssetId="sndAsset4" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound8" soundAssetId="sndAsset5" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound9" soundAssetId="sndAsset6" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound10" soundAssetId="sndAsset5" hasTriggerEffects="1" effect="1"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="396" playTime="16.5000000"/>
+				<step start="397" end="721" playTime="13.5000000"/>
+				<step start="722" end="1118" playTime="16.5000000" pauseTime="0.5000000"/>
+			</animationSteps>
+			<notes>Аудио:
+Скрипт 1 По мнению древних египтян, первым пивоваром является бог Осирис. В трудах Гекатея и Геродота  упоминается о некоем напитке из ячменя, который производили в долине Нила. Также Диодор Сицилийский в отмечал, что последователи культа бога Осириса приготовливают напиток из ячменя в тех местах, где не растет виноградная лоза. В одном из дошедших до нас писем на папирусе, которому около 3 тысяч лет, отец упрекает сына в приверженности к напитку "гаг" – одному  из сортов пива.
+
+Скрипт 2 Известно, что  Египтяне варили несколько видов пива, носивших разные названия например  “зитум” (“zythum”)  “буза” (‘boozah”) все они были разными по вкусу.
+Например древнеегипетское пиво  "хек", было сладким и крепким. Готовили его так: ..следовало несколько раз намочить хороший ячмень до образования «хлопьев», высушить, приготовить из него хлеб, добавив закваску, поверхностно поджарить и снова настоять на воде. Полученную жидкость процеживали сквозь тонкое решето…также Египтяне приправляли пиво ядовитой мандрагорой, использовав ее в качестве сильнейшего голюциногенна,  и  приписывая ей чудодейственные свойства. Кроме того, в некоторые сорта добавляли шафран, анис и другие пряности.
+
+Скрипт 3 Пивоварни  принадлежали многим фараонам, а так же  их женам…. до нас  дошли остатки пивоварни, владелицей которой была Нефертити, красавица жена фараона 18ой династии Аменхотепа 4-го, более известного как  фараон еретик -Эхнатон …на стенах пивоварни, изображена сама царица, разливающая пиво через ситечко. Очевидно,   таким нехитрым способом очищавшая пиво  от примесей.
+</notes>
+			<notesNormalized>аудио:
+скрипт 1 по мнению древних египтян, первым пивоваром является бог осирис. в трудах гекатея и геродота упоминается о некоем напитке из ячменя, который производили в долине нила. также диодор сицилийский в отмечал, что последователи культа бога осириса приготовливают напиток из ячменя в тех местах, где не растет виноградная лоза. в одном из дошедших до нас писем на папирусе, которому около 3 тысяч лет, отец упрекает сына в приверженности к напитку "гаг" – одному из сортов пива.
+
+скрипт 2 известно, что египтяне варили несколько видов пива, носивших разные названия например “зитум” (“zythum”) “буза” (‘boozah”) все они были разными по вкусу.
+например древнеегипетское пиво "хек", было сладким и крепким. готовили его так: ..следовало несколько раз намочить хороший ячмень до образования «хлопьев», высушить, приготовить из него хлеб, добавив закваску, поверхностно поджарить и снова настоять на воде. полученную жидкость процеживали сквозь тонкое решето…также египтяне приправляли пиво ядовитой мандрагорой, использовав ее в качестве сильнейшего голюциногенна, и приписывая ей чудодейственные свойства. кроме того, в некоторые сорта добавляли шафран, анис и другие пряности.
+
+скрипт 3 пивоварни принадлежали многим фараонам, а так же их женам…. до нас дошли остатки пивоварни, владелицей которой была нефертити, красавица жена фараона 18ой династии аменхотепа 4-го, более известного как фараон еретик -эхнатон …на стенах пивоварни, изображена сама царица, разливающая пиво через ситечко. очевидно, таким нехитрым способом очищавшая пиво от примесей.
+</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;Аудио:&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;&lt;b&gt;Скрипт 1 &lt;/b&gt;По мнению древних египтян, первым пивоваром является бог Осирис. В трудах Гекатея и Геродота  упоминается о некоем напитке из ячменя, который производили в долине Нила. Также Диодор Сицилийский в отмечал, что последователи культа бога Осириса приготовливают напиток из ячменя в тех местах, где не растет виноградная лоза. В одном из дошедших до нас писем на папирусе, которому около 3 тысяч лет, отец упрекает сына в приверженности к напитку &amp;quot;гаг&amp;quot; – одному  из сортов пива.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="10"&gt;&lt;b&gt;Скрипт 2 &lt;/b&gt;Известно, что  Египтяне варили несколько видов пива, носивших разные названия например  “зитум” (“zythum”)  “буза” (‘boozah”) все они были разными по вкусу.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="10"&gt;Например древнеегипетское пиво  &amp;quot;хек&amp;quot;, было сладким и крепким. Готовили его так: ..&lt;i&gt;следовало несколько раз намочить хороший ячмень до образования «хлопьев», высушить, приготовить из него хлеб, добавив закваску, поверхностно поджарить и снова настоять на воде. Полученную жидкость процеживали сквозь тонкое решето&lt;/i&gt;…также &lt;/font&gt;&lt;font size="12"&gt;Египтяне приправляли пиво ядовитой мандрагорой, использовав ее в качестве сильнейшего голюциногенна,  и  приписывая ей чудодейственные свойства. Кроме того, в некоторые сорта добавляли шафран, анис и другие пряности.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;&lt;b&gt;Скрипт 3 &lt;/b&gt;Пивоварни  принадлежали многим фараонам, а так же  их женам…. до нас  дошли остатки пивоварни, владелицей которой была Нефертити, красавица жена фараона 18ой династии Аменхотепа 4-го, более известного как  фараон еретик -Эхнатон …на стенах пивоварни, изображена сама царица, разливающая пиво через ситечко. Очевидно,   таким нехитрым способом очищавшая пиво  от примесей.&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Древний мир. египет
+5
+	
+Первоначально египтяне покупали пиво в Вавилоне, и постепенно оно завоевало их симпатии. Разумеется, проделав долгий путь по жаре на верблюдах, напиток терял большую часть своих достоинств. Жителям долины Нила не оставалось ничего другого, как самим освоить его производство.
+
+Во времена царствования фараонов, Египтяне в совершенстве овладели искусством приготовления ячменного солода, они так же умели готовить пиво из других злаков, но делали это иначе, чем в Вавилоне. Изобретение пшеничного пива они приписывали богу Осирису….
+К 3500 году до н.э. относятся древнейшие из рецептов египетского пива. Особое целебное действие египтяне приписывали пивной гуще. Ее использовали для различных припарок, а также принимали внутрь. Считается, что пиво в Древнем Египте варили женщины….
+ Удивительно, что на протяжении тысячелетий ни один из фараонов не догадался обложить его налогами. До этого додумалась только Клеопатра, правившая в Египте в 69 - 30 годах до н.э. Она хотела возобновить строительство пирамид, а для этого нужны были деньги. Разумеется, официальной версией была забота о народной трезвости. 
+ Так был введен самый первый налог на алкоголь.</text>
+		</slide>
+		<slide index="5" title="Древний мир. шумеры" titleNormalized="древний мир. шумеры" src="slide6.swf" size="51042" advanceOnTime="0" framesCount="956" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset5">
+			<sounds>
+				<sound id="sound11" soundAssetId="sndAsset7" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="420" playTime="17.5000000"/>
+				<step start="421" end="955" playTime="22.2500000" pauseTime="12.3499985"/>
+			</animationSteps>
+			<notes>Аудио. 
+
+СКРИПТ 1  А «Радости» в Месопотамии было аж более семидесяти видов — сладкие и горькие, темные, и светлые. Но самым любимым и сравнительно недорогим было темное пиво, настоянное на травах. Пивоваров, кстати,  даже освобождали от военной службы.
+
+Раньше пиво употребляли только бедные. Известны факты, что они жевали зерно во рту, в результате чего слюнные железы помогали брожению пива</notes>
+			<notesNormalized>аудио. 
+
+скрипт 1 а «радости» в месопотамии было аж более семидесяти видов — сладкие и горькие, темные, и светлые. но самым любимым и сравнительно недорогим было темное пиво, настоянное на травах. пивоваров, кстати, даже освобождали от военной службы.
+
+раньше пиво употребляли только бедные. известны факты, что они жевали зерно во рту, в результате чего слюнные железы помогали брожению пива</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;&lt;u&gt;Аудио. &lt;/u&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 1  А «Радости» в Месопотамии было аж более семидесяти видов — сладкие и горькие, темные, и светлые. Но самым любимым и сравнительно недорогим было темное пиво, настоянное на травах. Пивоваров, кстати,  даже освобождали от военной службы.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;Раньше пиво употребляли только бедные. Известны факты, что они жевали зерно во рту, в результате чего слюнные железы помогали брожению пива&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Немецкий археолог Е. Хубер (E. Huber) во время раскопок шумерского города нашел клинопись 3-го тысячелетия до н.э. с рецептами не менее 15-и сортов пива, которые ему удалось приготовить.
+Древний мир. шумеры
+Более 5000 лет дошедшим до нас клинописным табличкам которые детально описывают технологию производства пива у ШУМЕРОВ: определенные сорта хлеба сбраживали, чтобы получить ферментированную мякоть – так называемый «божественный напиток», который оказывал приятный опьяняющий эффект. 
+У Шумеров даже существовала поговорка: «Не знать пива — не знать радости»…..
+6
+В шумерских племенах изготовление пива было настолько популярным, что они начали поклоняться богине «утоляющих жажду напитков» - Нинкаси.
+Пиво было не только ежедневным напитком для определенных слоев населения, но и предметом различных обрядов. Когда кто-то умирал, на надгробии изображался слуга, старающийся задобрить богов пивом. Похороны были общественным событием, люди пили вместе, и священнослужителя за его услуги вознаграждали пивом и хлебом. Конечно, уже тогда было повсеместно известно о расслабляющем и веселящем действии этого напитка.</text>
+		</slide>
+		<slide index="6" title="Древние Рим, Греция….." titleNormalized="древние рим, греция….." src="slide7.swf" size="64332" advanceOnTime="0" framesCount="1004" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset6">
+			<sounds>
+				<sound id="sound12" soundAssetId="sndAsset8" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="960" playTime="40.0000000"/>
+				<step start="961" end="1003" playTime="1.7500000" pauseTime="8.2500000"/>
+			</animationSteps>
+			<notes>Аудио 
+
+Скрипт 1 И все же Гиппократ посвятил ячменному напитку один из своих трудов, а Аристотель вывел заключение, что после опьянения  от пива человек падает назад, а не шатается по сторонам, как после употребления вина. Стоит отметить, что вино греки довольно сильно разбавляли водой, и выражение «пить неразбавленное вино» означало «быть горьким пьяницей». Понятно, что пиво, даже самое слабое, было для греков горьким и довольно крепким.  </notes>
+			<notesNormalized>аудио 
+
+скрипт 1 и все же гиппократ посвятил ячменному напитку один из своих трудов, а аристотель вывел заключение, что после опьянения от пива человек падает назад, а не шатается по сторонам, как после употребления вина. стоит отметить, что вино греки довольно сильно разбавляли водой, и выражение «пить неразбавленное вино» означало «быть горьким пьяницей». понятно, что пиво, даже самое слабое, было для греков горьким и довольно крепким.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;Аудио &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;&lt;b&gt;Скрипт 1 &lt;/b&gt;И&lt;b&gt; &lt;/b&gt;все же Гиппократ посвятил ячменному напитку один из своих трудов, а Аристотель вывел заключение, что &lt;i&gt;после опьянения  от пива человек падает назад, а не шатается по сторонам, как после употребления вина.&lt;/i&gt; Стоит отметить, что вино греки довольно сильно разбавляли водой, и выражение «пить неразбавленное вино» означало «быть горьким пьяницей». Понятно, что пиво, даже самое слабое, было для греков горьким и довольно крепким.  &lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Древние Рим, Греция…..
+7
+В ДРЕВНЕЙ ГРЕЦИИ тоже практически не употребляли пива, что во многом характерно для народов, занимающихся выращиванием винограда…..
+Жители РИМСКОЙ ИМПЕРИИ ценили вино и доставляли виноград в разные части мира, поэтому практически не употребляли пива. До 10 века оно считалось напитком бедняков и варваров.
+Отсюда современное название пива в итальянском (cervisia) и испанском (cerveza) при этом для получения необычных изысканных вкусов использовались всевозможные травы и специи: восковница, мелиса, огуречная трава, зверобой, бузина и множество других .
+Однако древнеримский комедиограф Тит Маций Плавт (254—184 гг. до н.э.) подтверждает, что пиво употреблялось, в частности, на празднествах в честь богини земледелия Цереры, отчего оно стало называться "ceres". 
+Среди арийских народов ранее других пивоварами стали Фригийцы, заселившие во II тысячелетии до н.э. Малую Азию, и Фракийцы, проживавшие в основном на Балканах и в низовьях Дуная. По свидетельству Гекатея Милетского (конец VI - начало V вв. до н.э.), у одного из фракийских племен - пэонов употреблялось два сорта пива, одно из ячменя, другое из пшена, причем в пиво для вкуса клали травы.</text>
+		</slide>
+		<slide index="7" title="Африка. Индия. Южная америка" titleNormalized="африка. индия. южная америка" src="slide8.swf" size="37895" advanceOnTime="0" framesCount="1070" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset7">
+			<sounds>
+				<sound id="sound13" soundAssetId="sndAsset9" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="648" playTime="27.0000000"/>
+				<step start="649" end="1069" playTime="17.5000000" pauseTime="13.5000000"/>
+			</animationSteps>
+			<notes>СКРИПТ 2
+Как только не называли пиво из сорго — помбе, мерисса, у каждого племени было свое название. Как и технология приготовления. Так, воины племени басуто просто бросали в кипящую воду сорговый солод и затем добавляли в остывшую смесь остаток старого пива. Это было больше похоже на кашу, чем на напиток.</notes>
+			<notesNormalized>скрипт 2
+как только не называли пиво из сорго — помбе, мерисса, у каждого племени было свое название. как и технология приготовления. так, воины племени басуто просто бросали в кипящую воду сорговый солод и затем добавляли в остывшую смесь остаток старого пива. это было больше похоже на кашу, чем на напиток.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 2&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;Как только не называли пиво из сорго — помбе, мерисса, у каждого племени было свое название. Как и технология приготовления. Так, воины племени &lt;b&gt;басуто&lt;/b&gt; просто бросали в кипящую воду сорговый солод и затем добавляли в остывшую смесь остаток старого пива. Это было больше похоже на кашу, чем на напиток.&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Африка. Индия. Южная америка
+8
+В АФРИКЕ пиво было довольно распространенным напитком. В Абиссинии, которая считается родиной пшеницы и ячменя, пиво варили из традиционных злаков, а так же из крушины.
+А в тех районах Африки, где ячмень не произрастал, пиво традиционно готовилось из проса, а также дагуссы, которая делала пиво более крепким.
+Из проса варили пиво и народы Судана и Гвинейского побережья. Оно было похоже на брагу. Но постепенно просо вытеснила другая злаковая культура — сорго… 
+В ДРЕВНЕЙ ИНДИИ покровителем пива был бог Индра. Пиво в Индии готовили практически так же, как и в Африке — из сорго и дагуссы впрочем использовался и рис. На санскрите этот напиток назывался «сура». У народов Тибета и Непала пиво чаще приготовляют из ячменя, но используют также рис и просо.
+Пиво в ЮЖНОЙ АМЕРИКЕ варили, естественно, из маиса (кукуруза). Зерна кукурузы в равных пропорциях смешивали с солодом, на сутки заливали холодной водой и полученную смесь разминали до консистенции теста. Для изготовления закваски тесто заливали кипятком. Затем в сусло добавляли сухой солод и оставляли бродить. Если в него добавляли еще и перец, то получалась «чича». В Бразилии варили черное пиво — из жареных зерен. Так же для нередко использовались и плоды некоторых деревьев, а также сахарный тростник.</text>
+		</slide>
+		<slide index="8" title="Северная америка" titleNormalized="северная америка" src="slide9.swf" size="84190" advanceOnTime="0" framesCount="1363" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset8">
+			<sounds>
+				<sound id="sound14" soundAssetId="sndAsset10" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="1362" playTime="56.7500000" pauseTime="1.2500000"/>
+			</animationSteps>
+			<notes>Аудио 
+СКРИПТ 1
+О любви американцев к пиву сказано немало. Первый президент США Д.Вашингтон записал собственный рецепт  приготовления  пива "Fortitude's Founding Father Brew",(это будет легкое пиво средней плотности с сухим вкусом, ароматом шоколада и тонким оттенком копченостей)  именно так оно было названо. Рецепт пива обнаружили между листами печатного издания Notebook as a Virginia Colonel в одной из коллекций публичной городской нью-йоркской библиотеки. Датируется рукописный текст 1757 годом. Более того, он и Т. Джефферсон еще до начала гражданской войны  открывают собственную пивоварню. 
+В дневной рацион солдата революционной армии во время войны за независимость входила и кварта пива. 
+В 1909 г другой президент, Т. Рузвельт, в одну из своих поездок на сафари в Африку, захватил с собой 500 галлонов любимого им напитка.</notes>
+			<notesNormalized>аудио 
+скрипт 1
+о любви американцев к пиву сказано немало. первый президент сша д.вашингтон записал собственный рецепт приготовления пива "fortitude's founding father brew",(это будет легкое пиво средней плотности с сухим вкусом, ароматом шоколада и тонким оттенком копченостей) именно так оно было названо. рецепт пива обнаружили между листами печатного издания notebook as a virginia colonel в одной из коллекций публичной городской нью-йоркской библиотеки. датируется рукописный текст 1757 годом. более того, он и т. джефферсон еще до начала гражданской войны открывают собственную пивоварню. 
+в дневной рацион солдата революционной армии во время войны за независимость входила и кварта пива. 
+в 1909 г другой президент, т. рузвельт, в одну из своих поездок на сафари в африку, захватил с собой 500 галлонов любимого им напитка.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;Аудио &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 1&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;О любви американцев к пиву сказано немало. Первый президент США Д.Вашингтон записал собственный рецепт  приготовления  пива &lt;b&gt;&amp;quot;Fortitude&amp;apos;s Founding Father Brew&amp;quot;&lt;/b&gt;,(это будет легкое пиво средней плотности с сухим вкусом, ароматом шоколада и тонким оттенком копченостей)  именно так оно было названо. &lt;b&gt;Рецепт пива&lt;/b&gt; обнаружили между листами печатного издания Notebook as a Virginia Colonel в одной из коллекций публичной городской нью-йоркской библиотеки. Датируется рукописный текст 1757 годом. Более того, он и Т. Джефферсон еще до начала гражданской войны  открывают собственную пивоварню. &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;В дневной рацион солдата революционной армии во время войны за независимость входила и кварта пива. &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;В 1909 г другой президент, Т. Рузвельт, в одну из своих поездок на сафари в Африку, захватил с собой 500 галлонов любимого им напитка.&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Северная америка
+9
+Племена индейцев (инки, ацтеки), так и не сумевшие получить вино из десятков сортов окружавшего их винограда, начали изготавливать из кукурузы пиво намного раньше, чем в этих местах появился Колумб.
+Однако Первое пиво близкое к которому мы с вами привыкли в Новом Свете появилось в Вирджинии в 1587 году, а первая пивоварня в Манхэттене (тогда Нью-Амстердаме) - в 1612. 
+Шестьдесят лет спустя, студенты Гарварда получают возможность после лекций пить своё, университетское пиво благодаря заботе попечителей. 
+
+В середине XIX века немецкие эмигранты Анхойзер-Буш, Миллер и другие привозят в США пиво “лагер”. 
+Уже в 1860-х годах здесь начинается его автоматический разлив и коммерческое охлаждение. 
+В 1870 году Анхойзер Буш первым строит вагоны-ледники, в которых перевозят пиво по всей стране, сделав “Будвайзер” общенациональной маркой. Cто лет спустя доля США в мировом производстве пива составила 20% . По статистике, именно США – занимает третье место в мире по производству пива после Китая и Индии.</text>
+		</slide>
+		<slide index="9" title="Европа" titleNormalized="европа" src="slide10.swf" size="36594" advanceOnTime="0" framesCount="1526" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset9">
+			<sounds>
+				<sound id="sound15" soundAssetId="sndAsset11" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound16" soundAssetId="sndAsset12" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="1080" playTime="45.0000000"/>
+				<step start="1081" end="1525" playTime="10.0000000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes>Аудио 
+СКРИПТ1
+Так, известный римский историк Тацит (ок. 55-115 г.) в своей книге «О происхождении германцев» писал: «Их напиток — ячменный или пшеничный отвар, превращенный посредством брожения в некое подобие вина». Тацит пришел к выводу, что с германцами можно покончить не только копьем и мечом, но и поставками cervisia (пива). 
+СКРИПТ2 
+Но надо иметь в виду, что пиво древних германцев было совершенно иным, нежели светлое и освежающее пльзеньское наших дней. На вкус оно должно было быть сладковатым и довольно противным. Пиво сбраживалось при нормальной температуре воздуха, брожение часто было самопроизвольным, и результат зависел от случая. Впрочем, дрожжи использовали и тогда, хотя и не очень умело. Для приготовления пивного сусла брали все, что казалось сколько-нибудь подходящим: от меда до любого зерна, а потом в дело шли приправы и добавки — можжевельник, мирт, тмин, анис, лавровый лист, древесная кора, листья ясеня, различные травы, ягоды, коренья и даже бычья желчь.  Такое пиво с различными приправами называлось Grut-Bier и производилось в Германии вплоть до XV века. Горечь пиву того времени сообщал не хмель, а род вереска с нижнегерманским названием "грут" (Grut). Позже грутом стали называть смесь трав и пряностей, добавляемых в пиво. Отсюда происходит наименование налога, который с крестьян и торговцев взимали средневековые князья и их вассалы, — "право грута" (Grutrecht), приносившего городам немалые доходы.</notes>
+			<notesNormalized>аудио 
+скрипт1
+так, известный римский историк тацит (ок. 55-115 г.) в своей книге «о происхождении германцев» писал: «их напиток — ячменный или пшеничный отвар, превращенный посредством брожения в некое подобие вина». тацит пришел к выводу, что с германцами можно покончить не только копьем и мечом, но и поставками cervisia (пива). 
+скрипт2 
+но надо иметь в виду, что пиво древних германцев было совершенно иным, нежели светлое и освежающее пльзеньское наших дней. на вкус оно должно было быть сладковатым и довольно противным. пиво сбраживалось при нормальной температуре воздуха, брожение часто было самопроизвольным, и результат зависел от случая. впрочем, дрожжи использовали и тогда, хотя и не очень умело. для приготовления пивного сусла брали все, что казалось сколько-нибудь подходящим: от меда до любого зерна, а потом в дело шли приправы и добавки — можжевельник, мирт, тмин, анис, лавровый лист, древесная кора, листья ясеня, различные травы, ягоды, коренья и даже бычья желчь. такое пиво с различными приправами называлось grut-bier и производилось в германии вплоть до xv века. горечь пиву того времени сообщал не хмель, а род вереска с нижнегерманским названием "грут" (grut). позже грутом стали называть смесь трав и пряностей, добавляемых в пиво. отсюда происходит наименование налога, который с крестьян и торговцев взимали средневековые князья и их вассалы, — "право грута" (grutrecht), приносившего городам немалые доходы.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;Аудио &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;СКРИПТ1&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;Так, известный римский историк Тацит (ок. 55-115 г.) в своей книге «О происхождении германцев» писал: «Их напиток — ячменный или пшеничный отвар, превращенный посредством брожения в некое подобие вина». Тацит пришел к выводу, что с германцами можно покончить не только копьем и мечом, но и поставками cervisia (пива). &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;СКРИПТ2 &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;Но надо иметь в виду, что пиво древних германцев было совершенно иным, нежели светлое и освежающее пльзеньское наших дней. На вкус оно должно было быть сладковатым и довольно противным. Пиво сбраживалось при нормальной температуре воздуха, брожение часто было самопроизвольным, и результат зависел от случая. Впрочем, дрожжи использовали и тогда, хотя и не очень умело. Для приготовления пивного сусла брали все, что казалось сколько-нибудь подходящим: &lt;i&gt;от меда до любого зерна, а потом в дело шли приправы и добавки — можжевельник, мирт, тмин, анис, лавровый лист, древесная кора, листья ясеня, различные травы, ягоды, коренья и даже бычья желчь&lt;/i&gt;.  Такое пиво с различными приправами называлось Grut-Bier и производилось в Германии вплоть до XV века. Горечь пиву того времени сообщал не хмель, а род вереска с нижнегерманским названием &lt;b&gt;&amp;quot;грут&amp;quot; (Grut)&lt;/b&gt;. Позже грутом стали называть смесь трав и пряностей, добавляемых в пиво. Отсюда происходит наименование налога, который с крестьян и торговцев взимали средневековые князья и их вассалы, — &amp;quot;право грута&amp;quot; (Grutrecht), приносившего городам немалые доходы.&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Ну и конечно, у жителей ГЕРМАНИИ пиво было национальным напитком. Предполагается, что варить пиво германцы научились у финикийцев. Под Кульмбахом в Баварии были найдены глиняные кувшины, которые могли использоваться пивоварами еще за 3000 лет до н.э. В дальнейшем технология приготовления пива постепенно распространилась в Англию и Скандинавию, а затем, благодаря экспансии европейской культуры, и по всему миру. По этой причине родиной европейского пива принято считать Германию.
+Европа
+10
+Пиво было традиционным напитком у КЕЛЬТОВ уже в 1-ом веке до н.э. Современные историки располагают свидетельствами, что Кельты варили пиво из пшеницы и меда, который для них был больше едой, чем питьем. Имеется также описание кельтской пивной: …."Из одной бочки старательно наливают кружку за кружкой, которая затем разносится слугами направо и налево". .. 
+В Галлии в 1 веке н. э. делали напиток "корма" (у ирландцев - curmi), сбраживая ячменный солод с разнообразными травяными добавками. Позже эти добавки использовали вместе с хмелем.
+Своим названием европейское пиво так же обязано древним германцам. В староверхненемецком языке для обозначения этого напитка существовало слово Peor (или Bior), в котором нетрудно узнать сегодняшнее немецкое Bier или английское beer. Видимо, происходит оно от латинского слова biber — напиток (любопытно, что по-английски напиток — beverage, а bibber — пьяница) …</text>
+		</slide>
+		<slide index="10" title="хмель" titleNormalized="хмель" src="slide11.swf" size="74551" advanceOnTime="0" framesCount="949" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset10">
+			<sounds>
+				<sound id="sound17" soundAssetId="sndAsset13" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="948" playTime="34.5000000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes>Аудио. 
+СКРИПТ 1
+С монастырским пивом связана легенда о том, как монахи получили от Римского папы разрешения употреблять пиво в дни поста. Папа, будучи итальянцем, пил вино и не имел представления о пиве. Для того, чтобы папа мог попробовать монастырское пиво, напиток везли из Германии в Италию. К тому времени, как пиво было доставлено к папскому двору, будучи не пастеризованным, оно успело испортиться. Когда папа пробовал «новый продукт», он не смог сдержать отвращения и выплюнул содержимое пивного бокала со словами: «Если им угодно пить такую гадость, то пускай пьют!» Довольные таким ответом монахи вернулись обратно в Германию и с чистой совестью продолжили варить пиво.</notes>
+			<notesNormalized>аудио. 
+скрипт 1
+с монастырским пивом связана легенда о том, как монахи получили от римского папы разрешения употреблять пиво в дни поста. папа, будучи итальянцем, пил вино и не имел представления о пиве. для того, чтобы папа мог попробовать монастырское пиво, напиток везли из германии в италию. к тому времени, как пиво было доставлено к папскому двору, будучи не пастеризованным, оно успело испортиться. когда папа пробовал «новый продукт», он не смог сдержать отвращения и выплюнул содержимое пивного бокала со словами: «если им угодно пить такую гадость, то пускай пьют!» довольные таким ответом монахи вернулись обратно в германию и с чистой совестью продолжили варить пиво.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;&lt;u&gt;Аудио. &lt;/u&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 1&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;С монастырским пивом связана легенда о том, как монахи получили от Римского папы разрешения употреблять пиво в дни поста. Папа, будучи итальянцем, пил вино и не имел представления о пиве. Для того, чтобы папа мог попробовать монастырское пиво, напиток везли из Германии в Италию. К тому времени, как пиво было доставлено к папскому двору, будучи не пастеризованным, оно успело испортиться. Когда папа пробовал «новый продукт», он не смог сдержать отвращения и выплюнул содержимое пивного бокала со словами: «Если им угодно пить такую гадость, то пускай пьют!» Довольные таким ответом монахи вернулись обратно в Германию и с чистой совестью продолжили варить пиво.&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>хмель
+Около Х—ХI вв. хмель впервые стал употребляться в пивоварнях монастырей траппистов, бенедиктинцев, францисканцев, августинцев, прежде всего, в Южной Германии.
+11
+Монахи сами придумывали рецепты пива, кроме того, они были грамотны и записывали результаты своих опытов, сохраняя их для следующих поколений. Монастырское пиво становилось все лучше и лучше, в том числе благодаря хмелю.
+Благодаря хмелю, пиво увеличило срок своего хранения, что позволяло монахам производить больше пива и обменивать его на еду и одежду. Таким образом пиво вышло за монастырские стены.</text>
+		</slide>
+		<slide index="11" title="Закон о чистоте пива" titleNormalized="закон о чистоте пива" src="slide12.swf" size="69052" advanceOnTime="0" framesCount="1441" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset11">
+			<sounds>
+				<sound id="sound18" soundAssetId="sndAsset14" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="1440" playTime="35.0000000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes>Аудио. 
+СКРИПТ 1 
+Что бы попасть в гильдию необходимо было пройти вступительное испытание. Гильдия Reinheitsgebot с большой ответственностью относится к принципам и правилам, завещанным ей основателями и требует того же от всех её членов. Чтобы убедиться, что претендент на вступление полностью осознавал всю ответственность, возлагаемую на него гильдией, новичок должен десять раз подряд громко и отчётливо повторить название гильдии без ошибок.
+
+СКРИПТ 2
+Существует Легенда о возникновении Закона о чистоте пива,…… однажды Баварский принц Вильгельм задумал объехать со свитой свои владения…по дороге принц заезжал  в деревни чтобы   напоить лошадей, пока животные  отдыхали, усталые путники сами были не прочь подкрепиться и отведать хмельного напитка и  если в одной деревне пиво было изумительным и стоило пару крейцеров, то в другой деревне это была горькая,  мутная жижа по 6 крейцеров. Принц был очень недоволен таким положением дел и вернувшись после путешествия в замок издал закон, который известен в наши дни как Райнхайцгебот.</notes>
+			<notesNormalized>аудио. 
+скрипт 1 
+что бы попасть в гильдию необходимо было пройти вступительное испытание. гильдия reinheitsgebot с большой ответственностью относится к принципам и правилам, завещанным ей основателями и требует того же от всех её членов. чтобы убедиться, что претендент на вступление полностью осознавал всю ответственность, возлагаемую на него гильдией, новичок должен десять раз подряд громко и отчётливо повторить название гильдии без ошибок.
+
+скрипт 2
+существует легенда о возникновении закона о чистоте пива,…… однажды баварский принц вильгельм задумал объехать со свитой свои владения…по дороге принц заезжал в деревни чтобы напоить лошадей, пока животные отдыхали, усталые путники сами были не прочь подкрепиться и отведать хмельного напитка и если в одной деревне пиво было изумительным и стоило пару крейцеров, то в другой деревне это была горькая, мутная жижа по 6 крейцеров. принц был очень недоволен таким положением дел и вернувшись после путешествия в замок издал закон, который известен в наши дни как райнхайцгебот.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;&lt;u&gt;Аудио. &lt;/u&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="11"&gt;СКРИПТ 1 &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="11"&gt;Что бы попасть в гильдию необходимо было пройти вступительное испытание. Гильдия &lt;b&gt;Reinheitsgebot&lt;/b&gt; с большой ответственностью относится к принципам и правилам, завещанным ей основателями и требует того же от всех её членов. Чтобы убедиться, что претендент на вступление полностью осознавал всю ответственность, возлагаемую на него гильдией, новичок должен десять раз подряд громко и отчётливо повторить название гильдии без ошибок.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 2&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;Существует Легенда о возникновении Закона о чистоте пива,…… однажды Баварский принц Вильгельм задумал объехать со свитой свои владения…по дороге принц заезжал  в деревни чтобы   напоить лошадей, пока животные  отдыхали, усталые путники сами были не прочь подкрепиться и отведать хмельного напитка и  если в одной деревне пиво было изумительным и стоило пару крейцеров, то в другой деревне это была горькая,  мутная жижа по 6 крейцеров. Принц был очень недоволен таким положением дел и вернувшись после путешествия в замок издал закон, который известен в наши дни как Райнхайцгебот.&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Закон о чистоте пива
+В 1516 г. баварским принцем Вильгельмом, был издан закон о чистоте пива. Reinheitsgebot (Райнхайтсгебот) обязывал пивоваров использовать для варки пива только ячмень, воду и хмель и продавать по одной цене.
+12
+Закон отличался суровостью – тех, кто разбавлял и подделывал пиво, строго штрафовали, а самых пивоваров – и вовсе топили в собственном пиве. Reinheitsgebot действует в Германии по сей день, являясь старейшим законодательным актом в мире, регламентирующим производство продуктов питания и защищающим права потребителя.
+С 13 по 16 века, пивоварение процветало, стали возникать гильдии - объединения купцов и ремесленников, защищавшие интересы и регламентирующие привилегии своих членов. Что бы попасть в гильдию необходимо было пройти вступительное испытание. Гильдии с большой ответственностью относились к принципам и правилам, завещанным им основателями и требовали того же от всех своих членов. Чтобы убедиться, что претендент на вступление в одну из гильдий полностью осознавал всю ответственность, возлагаемую на него, новичок должен был десять раз подряд громко и отчётливо повторить название гильдии без ошибок!
+</text>
+		</slide>
+		<slide index="12" title="Дрожжи. Пастеризация. Луи пастер" titleNormalized="дрожжи. пастеризация. луи пастер" src="slide13.swf" size="92370" advanceOnTime="0" framesCount="698" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset12">
+			<sounds>
+				<sound id="sound19" soundAssetId="sndAsset15" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="348" playTime="14.5000000"/>
+				<step start="349" end="697" playTime="14.5000000" pauseTime="8.0000000"/>
+			</animationSteps>
+			<notes>Аудио. 
+
+СКРИПТ 2
+Открытия, сделанные великим французским ученым Луи Пастером, запечатлены на мемориальной доске у входа в его первую лабораторию: «Здесь была лаборатория Пастера; 1857 — брожение; 1860 — самопроизвольное зарождение; 1865 — болезни вина и пива; 1863 — болезни шелковичных червей; 1881 — зараза и вакцина; 1885 — предохранение от бешенства».  </notes>
+			<notesNormalized>аудио. 
+
+скрипт 2
+открытия, сделанные великим французским ученым луи пастером, запечатлены на мемориальной доске у входа в его первую лабораторию: «здесь была лаборатория пастера; 1857 — брожение; 1860 — самопроизвольное зарождение; 1865 — болезни вина и пива; 1863 — болезни шелковичных червей; 1881 — зараза и вакцина; 1885 — предохранение от бешенства».</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12" color="#000000"&gt;Аудио. &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#45484d"&gt;СКРИПТ 2&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#45484d"&gt;Открытия, сделанные великим французским ученым Луи Пастером, запечатлены на мемориальной доске у входа в его первую лабораторию: «Здесь была лаборатория Пастера; 1857 — брожение; 1860 — самопроизвольное зарождение; 1865 — болезни вина и пива; 1863 — болезни шелковичных червей; 1881 — зараза и вакцина; 1885 — предохранение от бешенства».&lt;/font&gt;&lt;font size="12" color="#000000"&gt;  &lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Дрожжи. Пастеризация. Луи пастер
+
+
+13
+	
+1857 г. произошел прорыв в истории пивоварения! Открытие Луи Пастером дрожжевых грибов – одноклеточных организмов, которые отвечают за брожение. Всего для изучения процессов брожения и гниения, учёным было поставлено 13 000 опытов.
+После открытия Пастера, французский технолог Нардон и вслед за ним пивовар Вельтен в Марселе применили пастеризацию для изготовления пива. В настоящее время сам продукт или пиво в бутылках выдерживают при температуре 70 °С в течение нескольких минут.
+	
+Кроме этого Луи Пастер был разработчиком пастеризации, способа консервации продуктов нагреванием до определенной температуры, при которой погибает большинство бактерий. Именно благодаря пастеризации мы можем хранить пиво долгое время.</text>
+		</slide>
+		<slide index="13" title="Европа" titleNormalized="европа" src="slide14.swf" size="53156" advanceOnTime="0" framesCount="1064" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset13">
+			<sounds>
+				<sound id="sound20" soundAssetId="sndAsset16" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="516" playTime="21.5000000"/>
+				<step start="517" end="1063" playTime="22.7500000" pauseTime="9.5000000"/>
+			</animationSteps>
+			<notes>Аудио
+СКРИПТ 1
+Для чехов пиво — не просто напиток, это неотъемлемая жизненная составляющая.
+В начале XV века пивоварня в Чешских БудеЁовицах снабжала пивом королевский двор Богемии. Тогда у местного пива и появился девиз «пиво королей» .
+В средневековой Чехии населённый пункт, чтобы получить статус города, должен был самостоятельно вершить суд, иметь таможню и пивоваренный завод.
+
+
+СКРИПТ 3
+Интересный факт о том как ранее проверяли качество пива. Только что сваренное пиво наливали на деревянную скамью. В пивную лужу сажали «инспектора» в кожаных штанах. Инспектор должен был просидеть в луже строго определённое время, а потом попробовать подняться. Если подняться не удавалось (хорошее пиво прочно приклеивало кожаные штаны к дереву), значит, пиво было сварено на совесть
+ Только что сваренное пиво наливали на деревянную скамью. В пивную лужу сажали «инспектора» в кожаных штанах. Инспектор должен был просидеть в луже строго определённое время, а потом попробовать подняться. Если подняться не удавалось (хорошее пиво прочно приклеивало кожаные штаны к дереву), значит, пиво было сварено на совесть</notes>
+			<notesNormalized>аудио
+скрипт 1
+для чехов пиво — не просто напиток, это неотъемлемая жизненная составляющая.
+в начале xv века пивоварня в чешских будеёовицах снабжала пивом королевский двор богемии. тогда у местного пива и появился девиз «пиво королей» .
+в средневековой чехии населённый пункт, чтобы получить статус города, должен был самостоятельно вершить суд, иметь таможню и пивоваренный завод.
+
+
+скрипт 3
+интересный факт о том как ранее проверяли качество пива. только что сваренное пиво наливали на деревянную скамью. в пивную лужу сажали «инспектора» в кожаных штанах. инспектор должен был просидеть в луже строго определённое время, а потом попробовать подняться. если подняться не удавалось (хорошее пиво прочно приклеивало кожаные штаны к дереву), значит, пиво было сварено на совесть
+ только что сваренное пиво наливали на деревянную скамью. в пивную лужу сажали «инспектора» в кожаных штанах. инспектор должен был просидеть в луже строго определённое время, а потом попробовать подняться. если подняться не удавалось (хорошее пиво прочно приклеивало кожаные штаны к дереву), значит, пиво было сварено на совесть</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12" color="#000000"&gt;Аудио&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt;СКРИПТ 1&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#525039"&gt;Для чехов пиво — не просто напиток, это неотъемлемая жизненная составляющая.&lt;/font&gt;&lt;font size="12" color="#000000"&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt;В начале XV века пивоварня в Чешских БудеЁовицах снабжала пивом королевский двор Богемии. Тогда у местного пива и появился девиз «пиво королей» .&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt;В средневековой Чехии населённый пункт, чтобы получить статус города, должен был самостоятельно вершить суд, иметь таможню и пивоваренный завод.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt;СКРИПТ 3&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt;Интересный факт о том как ранее проверяли качество пива.&lt;/font&gt;&lt;font size="10" color="#000000"&gt; Только что сваренное пиво наливали на деревянную скамью. В пивную лужу сажали «инспектора» в кожаных штанах. Инспектор должен был просидеть в луже строго определённое время, а потом попробовать подняться. Если подняться не удавалось (хорошее пиво прочно приклеивало кожаные штаны к дереву), значит, пиво было сварено на совесть&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt; Только что сваренное пиво наливали на деревянную скамью. В пивную лужу сажали «инспектора» в кожаных штанах. Инспектор должен был просидеть в луже строго определённое время, а потом попробовать подняться. Если подняться не удавалось (хорошее пиво прочно приклеивало кожаные штаны к дереву), значит, пиво было сварено на совесть&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Европа
+
+
+14
+	
+В 1088 г. в указе первого короля ЧЕХИИ Вратислава II, было первое упоминание о распространении пива на территории Чехии. В этом указе Вышеградскому монастырю было дано право выращивать хмель и варить собственное пиво.
+А уже в 1310 г. был основан первый пивоваренный завод в Чехии в городе Домажлице.
+К началу XVI века в Чехии было уже около 3000 мини пивоварен.
+ В ГЕРМАНИИ первый пивоваренный завод возник в г. Вайхенштефане в 1040 г. 
+ Сегодня в Германии производится 5000 разных сортов пива, в каждой деревеньке имеется своя небольшая пивоварня, которая варит пиво исключительно по своим технологиям, а каждый пивовар хранит секрет пивоварения в строжайшей тайне. В наши дни Дортмунд является пивоваренным центром Европы. По количеству производимого пива он опережает даже Мюнхен, где находятся самая известная пивоварня "Хофбройхаус", построенная в 1589 г., а так же ежегодно проводится праздник «Октоберфест».
+Интересный факт о том как ранее проверяли качество пива. Только что сваренное пиво наливали на деревянную скамью. В пивную лужу сажали «инспектора» в кожаных штанах. Инспектор должен был просидеть в луже строго определённое время, а потом попробовать подняться. Если подняться не удавалось (хорошее пиво прочно приклеивало кожаные штаны к дереву), значит, пиво было сварено на совесть.</text>
+		</slide>
+		<slide index="14" title="октоберфест" titleNormalized="октоберфест" src="slide15.swf" size="104609" advanceOnTime="0" framesCount="817" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset14">
+			<sounds>
+				<sound id="sound21" soundAssetId="sndAsset17" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="816" playTime="34.0000000" pauseTime="13.2500000"/>
+			</animationSteps>
+			<notes>СКРИПТ 2
+Октоберфест – крупнейшая в мире фестиваль пива (занесен в Книгу рекордов Гиннесса) который проводится в столице Баварии - Мюнхене с конца сентября по начало октября, уже на протяжении 190 лет. .
+7 000 000 литров пива выпивают посетители ярмарки 
+500 000 жареных курочек и 100 000 сосисок  съедают гости  
+4 ~ 6 млн. человек ежегодно посещает фестиваль
+На Октоберфесте представлены со своими палатками только мюнхенские пивоварни, такие как: Spaten-Franziskaner-Bräu, Августинер, Paulaner, Hacker-Pschorr, Hofbräu и Löwenbräu. </notes>
+			<notesNormalized>скрипт 2
+октоберфест – крупнейшая в мире фестиваль пива (занесен в книгу рекордов гиннесса) который проводится в столице баварии - мюнхене с конца сентября по начало октября, уже на протяжении 190 лет. .
+7 000 000 литров пива выпивают посетители ярмарки 
+500 000 жареных курочек и 100 000 сосисок съедают гости 
+4 ~ 6 млн. человек ежегодно посещает фестиваль
+на октоберфесте представлены со своими палатками только мюнхенские пивоварни, такие как: spaten-franziskaner-bräu, августинер, paulaner, hacker-pschorr, hofbräu и löwenbräu.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 2&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;&lt;u&gt;Октоберфест&lt;/u&gt; – крупнейшая в мире фестиваль пива (занесен в Книгу рекордов Гиннесса) который проводится в столице Баварии - Мюнхене с конца сентября по начало октября, уже на протяжении 190 лет. .&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;&lt;b&gt;7 000 000 &lt;/b&gt;литров пива выпивают посетители ярмарки &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;&lt;b&gt;500 000 &lt;/b&gt;жареных курочек и &lt;b&gt;100 000 &lt;/b&gt;сосисок  съедают гости  &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;&lt;b&gt;4 ~ 6 млн&lt;/b&gt;. человек ежегодно посещает фестиваль&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;На Октоберфесте представлены со своими палатками только мюнхенские пивоварни, такие как: Spaten-Franziskaner-Bräu, Августинер, Paulaner, Hacker-Pschorr, Hofbräu и Löwenbräu. &lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>октоберфест
+
+
+15
+	
+12 октября 1810 г. впервые состоялся Октоберфест (фестиваль пива) в честь свадьбы кронпринца Людвига (в будущем ставшего королем Людвигом I) и принцессы Терезы Саксонской-Хильдбургхаузской (её именем назван луг, где проходит праздник).
+В соответствии с правилами проведения Октоберфеста, на празднике может разливаться только мюнхенское пиво, сваренное в соответствии с немецким законом о чистоте пива 1516 года.
+
+Пиво ранее поставляли только в дубовых бочках. На сегодняшний день всего один производитель поддерживает эту традицию, Augustiner-Bräu, в то время как все остальные пивоварни перешли на использование металлических бочек, лишь снаружи обшитых досками.</text>
+		</slide>
+		<slide index="15" title="Европа" titleNormalized="европа" src="slide16.swf" size="48705" advanceOnTime="0" framesCount="1417" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset15">
+			<sounds>
+				<sound id="sound22" soundAssetId="sndAsset18" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="1416" playTime="54.2500000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes>Еще одному стилю пива Стауту мы обязаны Ирландии. Первоначально Стаут варился именно там, как разновидность портера. Раньше прилагательное стаут (англ. stout) обозначало гордый, отважный. Впервые слово стаут для обозначения пива было использовано в 1820 году компанией Гиннесс для своего стаут-портера. Позднее слово Стаут стало  означать  крепкий и относиться к любому виду пива. В конце XIX века стаут  ассоциировался только с портером и стал синонимом тёмного пива, он так же приобрёл репутацию целительного, укрепляющего напитка, и доктора часто рекомендовали его как средство для восстановления здоровья.
+Стаут отличается от портера: более тёмным цветом, который получается  благодаря  использованию сильно прожаренного солода, а также более ярко выраженным жженым вкусом и привкусом холодного кофе. По крепости английские и ирландские стауты легче портеров.
+
+
+</notes>
+			<notesNormalized>еще одному стилю пива стауту мы обязаны ирландии. первоначально стаут варился именно там, как разновидность портера. раньше прилагательное стаут (англ. stout) обозначало гордый, отважный. впервые слово стаут для обозначения пива было использовано в 1820 году компанией гиннесс для своего стаут-портера. позднее слово стаут стало означать крепкий и относиться к любому виду пива. в конце xix века стаут ассоциировался только с портером и стал синонимом тёмного пива, он так же приобрёл репутацию целительного, укрепляющего напитка, и доктора часто рекомендовали его как средство для восстановления здоровья.
+стаут отличается от портера: более тёмным цветом, который получается благодаря использованию сильно прожаренного солода, а также более ярко выраженным жженым вкусом и привкусом холодного кофе. по крепости английские и ирландские стауты легче портеров.
+
+
+</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;Еще одному стилю пива Стауту мы обязаны Ирландии. Первоначально Стаут варился именно там, как разновидность портера. Раньше прилагательное &lt;i&gt;стаут&lt;/i&gt; (англ. &lt;i&gt;stout&lt;/i&gt;) обозначало &lt;i&gt;гордый&lt;/i&gt;, &lt;i&gt;отважный&lt;/i&gt;. Впервые слово &lt;i&gt;стаут&lt;/i&gt; для обозначения пива было использовано в 1820 году компанией Гиннесс для своего стаут-портера. Позднее слово Стаут стало  означать  &lt;i&gt;крепкий&lt;/i&gt; и относиться к любому виду пива. В конце XIX века стаут  ассоциировался только с портером и стал синонимом тёмного пива, он так же приобрёл репутацию целительного, укрепляющего напитка, и доктора часто рекомендовали его как средство для восстановления здоровья.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;Стаут отличается от портера: более тёмным цветом, который получается  благодаря  использованию сильно прожаренного солода, а также более ярко выраженным жженым вкусом и привкусом холодного кофе. По крепости английские и ирландские стауты легче портеров.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</notesHtml>
+			<text>Европа
+16
+Визитной карточкой пивоварения Британских островов, является пиво производимое быстрым верховым брожением при высокой температуре – ЭЛЬ. Появление Эля датируют началом VII века. Для его изготовления требуется от 3 до 4 недель, однако некоторые разновидности Эля могут производить до 4 месяцев.
+До появления хмеля в XVI веке в Англии, словом «эль», обозначались лишь те напитки, которые готовили без добавления хмеля. Те напитки, в которые начали добавлять хмель, стали именоваться пивом.
+В XVIII веке появляется пиво Портер, которое сразу стало популярно. По́ртер — темное пиво с характерным винным привкусом, сильным ароматом солода и насыщенным вкусом, в котором одновременно присутствуют и сладость, и горечь. Этот сорт пива особенно полюбили рабочие уличных рынков (porter по-английски — «носильщик», «грузчик»), которых в то время в Лондоне было немало. Впервые портер был сварен в Лондоне пивоваром Ральфом Харвудом, 
+ он был придуман с целью заменить популярный тогда классический эль, специально для 
+ работников тяжелого физического труда, поскольку портер весьма питателен.
+
+Вплоть до начала XIX века, срок дозревания портеров составлял не менее восьми месяцев. Пиво дображивало в огромных деревянных бочках, которые в больших количествах хранились в специальных складах и погребах.</text>
+		</slide>
+		<slide index="16" title="Европа" titleNormalized="европа" src="slide17.swf" size="66898" advanceOnTime="0" framesCount="697" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset16">
+			<sounds>
+				<sound id="sound23" soundAssetId="sndAsset19" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="696" playTime="29.0000000" pauseTime="15.6500015"/>
+			</animationSteps>
+			<notes>СКРИПТ 3
+Существует особое понятие - “бельгийская культура подачи пива”. Так как бельгийцы стараются всячески украсить процесс употребления своего пива. Нередко пивные бутылки упакованы в красочную бумагу и выглядят при этом как подарок. А еще в Бельгии варят столовое пиво с содержанием алкоголя до 1,5%, предназначенное для запивания блюд во время обеда или ужина. До 1970-х годов такое пиво постоянно подавали в школьных столовых, но потом оно было вытеснено газировкой. При этом  сегодня в Бельгии немало адептов возвращения столового пива в школы, потому что по их мнению, оно полезнее колы.
+
+Lambic – пиво спонтанного типа брожения, которое варится с использованием специального хмеля, солода и дрожжей из атмосферы
+Geuze (gueuze) – гёзе смешивается из ламбиков разного срока выдержки и бутилируется в бутылки шампанского типа с целью дображивания 
+Пиво Kwak - эль янтарного цвета с фруктовым ароматом из солода, нуги и карамелизированного банана, отличается фруктовым послевкусием с оттенком хмеля
+
+</notes>
+			<notesNormalized>скрипт 3
+существует особое понятие - “бельгийская культура подачи пива”. так как бельгийцы стараются всячески украсить процесс употребления своего пива. нередко пивные бутылки упакованы в красочную бумагу и выглядят при этом как подарок. а еще в бельгии варят столовое пиво с содержанием алкоголя до 1,5%, предназначенное для запивания блюд во время обеда или ужина. до 1970-х годов такое пиво постоянно подавали в школьных столовых, но потом оно было вытеснено газировкой. при этом сегодня в бельгии немало адептов возвращения столового пива в школы, потому что по их мнению, оно полезнее колы.
+
+lambic – пиво спонтанного типа брожения, которое варится с использованием специального хмеля, солода и дрожжей из атмосферы
+geuze (gueuze) – гёзе смешивается из ламбиков разного срока выдержки и бутилируется в бутылки шампанского типа с целью дображивания 
+пиво kwak - эль янтарного цвета с фруктовым ароматом из солода, нуги и карамелизированного банана, отличается фруктовым послевкусием с оттенком хмеля
+
+</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12" color="#000000"&gt;СКРИПТ 3&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt;Существует особое понятие - “бельгийская культура подачи пива”. Так как бельгийцы стараются всячески украсить процесс употребления своего пива. Нередко пивные бутылки упакованы в красочную бумагу и выглядят при этом как подарок. А еще в Бельгии варят столовое пиво с содержанием алкоголя до 1,5%, предназначенное для запивания блюд во время обеда или ужина. До 1970-х годов такое пиво постоянно подавали в школьных столовых, но потом оно было вытеснено газировкой. При этом  сегодня в Бельгии немало адептов возвращения столового пива в школы, потому что по их мнению, оно полезнее колы.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt;Lambic – пиво спонтанного типа брожения, которое варится с использованием специального хмеля, солода и дрожжей из атмосферы&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt;Geuze (gueuze) – гёзе смешивается из ламбиков разного срока выдержки и бутилируется в бутылки шампанского типа с целью дображивания &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt;Пиво Kwak - эль янтарного цвета с фруктовым ароматом из солода, нуги и карамелизированного банана, отличается фруктовым послевкусием с оттенком хмеля&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</notesHtml>
+			<text>Европа
+17
+	
+В БЕЛЬГИИ производится около 900 разных марок пива, некоторым из них по 400—500 лет. Это одна из немногих стран Старого Света, которая хранит историю европейского церковного пивоварения.	
+Именно здесь варят интересные сорта пива например такие как:
+ Lambic (Лямбик) – пиво спонтанного типа брожения, которое варится c использованием фруктов, специального хмеля, солода и бродит в открытых бочках с использованием диких дрожжей из атмосферы (например Лифманс).
+ Geuze (Гёзе) - смешивается из ламбиков разного срока выдержки и бутилируется в бутылки шампанского типа с целью
+ дображивания .</text>
+		</slide>
+		<slide index="17" title="Русь" titleNormalized="русь" src="slide18.swf" size="61989" advanceOnTime="0" framesCount="1129" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset17">
+			<sounds>
+				<sound id="sound24" soundAssetId="sndAsset20" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="1128" playTime="47.0000000" pauseTime="4.5000000"/>
+			</animationSteps>
+			<notes>СКРИПТ 1
+
+СКРИПТ 2
+
+Первое упоминание о пиве у славян относится к 448 году, но особенно широко распространилось пивоварение в 9 веке в Новгородских землях Руси. 
+В годы царствования Великого князя Ивана III (1462-1505гг.) пиво, наряду с хлебным вином,  начали подавать в кабаках. 
+Борис Годунов (1598-1605 гг.) запретил варить пиво "средним и молодшим" людям. С солода, хмеля и меда бралась "брашная" пошлина.
+Либерал Алексей Михайлович (1645-1676 гг.) дозволял варить пиво крестьянам для домашнего питья несколько раз в год - в Великий день, Дмитриевскую субботу на Масленицу, на Рождество Христово. Право варить пиво давалось только лучшим, самым работящим крестьянам.
+При царствовании известного реформатора Петра I в Петербург были выписаны солодовники и пивовары из Европы. Пиво вошло в обязательный ассортимент угощений на празднествах, устраиваемых по случаю памятных дат и военных триумфов.
+
+в 1718 г. в эпоху Петра I произошел прорыв в российском пивоварении, он издал указ о строительстве пивоварен каменных на «голландский манер» в Петербурге на шесть тысяч бочек для нужд госпиталей и 
+
+
+В Великий век Екатерины в 1765г. пивоварение в уездах для собственных нужд было разрешено беспошлинно, но продажа пива по-прежнему была разрешена только в питейных домах. В 1795г. I Абрахамом Фридрихом Кроном в Петербурге был основан старейший российский пивзавод, который носил имя Александра Невского. </notes>
+			<notesNormalized>скрипт 1
+
+скрипт 2
+
+первое упоминание о пиве у славян относится к 448 году, но особенно широко распространилось пивоварение в 9 веке в новгородских землях руси. 
+в годы царствования великого князя ивана iii (1462-1505гг.) пиво, наряду с хлебным вином, начали подавать в кабаках. 
+борис годунов (1598-1605 гг.) запретил варить пиво "средним и молодшим" людям. с солода, хмеля и меда бралась "брашная" пошлина.
+либерал алексей михайлович (1645-1676 гг.) дозволял варить пиво крестьянам для домашнего питья несколько раз в год - в великий день, дмитриевскую субботу на масленицу, на рождество христово. право варить пиво давалось только лучшим, самым работящим крестьянам.
+при царствовании известного реформатора петра i в петербург были выписаны солодовники и пивовары из европы. пиво вошло в обязательный ассортимент угощений на празднествах, устраиваемых по случаю памятных дат и военных триумфов.
+
+в 1718 г. в эпоху петра i произошел прорыв в российском пивоварении, он издал указ о строительстве пивоварен каменных на «голландский манер» в петербурге на шесть тысяч бочек для нужд госпиталей и 
+
+
+в великий век екатерины в 1765г. пивоварение в уездах для собственных нужд было разрешено беспошлинно, но продажа пива по-прежнему была разрешена только в питейных домах. в 1795г. i абрахамом фридрихом кроном в петербурге был основан старейший российский пивзавод, который носил имя александра невского.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 1&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;СКРИПТ 2&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;Первое упоминание о пиве у славян относится к 448 году, но особенно широко распространилось пивоварение в 9 веке в Новгородских землях Руси. &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;В годы царствования Великого князя Ивана III (1462-1505гг.) пиво, наряду с хлебным вином,  начали подавать в кабаках. &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;Борис Годунов (1598-1605 гг.) запретил варить пиво &amp;quot;средним и молодшим&amp;quot; людям. С солода, хмеля и меда бралась &amp;quot;брашная&amp;quot; пошлина.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;Либерал Алексей Михайлович (1645-1676 гг.) дозволял варить пиво крестьянам для домашнего питья несколько раз в год - в Великий день, Дмитриевскую субботу на Масленицу, на Рождество Христово. Право варить пиво давалось только лучшим, самым работящим крестьянам.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;При царствовании известного реформатора Петра I в Петербург были выписаны солодовники и пивовары из Европы. Пиво вошло в обязательный ассортимент угощений на празднествах, устраиваемых по случаю памятных дат и военных триумфов.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;&lt;b&gt;&lt;u&gt;в 1718 г&lt;/u&gt;&lt;/b&gt;. в эпоху Петра I произошел прорыв в российском пивоварении, он издал указ о строительстве пивоварен каменных на «голландский манер» в Петербурге на шесть тысяч бочек для нужд госпиталей и &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;В Великий век Екатерины в 1765г. пивоварение в уездах для собственных нужд было разрешено беспошлинно, но продажа пива по-прежнему была разрешена только в питейных домах. В 1795г. I Абрахамом Фридрихом Кроном в Петербурге был основан старейший российский пивзавод, который носил имя Александра Невского. &lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Русь
+
+
+18
+	
+К 448 г. относится первое упоминание о пиве у славян. Такие хмельные напитки как пиво, мед, брага, а также квас были известны на Руси с незапамятных времен При раскопках Древнего Новгорода были найдены берестяные грамоты датированные 9 веком, в одной из них упоминался перевар - хмельной напиток из меда и пива.
+	
+Царь Алексей Михайлович (1645-1676 гг.) своими указами позволял варить пиво крестьянам для домашнего питья несколько раз в год — в Великий день, Дмитриевскую субботу на Масленицу, на Рождество. Право варить пиво давалось только лучшим, самым работящим крестьянам.
+
+1462-1505 гг. В период правления Ивана III пиво, наряду с хлебным вином, начали подавать в кабаках. 
+Петр I определял пиво не только как прохладительный и жаждоутоляющий напиток, но и как лечебный. 
+Борис Годунов (1598-1605гг.) запретил варить пиво "средним и молодшим" людям. С солода, хмеля и меда бралась "брашная" пошлина.</text>
+		</slide>
+		<slide index="18" title="Россия" titleNormalized="россия" src="slide19.swf" size="51059" advanceOnTime="0" framesCount="1370" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset18">
+			<sounds>
+				<sound id="sound25" soundAssetId="sndAsset21" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound26" soundAssetId="sndAsset22" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="312" playTime="13.0000000"/>
+				<step start="313" end="1369" playTime="44.0000000" pauseTime="4.7999992"/>
+			</animationSteps>
+			<notes>Екатерина Великая пиво любила. Именно для нее англичане сварили особенно крепкое пиво 9% - чтобы оно не портилось и не замерзло в дороге. Этот сорт пива называется Russian Imperial Stout "Российский имперский стаут «Оно не пастеризуется, а созревает в бочонках в течение 2 месяцев, после чего выдерживается в бутылках целый год. 
+ сын Альберт сумел расширить дело отца, в 1879 году самарская городская Дума сдала ему в аренду на 99 лет участок земли под строительство пивного завода. Строительство велось такими стремительными темпами, что уже в 1881 году было произведено 75 тысяч ведер пива. Самым популярным было Венское пиво, которое в 30-х годах XX столетия было переименовано в «Жигулевское».</notes>
+			<notesNormalized>екатерина великая пиво любила. именно для нее англичане сварили особенно крепкое пиво 9% - чтобы оно не портилось и не замерзло в дороге. этот сорт пива называется russian imperial stout "российский имперский стаут «оно не пастеризуется, а созревает в бочонках в течение 2 месяцев, после чего выдерживается в бутылках целый год. 
+ сын альберт сумел расширить дело отца, в 1879 году самарская городская дума сдала ему в аренду на 99 лет участок земли под строительство пивного завода. строительство велось такими стремительными темпами, что уже в 1881 году было произведено 75 тысяч ведер пива. самым популярным было венское пиво, которое в 30-х годах xx столетия было переименовано в «жигулевское».</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12" color="#222222"&gt;Екатерина Великая пиво любила. Именно для нее англичане сварили особенно крепкое пиво 9% - чтобы оно не портилось и не замерзло в дороге. Этот сорт пива называется &lt;/font&gt;&lt;font size="12" color="#333333"&gt;Russian Imperial Stout &amp;quot;Российский имперский стаут «&lt;/font&gt;&lt;font size="12" color="#222222"&gt;Оно не пастеризуется, а созревает в бочонках в течение 2 месяцев, после чего выдерживается в бутылках целый год.&lt;/font&gt;&lt;font size="12" color="#000000"&gt; &lt;i&gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12" color="#000000"&gt; сын Альберт сумел расширить дело отца, в 1879 году самарская городская Дума сдала ему в аренду на 99 лет участок земли под строительство пивного завода. Строительство велось такими стремительными темпами, что уже в 1881 году было произведено 75 тысяч ведер пива. Самым популярным было Венское пиво, которое в 30-х годах XX столетия было переименовано в «Жигулевское».&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Россия
+
+
+19
+В 1765 г., во времена правления Екатерины Великой пивоварение в уездах для собственных нужд было разрешено беспошлинно, но продажа пива по-прежнему была разрешена только в питейных домах.
+	
+В 1790 г. было основано пивоваренное предприятие в Санкт-Петербурге, которое в 1848 году стало называться Калинкинъским пивоваренным заводом, который в последствии стал крупнейшим в Российской империи и производил пиво, которое поставлялось по всей России.
+С 1818 г. завод являлся «Поставщиком Двора его Императорского Величества», поэтому на бутылках с пивом над надписью «Калинкинъ» имелся рельефный малый государственный герб России. К 1914 году Калинкинский пивоваренный завод производил 5,5 млн ведер пива.
+В середине XIX века обедневший австрийский дворянин Филипп фон Вакано открыл в г. Самаре небольшой пивоваренный завод, который затем, по наследству, перешел к его сыну Альберту.
+В 1795 г. в Санкт-Петербурге Абрахамом Фридрихом Кроном был основан старейший российский пивзавод, который носил имя Александра Невского. Для своего времени это был самый крупный завод. Тогда, ежегодно на заводе варилось и разливалось 1,7 млн. литров.</text>
+		</slide>
+		<slide index="19" title="Россия" titleNormalized="россия" src="slide20.swf" size="62072" advanceOnTime="0" framesCount="685" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset19">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="684" playTime="28.5000000" pauseTime="29.7000008"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Россия
+
+
+20
+	
+5 февраля 1876 г. была произведена первая варка пива на Трёхгорном пивоваренном заводе, затем была выдержка пива, и с 1 июня пиво поступило в продажу.
+Завод выпускал пиво марок «Баварское» и «Золотой ярлык», а с 1881 года добавился еще и сорт «Мюнхенское», в 1882 году завод приступил к выпуску пива «Золотой ярлык». На Всероссийской промышленно-художественной выставке за свою продукцию, завод получил высшую награду – право изображать государственный герб «Золотой орёл» на своей продукции. 
+ В 1934 году ему присвоили имя А.Е. Бадаева.
+в 1863 г. московским купцом Власом Егоровичем Ярославцевым в Москве был основан Хамовнический пивоваренный завод. В 1870 году производство пива достигло объёма в 100 000 вёдер при себестоимости пива 75 коп. за ведро. К декабрю 1873 года оно увеличилось до 250 000 ведер пива.
+Это одно из старейших предприятий в России, производивших пиво до недавнего времени, к сожалению закрытое в 2005 году.
+Сначала на заводе варили пиво в основном трех сортов: Богемское, Черное, Пильзенское, а в конце века Венское, Пильзенское, Мюнхенское и Русское черное.</text>
+		</slide>
+		<slide index="20" title="РСФСР. СССР" titleNormalized="рсфср. ссср" src="slide21.swf" size="55733" advanceOnTime="0" framesCount="1465" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset20">
+			<sounds>
+				<sound id="sound27" soundAssetId="sndAsset23" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="1464" playTime="39.7500000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes>Одновременно  велись разработки новых сортов пива, прежде всего элитных. Так, к 1939 году были разработаны: пиво «Московское высший сорт», пиво «Столичное» - светлый сорт ставший самым крепким (а после войны, когда значение плотности повысили до 23%, и самым плотным сортом пива в СССР) Пиво «Киевское» —  с пшеничным солодом, хотя и низового брожения. Также началось производство пива  «Союзное» и «Полярное». Разрабатывался и сорт в стилистике эля, но начало Великой Отечественной войны прекратило все работы в этом направлении.</notes>
+			<notesNormalized>одновременно велись разработки новых сортов пива, прежде всего элитных. так, к 1939 году были разработаны: пиво «московское высший сорт», пиво «столичное» - светлый сорт ставший самым крепким (а после войны, когда значение плотности повысили до 23%, и самым плотным сортом пива в ссср) пиво «киевское» — с пшеничным солодом, хотя и низового брожения. также началось производство пива «союзное» и «полярное». разрабатывался и сорт в стилистике эля, но начало великой отечественной войны прекратило все работы в этом направлении.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;Одновременно  велись разработки новых сортов пива, прежде всего элитных. Так, к 1939 году были разработаны: пиво «Московское высший сорт», пиво «Столичное» - светлый сорт ставший самым крепким (а после войны, когда значение плотности повысили до 23%, и самым плотным сортом пива в СССР) Пиво «Киевское» —  с пшеничным солодом, хотя и низового брожения. Также началось производство пива  «Союзное» и «Полярное». Разрабатывался и сорт в стилистике эля, но начало Великой Отечественной войны прекратило все работы в этом направлении.&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>РСФСР. СССР
+21
+	
+К концу 1920-х НЭП стали сворачивать, тогда же был введён первый ОСТ на пиво (ОСТ 61-27), который был обязателен только для крупных государственных заводов и с 1 января 1928 г. в РСФСР предписывалось производить регламентированные сорта: Светлое пиво № 1, Светлое пиво № 2, Тёмное и Чёрное.
+Официальной датой рождения пива РСФСР можно считать 3 февраля 1922 года, когда было подписано постановление «Об акцизе с пива, мёда, кваса, фруктовых и искусственных минеральных вод». Это время совпало с развёртыванием НЭПа, когда была дана некоторая свобода частному предпринимательству. Какое же пиво варили в то время? Те же самые сорта, что и до революции: «Баварское», тёмное «Мюнхенское», «Кульмбахское», «Экспорт», крепкий «Бок», «Венское», «Богемское», классическое «Пильзенское» и его более плотные, «экспортные» версии - «Экстра-Пильзен».
+В 30-х годах названия пиву, часто давали в честь крупнейших государственных заводов: «Жигулёвское» — завода в Куйбышеве (Самара), «Русское» — завода Ростова-на-Дону, «Московское» — московских предприятий, «Украинское» — заводов Одессы и Харькова.
+ Эти, а так же другие сорта под своим старыми именами : «Портер» (который
+ сбраживался по английской традиции верховым брожением, очень плотный,
+ сильноохмелённый сорт с винным и карамельным вкусом), «Мартовское» пиво,
+ «Карамельное» (темное, не выброженное , имевшее 1,5% алкоголя, которое
+ рекомендовали употреблять даже детям и кормящим матерям) просуществовали до
+ самого развала СССР .</text>
+		</slide>
+		<slide index="21" title="СССР" titleNormalized="ссср" src="slide22.swf" size="46930" advanceOnTime="0" framesCount="837" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset21">
+			<sounds>
+				<sound id="sound28" soundAssetId="sndAsset24" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+				<sound id="sound29" soundAssetId="sndAsset25" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="348" playTime="14.5000000"/>
+				<step start="349" end="793" playTime="18.5000000"/>
+				<step start="794" end="836" playTime="1.7500000" pauseTime="5.0000000"/>
+			</animationSteps>
+			<notes>Львиную долю пива продавали в розлив (как и до войны, хотя в Российской империи всё было наоборот), бутылочного пива выпускали мало, и лидировала в этом деле Прибалтика. Основной объём пива приходился на сорт «Жигулёвское», в отдельных случаях оно занимало до 90% всего объёма производимого пива.
+
+
+В это же время в пивоварении стали в очень широких пределах внедрять несоложёное сырье— ячмень, рис, кукурузу, сою, пшеницу, различные типа сахара. Это позволяло создавать различные вкусовые профили, которые стали неотъемлемой частью рецептуры советского пива. затирать сусло с таким количеством добавок можно было только с применением ферментов, поэтому в  конце 1950-х — начале 1960-х были открыты заводы по производству ферментных препаратов в Запорожье и Львове, что позволило увеличить количество применяемых несоложёных продуктов до 30–50% (прежде всего в «Жигулёвском»пиве.</notes>
+			<notesNormalized>львиную долю пива продавали в розлив (как и до войны, хотя в российской империи всё было наоборот), бутылочного пива выпускали мало, и лидировала в этом деле прибалтика. основной объём пива приходился на сорт «жигулёвское», в отдельных случаях оно занимало до 90% всего объёма производимого пива.
+
+
+в это же время в пивоварении стали в очень широких пределах внедрять несоложёное сырье— ячмень, рис, кукурузу, сою, пшеницу, различные типа сахара. это позволяло создавать различные вкусовые профили, которые стали неотъемлемой частью рецептуры советского пива. затирать сусло с таким количеством добавок можно было только с применением ферментов, поэтому в конце 1950-х — начале 1960-х были открыты заводы по производству ферментных препаратов в запорожье и львове, что позволило увеличить количество применяемых несоложёных продуктов до 30–50% (прежде всего в «жигулёвском»пиве.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;Львиную долю пива продавали в розлив (как и до войны, хотя в Российской империи всё было наоборот), бутылочного пива выпускали мало, и лидировала в этом деле Прибалтика. Основной объём пива приходился на сорт «Жигулёвское», в отдельных случаях оно занимало до 90% всего объёма производимого пива.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;В это же время в пивоварении стали в очень широких пределах внедрять несоложёное сырье— ячмень, рис, кукурузу, сою, пшеницу, различные типа сахара. Это позволяло создавать различные вкусовые профили, которые стали неотъемлемой частью рецептуры советского пива. затирать сусло с таким количеством добавок можно было только с применением ферментов, поэтому в  конце 1950-х — начале 1960-х были открыты заводы по производству ферментных препаратов в Запорожье и Львове, что позволило увеличить количество применяемых несоложёных продуктов до 30–50% (прежде всего в «Жигулёвском»пиве.&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>СССР
+22
+	
+После войны началось восстановление разрушенного хозяйства. За 1930-е годы производство пива увеличилось в СССР в три раза, но в 1946 году оно составляло менее половины от производства 1940-го.
+Серьёзные изменения произошли только во времена хрущевской оттепели. В то время вместо ГОСТа на пиво ввели республиканские стандарты, что многократно увеличило количество сортов советского пива. Многие крупные заводы вводили свои собственные ВТУ (временные технические условия). Количественное разнообразие новых сортов далеко превысило сотню. Кроме РСФСР, особенно много сортов было в УССР, БССР, Прибалтике — обычно они носили названия республик, исторических областей, столиц и городов с пивоваренными традициями. 
+Вот несколько наиболее интересных сортов, которые начали выпускать в то время: «Таёжное» и «Магаданское» производили с использованием экстракта хвои, а эстонское «Кадака» — с можжевельником, «Переяславское» и «Роменское праздничное» — с мёдом, а «Любительское» — с 50% несоложёной пшеницы.</text>
+		</slide>
+		<slide index="22" title="СССР" titleNormalized="ссср" src="slide23.swf" size="48727" advanceOnTime="0" framesCount="1010" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset22">
+			<sounds>
+				<sound id="sound30" soundAssetId="sndAsset26" hasTriggerEffects="1" slides="1" repeat="1" volume="0.8000000" effect="0"/>
+			</sounds>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="612" playTime="25.5000000"/>
+				<step start="613" end="1009" playTime="14.2500000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes>С середины 1960-х бутылочное пиво уже начало преобладать над разливным, его обычно не пастеризовали, а стойкость была в районе семи суток. Но на деле стойкость не достигала и трёх суток, поскольку пивзаводы могли себе это позволить — на прилавках пиво не залёживалось. 
+
+
+В это же время в пивоварении стали в очень широких пределах внедрять несоложёное сырье— ячмень, рис, кукурузу, сою, пшеницу, различные типа сахара. Это позволяло создавать различные вкусовые профили, которые стали неотъемлемой частью рецептуры советского пива. затирать сусло с таким количеством добавок можно было только с применением ферментов, поэтому в  конце 1950-х — начале 1960-х были открыты заводы по производству ферментных препаратов в Запорожье и Львове, что позволило увеличить количество применяемых несоложёных продуктов до 30–50% (прежде всего в «Жигулёвском»пиве.</notes>
+			<notesNormalized>с середины 1960-х бутылочное пиво уже начало преобладать над разливным, его обычно не пастеризовали, а стойкость была в районе семи суток. но на деле стойкость не достигала и трёх суток, поскольку пивзаводы могли себе это позволить — на прилавках пиво не залёживалось. 
+
+
+в это же время в пивоварении стали в очень широких пределах внедрять несоложёное сырье— ячмень, рис, кукурузу, сою, пшеницу, различные типа сахара. это позволяло создавать различные вкусовые профили, которые стали неотъемлемой частью рецептуры советского пива. затирать сусло с таким количеством добавок можно было только с применением ферментов, поэтому в конце 1950-х — начале 1960-х были открыты заводы по производству ферментных препаратов в запорожье и львове, что позволило увеличить количество применяемых несоложёных продуктов до 30–50% (прежде всего в «жигулёвском»пиве.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;С середины 1960-х бутылочное пиво уже начало преобладать над разливным, его обычно не пастеризовали, а стойкость была в районе семи суток. Но на деле стойкость не достигала и трёх суток, поскольку пивзаводы могли себе это позволить — на прилавках пиво не залёживалось. &lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font size="12"&gt;В это же время в пивоварении стали в очень широких пределах внедрять несоложёное сырье— ячмень, рис, кукурузу, сою, пшеницу, различные типа сахара. Это позволяло создавать различные вкусовые профили, которые стали неотъемлемой частью рецептуры советского пива. затирать сусло с таким количеством добавок можно было только с применением ферментов, поэтому в  конце 1950-х — начале 1960-х были открыты заводы по производству ферментных препаратов в Запорожье и Львове, что позволило увеличить количество применяемых несоложёных продуктов до 30–50% (прежде всего в «Жигулёвском»пиве.&lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>СССР
+23
+	
+В 1978 г. в Москве был запущен завод Очаково, для обеспечения участников и гостей Олимпиады-80 пивом и безалкогольными напитками. А В 1980 г. специально в честь Олимпийских Игр было выпущено первое баночное пиво «Золотое кольцо».
+Пиво в СССР старались выбродить полностью, но технологии того времени (прежде всего применяемые расы дрожжей) не позволяли этого сделать, так что при одинаковой начальной плотности, сорта советского пива всегда были менее крепкие, чем современные — и это при очень значительных сроках дображивая, вплоть до 100 суток, как у «Столичного». В Москве возродили дореволюционный «Двойной золотой ярлык» под названием «Двойное золотое», чуть позже начали варить плотные светлые «Нашу марка» и «Москворецкое», плотное тёмное «Останкинское». В Хамовниках варили «Лёгкое» пиво в традиционной русской стилистике невыброженного кваса.
+По всему же Союзу единственным массовым чистосолодовым сортом было «Рижское». Но на смену ему уже ближе к 1970-м стали внедрять «Славянское». 
+Из последних ГОСТов на солод исчез «жигулевский» («венский») солод, и «Жигулёвское» утратило свой «венский» характер, а из-за значительного количества несоложёных продуктов и сокращении времени дображивания до 14-ти и даже до 11-ти суток сорт превратился в самый непритязательный.</text>
+		</slide>
+		<slide index="23" title="Новая Россия" titleNormalized="новая россия" src="slide24.swf" size="116899" advanceOnTime="0" framesCount="853" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset23">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="852" playTime="35.5000000" pauseTime="11.5000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Новая Россия
+Балтика Пивоваренный завод «Балтика» в Санкт-Петербурге начал производство в 1990 году. В апреле 2008 года «Балтика» вошла в международную группу Carlsberg. Продукция предприятий: Carlsberg, Балтика, Tuborg, Kronenbourg 1664, Asahi Super Dry, Невское, Žatecký Gus.
+24
+«САБМиллер РУС» Основана в 1998 году как «Калужская пивоваренная компания» для выпуска премиальных сортов пива дочерняя компания SABMiller в России. Продукция: Miller, Holsten, Золотая бочка, Три богатыря, Velkopopovicky Kozel, Pilsner Urquell.
+Клинский пивокомбинат был введен в строй в 1975 г. В 1999 г. Клинский пивокомбинат стал частью компании SUN InBev (российское подразделение пивоваренной корпорации AB InBev). Продукция заводов: Клинское, Сибирская корона, Hoegaarden, Lowenbrau, Staropramen, Stella Artois, BUD, Тинькофф Авторское, Толстяк и Bagbier.</text>
+		</slide>
+		<slide index="24" title="Новая Россия" titleNormalized="новая россия" src="slide25.swf" size="97200" advanceOnTime="0" framesCount="853" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset24">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="852" playTime="35.5000000" pauseTime="15.7999992"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Новая Россия
+Efes В России компания EFES работает с 1999 г., и первая бутылка пива «Старый Мельник» на «Пивоварне Москва – Эфес» сошла с конвейера 7 июня 1999 г. Продукция: Старый мельник, Белый медведь, Эфес, Zlatopramen, Bavaria Premium.
+
+25
+Heineken - Нидерландская компания работает с 2002 года в России. В 2005 году пив. завод имени Степана Разина вошел в ГК Heineken в России. Продукция: Heineken, Amstel, Edelweiss, Guinness Original, Бочкарёв, ПИТ, Охота, Степан Разин, Три медведя, Zlatý Bažant, Gösser.
+В 1998 г. основана Пивоварня Ивана Таранова (ПИТ). История началась с 1992 года, когда начала работать дистрибьюторская компания North Winds Brewing Co., импортирующая пиво в Россию и другие страны СНГ. В течение 6 лет NWB успешно занималась импортом, налаживая сильную дистрибьюторскую сеть, и активно готовилась к выводу на рынок собственных марок. Были приобретены пивоваренные заводы в Калининграде и Новотроицке.</text>
+		</slide>
+		<slide index="25" title="Новая Россия" titleNormalized="новая россия" src="slide26.swf" size="90735" advanceOnTime="0" framesCount="85" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset25">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="84" playTime="3.5000000" pauseTime="25.3999996"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Новая Россия
+26
+ЗАО Московская Пивоваренная Компания 2006 г. начало строительства, в 2008 г. запуск первой очереди немецкого пива OeTTINGER. 2009 г. Начало производства собственных брендов «Жигули Барное», «Моспиво», «Москвас», пива Červena Selka. Старт производства датского пива FAXE Premium.</text>
+		</slide>
+		<slide index="26" title="Статистика. Потребление пива" titleNormalized="статистика. потребление пива" src="slide27.swf" size="66132" advanceOnTime="0" framesCount="361" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset26">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="360" playTime="15.0000000" pauseTime="9.3500004"/>
+			</animationSteps>
+			<notes>Сережа вопрос в том как правильно посчитать Европу, потому как в списке не все страны, что входят в нее. </notes>
+			<notesNormalized>сережа вопрос в том как правильно посчитать европу, потому как в списке не все страны, что входят в нее.</notesNormalized>
+			<notesHtml>&lt;p&gt;&lt;font size="12"&gt;Сережа вопрос в том как правильно посчитать Европу, потому как в списке не все страны, что входят в нее. &lt;/font&gt;&lt;/p&gt;</notesHtml>
+			<text>Статистика. Потребление пива
+27
+Компания «Euromonitor International» опубликовала результаты исследования глобального пивного рынка. Количество пива, потребляемого на душу населения, выглядит так:
+77 л
+74 л
+23 л
+83 л
+68 л
+61 л
+83 л
+1. Чехия: 143 л;
+2. Германия: 110 л;
+3. Австрия: 108 л;
+4. Эстония: 104 л;
+5. Польша: 100 л;
+6. Ирландия: 93 л;
+7. Румыния: 90 л;
+8. Литва: 89 л;
+9. Хорватия: 82 л;
+10. Бельгия: 81 л;
+14. США: 77 л;
+17. Россия: 74 л;
+50. Китай: 23 л.</text>
+		</slide>
+		<slide index="27" title="Статистика. Производство пива в мире" titleNormalized="статистика. производство пива в мире" src="slide28.swf" size="54127" advanceOnTime="0" framesCount="49" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset27">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="48" playTime="2.0000000" pauseTime="26.2000008"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Статистика. Производство пива в мире 
+28</text>
+		</slide>
+		<slide index="28" title="" titleNormalized="" src="slide29.swf" size="22976" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="0" thumbnailAssetId="imgAsset28">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Тест
+Щелкните кнопку Тест для редактирования этого теста</text>
+		</slide>
+	</slides>
+</presentation>
