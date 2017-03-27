@@ -21,10 +21,10 @@ app.get('/api/scorm/manifest/:id', (req, res) => {
 });
 
 app.get('/api/scorm/results', (req, res) => {
-  console.log('get request, Responce:', cache.cmi);
+  console.log('get request, Responce:', cache);
   res.set("Access-Control-Allow-Origin", "*");  // becouse of PORT difference..
   res.set('Content-Type', 'text/plain');
-  res.send(JSON.stringify(cache.cmi));
+  res.send(JSON.stringify(cache));
   res.end();
 });
 

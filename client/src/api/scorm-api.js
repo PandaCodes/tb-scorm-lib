@@ -63,7 +63,7 @@ export default {
         fetch(dataUrl, {
           method: 'POST',
           body: JSON.stringify({
-            cmi: storeCmi ? cmi.getJSONString() : '',
+            cmiString: storeCmi ? cmi.getJSONString() : '',
             results: cmi.getResults(),
           }),
         })
@@ -74,10 +74,9 @@ export default {
     const loadCmi = dataUrl ?
       fetch(dataUrl)
       .then(responce => responce.json())
-      .then(json => JSON.parse(json))
-      .then((storedCmi) => {
-        log('Fetched cmi from server', storedCmi);
-        cmi.load(storedCmi);
+      .then((json) => {
+        log('Fetched info from server', json);
+        cmi.restore(json.cmiString, json.data);
       })
       .catch(log)
       : Promise.resolve();

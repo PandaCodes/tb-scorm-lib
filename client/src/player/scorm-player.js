@@ -47,10 +47,13 @@ export default {
         // <imsss:sequencing>
         const manifestTag = manifest.getElementsByTagName('manifest')[0];
         const imsssNS = manifestTag ? manifestTag.getAttribute('xmlns:imsss') : '';
+        const adlcpNS = manifestTag ? manifestTag.getAttribute('xmlns:adlcp') : '';
         const sequencingTag = items[0] ? items[0].getElementsByTagNameNS(imsssNS, 'sequencing')[0] : null;
         const objectivesTag = sequencingTag ? sequencingTag.getElementsByTagNameNS(imsssNS, 'objectives')[0] : null;
         let objectives = objectivesTag ? objectivesTag.getElementsByTagNameNS(imsssNS, 'objective') : [];
         objectives = [].map.call(objectives, obj => ({ id: obj.getAttribute('objectiveID') }));
+        const dataFromLmsTag = items[0] ? items[0].getElementsByTagNameNS(adlcpNS, 'datafromlms')[0] : null;
+        const launch_data = dataFromLmsTag ? dataFromLmsTag.childNodes[0].nodeValue : null;
 
         // Schema version
         const sv = manifest.getElementsByTagName('schemaversion')[0].childNodes[0].nodeValue;
@@ -59,8 +62,8 @@ export default {
 
         return scormApi.init(Object.assign({}, options, {
           schemaVersion,
-          initModel: { objectives },
-          callbacks: { onTerminate: () => { iframe.src = ''; } }, // what if... (check time sequencing)
+          initModel: { objectives, launch_data },
+          callbacks: { onTerminate: () => { iframe.src = ''; } }, // todo: what if... (check time sequencing)
         })).then(() => {
           const firstIdRef = items[0].getAttribute('identifierref');
           const firstRes = [].find.call(resources, res => res.getAttribute('identifier') === firstIdRef);
