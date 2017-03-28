@@ -61,6 +61,10 @@ export default {
     const post = dataUrl
       ? (storeCmi = true) =>
         fetch(dataUrl, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credintials: 'include', // todo: check location 'omit'
           method: 'POST',
           body: JSON.stringify({
             cmiString: storeCmi ? cmi.getJSONString() : '',
