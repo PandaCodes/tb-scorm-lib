@@ -22,8 +22,10 @@ app.get('/api/scorm/manifest/:id', (req, res) => {
 
 app.get('/api/scorm/results', (req, res) => {
   console.log('get request, Responce:', cache);
+  res.set('Access-Control-Allow-Methods', '*');
+  res.set('Access-Control-Allow-Headers', '*');
   res.set("Access-Control-Allow-Origin", "*");  // becouse of PORT difference..
-  res.set('Content-Type', 'text/plain');
+  res.set('Content-Type', 'application/json');
   res.send(JSON.stringify(cache));
   res.end();
 });
@@ -31,6 +33,8 @@ app.get('/api/scorm/results', (req, res) => {
 app.post('/api/scorm/results', (req, res) => {
   cache = JSON.parse(req.body);
   console.log('got post request', cache);
+  res.set('Access-Control-Allow-Methods', '*');
+  res.set('Access-Control-Allow-Headers', '*');
   res.set("Access-Control-Allow-Origin", "*");  // becouse of PORT difference..
   res.end();
 });

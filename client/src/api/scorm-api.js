@@ -62,6 +62,7 @@ export default {
       ? (storeCmi = true) =>
         fetch(dataUrl, {
           headers: {
+            Accept: 'application/json',
             'Content-Type': 'application/json',
           },
           credintials: 'include', // todo: check location 'omit'
@@ -76,7 +77,7 @@ export default {
     cmi.init(schemaVersion, initModel);
 
     const loadCmi = dataUrl ?
-      fetch(dataUrl)
+      fetch(dataUrl, { headers: { Accept: 'application/json' } })
       .then(responce => responce.json())
       .then((json) => {
         log('Fetched info from server', json);
