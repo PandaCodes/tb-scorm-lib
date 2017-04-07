@@ -58,14 +58,17 @@ export default {
       }
     };
     // Post - store cmi && results if the dataUrl is present
+    const sameHost = dataUrl && dataUrl.substr(location.host) > -1;
     const post = dataUrl
       ? (storeCmi = true) =>
         fetch(dataUrl, {
-          headers: {
+          headers: sameHost
+          ? {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-          },
-          credintials: 'include', // todo: check location 'omit'
+          }
+          : {},
+          credintials: sameHost ? 'include' : 'omit',
           method: 'POST',
           body: JSON.stringify({
             cmiString: storeCmi ? cmi.getJSONString() : '',

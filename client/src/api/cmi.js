@@ -20,37 +20,71 @@ const cmiDefault = {
     'cmi.completion_status': 'unknown',
     'cmi.location': '',
     // 'cmi.interactions._count': '0',
-    //'cmi.objectives._count': '4',
   },
 };
 const cmiNames = {
   1.2: {
     enry: 'cmi.core.entry',
     exit: 'cmi.core.exit',
+    learner_id: 'cmi.core.student_id',
+    learner_name: 'cmi.core.student_name',
+    max_time_allowed: 'cmi.max_time_allowed',
+    passing_score: 'cmi.student_data.mastery_score',
     score_raw: 'cmi.core.score.raw',
     score_max: 'cmi.core.score.max',
     score_min: 'cmi.core.score.min',
     session_time: 'cmi.core.session_time',
+    time_limit_action: 'cmi.student_data.time_limit_action',
     total_time: 'cmi.core.total_time',
   },
   2004: {
     entry: 'cmi.entry',
     exit: 'cmi.exit',
+    learner_id: 'cmi.learner_id',
+    learner_name: 'cmi.learner_name',
+    max_time_allowed: 'cmi.student_data.max_time_allowed',
+    passing_score: 'cmi.scaled_passing_score',
     score_raw: 'cmi.score.raw',
     score_max: 'cmi.score.max',
     score_min: 'cmi.score.min',
     session_time: 'cmi.session_time',
+    time_limit_action: 'cmi.time_limit_action',
     total_time: 'cmi.total_time',
   },
 };
 
-const createModel = ({ objectives, launch_data, total_time }) => {
+const createModel = ({
+  objectives,
+  launchData,
+  scaledPassingScore,
+  masteryScore,
+  completionThreshold,
+  timeLimitAction,
+  total_time,
+  learner_id,
+  learner_name,
+}) => {
   const model = {};
+  if (completionThreshold && schema === '2004') {
+    model['cmi.completion_threshold'] = completionThreshold;
+  }
+  if (timeLimitAction) {
+    model[cmiNames[schema].time_limit_action] = timeLimitAction;
+  }
+  if (learner_id) {
+    model[cmiNames[schema].learner_id] = learner_id;
+  }
+  if (learner_name) {
+    model[cmiNames[schema].learner_name] = learner_name;
+  }
   if (total_time) {
     model[cmiNames[schema].total_time] = total_time;
   }
-  if (launch_data) {
-    model['cmi.launch_data'] = launch_data;
+  if (launchData) {
+    model['cmi.launch_data'] = launchData;
+  }
+  if (scaledPassingScore || masteryScore) {
+    model[cmiNames[schema].passing_score] = scaledPassingScore || masteryScore;
   }
   // objectives
   if (objectives && Array.isArray(objectives)) {
@@ -79,16 +113,16 @@ export const set = (name, value) => { cmi[name] = value; };
 
 export const getResults = () => {
   const cmiN = cmiNames[schema];
-  let completion_status;
-  let success_status;
+  let completionStatus;
+  let successStatus;
   if (schema === '1.2') {
-    completion_status = ['completed', 'incomplete', 'not attempted']
+    completionStatus = ['completed', 'incomplete', 'not attempted']
       .indexOf(cmi['cmi.core.completion_status']) >= 0 ? cmi['cmi.core.lesson_status'] : 'unknown';
-    success_status = ['passed', 'failed']
+    successStatus = ['passed', 'failed']
       .indexOf(cmi['cmi.core.lesson_status']) >= 0 ? cmi['cmi.core.lesson_status'] : 'unknown';
   } else {
-    completion_status = cmi['cmi.completion_status'];
-    success_status = cmi['cmi.success_status'];
+    completionStatus = cmi['cmi.completion_status'];
+    successStatus = cmi['cmi.success_status'];
   }
   return {
     score_raw: cmi[cmiN.score_raw],
@@ -96,8 +130,8 @@ export const getResults = () => {
     score_min: cmi[cmiN.score_min],
     session_time: cmi[cmiN.session_time],
     total_time: cmi[cmiN.total_time],
-    success_status,
-    completion_status,
+    success_status: successStatus,
+    completion_status: completionStatus,
   };
 };
 
