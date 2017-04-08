@@ -54,7 +54,33 @@ const cmiNames = {
   },
 };
 
-const createModel = ({
+function parseTime() {
+  let time = cmi[cmiNames[schema].session_time];
+  if (schema === '1.2') {
+    return time.split(':').reduceRight((accT, t) => (accT * 1) + (t * 60));
+  }
+  time = time.slice(2);
+  let h = 0;
+  let m = 0;
+  let s = 0;
+  const hi = time.indexOf('H');
+  if (hi > -1) {
+    h = time.slice(0, hi);
+    time = time.slice(hi + 1);
+  }
+  const mi = time.indexOf('M');
+  if (mi > -1) {
+    m = time.slice(0, mi);
+    time = time.slice(mi + 1);
+  }
+  const si = time.indexOf('S');
+  if (si > -1) {
+    s = time.slice(0, si);
+  }
+  return (h * 3600) + (m * 60) + (s * 1);
+}
+
+function createModel({
   objectives,
   launchData,
   scaledPassingScore,
@@ -65,7 +91,7 @@ const createModel = ({
   totalTime,
   learnerId,
   learnerName,
-}) => {
+}) {
   const model = {};
   if (completionThreshold && schema === '2004') {
     model['cmi.completion_threshold'] = completionThreshold;
@@ -98,25 +124,25 @@ const createModel = ({
     objectives.map((obj, i) => { model[`cmi.objectives.${i}.id`] = obj.id; return null; });
   }
   return model;
-};
+}
 
-export const init = (schemaVersion, initModel) => {
+export function init(schemaVersion, initModel) {
   schema = schemaVersion === '1.2' ? '1.2' : '2004';
 
   const cmiInit = createModel(initModel);
   cmi = Object.assign({}, cmiDefault[schema], cmiInit);
-};
+}
 
 // load from string + additional data
-export const restore = (storedCmiString = '', data = {}) => {
-  // there everything we need?
-  cmi = Object.assign({}, JSON.parse(storedCmiString), createModel(data));
-};
+export function restore(storedCmiString = '', data = {}) {
+  // is there everything we need?
+  cmi = Object.assign({}, JSON.parse(storedCmiString), createModel({ totalTime: data.total_time }));
+}
 
 export const get = name => cmi[name];
 export const set = (name, value) => { cmi[name] = value; };
 
-export const getResults = () => {
+export function getResults() {
   const cmiN = cmiNames[schema];
   let completionStatus;
   let successStatus;
@@ -138,15 +164,15 @@ export const getResults = () => {
     score_raw: cmi[cmiN.score_raw],
     score_max: cmi[cmiN.score_max],
     score_min: cmi[cmiN.score_min],
-    session_time: cmi[cmiN.session_time],
+    session_time: parseTime(),
     total_time: cmi[cmiN.total_time],
     success_status: successStatus,
     completion_status: completionStatus,
   };
-};
+}
 
 
-export const exit = () => {
+export function exit() {
   let save;
   switch (cmi[cmiNames[schema].exit]) {
     case '' :
@@ -165,7 +191,7 @@ export const exit = () => {
       break;
   }
   return { save };
-};
+}
 
 export const getJSONString = () => JSON.stringify(cmi);
 

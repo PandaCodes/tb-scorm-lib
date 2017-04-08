@@ -22,7 +22,7 @@ const log = (...args) => {
 
 function getValueIn(node, tagName, namespace) {
   if (!node) return null;
-  const tag = ns
+  const tag = namespace
     ? node.getElementsByTagNameNS(namespace, tagName)[0]
     : node.getElementsByTagName(tagName)[0];
   return tag
