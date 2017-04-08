@@ -22,6 +22,7 @@ const valueNameSecurityCheck = (name) => {
   error = name.search(valueNameSecurityCheckRe) === 0 ? 0 : 401;
   return error === 0;
 };
+// TODO
 const valueNameReadOnlyCheck = (name) => {
   error = 0;
   if (stringEndsWith(name, '._children')) {
@@ -134,13 +135,7 @@ export default {
         log('LMS Terminate');
         if (!stateCheck(112, 113)) return 'false';
 
-        // ugly? TODO: to think
-        if (cmi.exit() === '') { post(false).catch(log); }
-        if (cmi.exit() === 'suspend' || cmi.exit() === 'time-out') {
-          cmi.entry('resume');
-          post().catch(log);
-        }
-        // other? TODO
+        post(cmi.exit().save).catch(log);
 
         let callbackResult = 'true';
         if (callbacks && callbacks.onTerminate) { callbackResult = callbacks.onTerminate(); }
@@ -177,7 +172,7 @@ export default {
         if (!valueNameSecurityCheck(name)) return 'false';
         if (!valueNameReadOnlyCheck(name)) return 'false';
 
-        // TODO: _children
+        // TODO: _children + R/W permissions
         cmi.set(name, value);
         return 'true';
       };

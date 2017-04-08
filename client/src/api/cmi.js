@@ -19,6 +19,7 @@ const cmiDefault = {
     'cmi.success_status': 'unknown',
     'cmi.completion_status': 'unknown',
     'cmi.location': '',
+    'cmi.total_time': 0,
     // 'cmi.interactions._count': '0',
   },
 };
@@ -60,25 +61,29 @@ const createModel = ({
   masteryScore,
   completionThreshold,
   timeLimitAction,
-  total_time,
-  learner_id,
-  learner_name,
+  maxTimeAllowed,
+  totalTime,
+  learnerId,
+  learnerName,
 }) => {
   const model = {};
   if (completionThreshold && schema === '2004') {
     model['cmi.completion_threshold'] = completionThreshold;
   }
+  if (maxTimeAllowed) {
+    model[cmiNames[schema].max_time_allowed] = maxTimeAllowed;
+  }
   if (timeLimitAction) {
     model[cmiNames[schema].time_limit_action] = timeLimitAction;
   }
-  if (learner_id) {
-    model[cmiNames[schema].learner_id] = learner_id;
+  if (learnerId) {
+    model[cmiNames[schema].learner_id] = learnerName;
   }
-  if (learner_name) {
-    model[cmiNames[schema].learner_name] = learner_name;
+  if (learnerName) {
+    model[cmiNames[schema].learner_name] = learnerName;
   }
-  if (total_time) {
-    model[cmiNames[schema].total_time] = total_time;
+  if (totalTime) {
+    model[cmiNames[schema].total_time] = totalTime;
   }
   if (launchData) {
     model['cmi.launch_data'] = launchData;
@@ -116,8 +121,13 @@ export const getResults = () => {
   let completionStatus;
   let successStatus;
   if (schema === '1.2') {
-    completionStatus = ['completed', 'incomplete', 'not attempted']
-      .indexOf(cmi['cmi.core.completion_status']) >= 0 ? cmi['cmi.core.lesson_status'] : 'unknown';
+    if (['browsed', 'incomplete', 'failed'].indexOf(cmi['cmi.core.completion_status']) >= 0) {
+      completionStatus = 'incomplete';
+    } else if (['passed', 'completed'].indexOf(cmi['cmi.core.completion_status']) >= 0) {
+      completionStatus = 'completed';
+    } else {
+      completionStatus = 'unknown';
+    }
     successStatus = ['passed', 'failed']
       .indexOf(cmi['cmi.core.lesson_status']) >= 0 ? cmi['cmi.core.lesson_status'] : 'unknown';
   } else {
@@ -136,13 +146,26 @@ export const getResults = () => {
 };
 
 
-export const exit = () => cmi[cmiNames[schema].exit];
-export const entry = (value) => {
-  if (['ab-initio', 'resume', ''].indexOf(value) >= 0) {
-    cmi[cmiNames[schema].entry] = value;
-    return value;
+export const exit = () => {
+  let save;
+  switch (cmi[cmiNames[schema].exit]) {
+    case '' :
+      save = false;
+      break;
+    case 'suspend':
+    case 'logout':
+      cmi[cmiNames[schema].entry] = 'resume';
+      save = true;
+      break;
+    case 'normal':
+    case 'time-out':
+    default:
+      cmi[cmiNames[schema].entry] = '';
+      save = true;
+      break;
   }
-  return cmi[cmiNames[schema].entry];
+  return { save };
 };
 
 export const getJSONString = () => JSON.stringify(cmi);
+

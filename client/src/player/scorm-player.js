@@ -20,47 +20,54 @@ const log = (...args) => {
   }
 };
 
+function getValueIn(node, tagName, namespace) {
+  if (!node) return null;
+  const tag = ns
+    ? node.getElementsByTagNameNS(namespace, tagName)[0]
+    : node.getElementsByTagName(tagName)[0];
+  return tag
+    ? tag.childNodes[0].nodeValue
+    : null;
+}
 
-const parseItem = (item) => {
+function parseSequencing(item) {
   const sequencingTag = item ? item.getElementsByTagNameNS(ns.imsss, 'sequencing')[0] : null;
   const objectivesTag = sequencingTag ? sequencingTag.getElementsByTagNameNS(ns.imsss, 'objectives')[0] : null;
+  const primaryObjective = objectivesTag ? objectivesTag.getElementsByTagNameNS(ns.imsss, 'primaryObjective')[0] : null;
   const objectiveTags = objectivesTag ? objectivesTag.getElementsByTagNameNS(ns.imsss, 'objective') : [];
   const objectives = [].map.call(objectiveTags, obj => ({ id: obj.getAttribute('objectiveID') }));
-  const primaryObjective = objectivesTag ? objectivesTag.getElementsByTagNameNS(ns.imsss, 'primaryObjective')[0] : null;
-
-  const dataFromLmsTag = item ? item.getElementsByTagNameNS(ns.adlcp, 'dataFromLMS')[0] : null;
-  const launchData = dataFromLmsTag ? dataFromLmsTag.childNodes[0].nodeValue : null;
-  const timeLimitActionTag = item ? item.getElementsByTagNameNS(ns.adlcp, 'timeLimitAction')[0] : null;
-  const timeLimitAction = timeLimitActionTag ? timeLimitActionTag.childNodes[0].nodeValue : null;
 
   // v.2004
-  const completionThresholdTag = item ? item.getElementsByTagNameNS(ns.adlcp, 'completionThreshold')[0] : null;
-  const completionThreshold = completionThresholdTag ? completionThresholdTag.childNodes[0].nodeValue : null;
-  const minNormalizedMeasureTag = primaryObjective
-    ? primaryObjective.getElementsByTagNameNS(ns.imsss, 'minNormalizedMeasure')[0]
-    : null;
-  const scaledPassingScore = minNormalizedMeasureTag
-    ? minNormalizedMeasureTag.childNodes[0].nodeValue
-    : null;
-  // v.1.2
-  const masteryScoreTag = item ? item.getElementsByTagNameNS(ns.adlcp, 'masteryscore')[0] : null;
-  const masteryScore = masteryScoreTag
-    ? masteryScoreTag.childNodes[0].nodeValue
-    : null;
-  const maxTimeAllowedTag = item ? item.getElementsByTagNameNS(ns.adlcp, 'maxTimeAllowed')[0] : null;
-  const maxTimeAllowed = maxTimeAllowedTag
-    ? maxTimeAllowedTag.childNodes[0].nodeValue
-    : null;
+  const scaledPassingScore = getValueIn(primaryObjective, 'minNormalizedMeasure', ns.imsss);
+  // TODO: maxTimeAllowed
+  const limitConditionsTag = sequencingTag ? sequencingTag.getElementsByTagNameNS(ns.imsss, 'limitConditions')[0] : null;
+  const maxTimeAllowed = limitConditionsTag ? limitConditionsTag.getAttribute('attemptAbsoluteDurationLimit') : null;
   return {
+    scaledPassingScore,
+    objectives,
+    maxTimeAllowed,
+  };
+}
+
+function parseItem(item) {
+  const launchData = getValueIn(item, 'dataFromLMS', ns.adlcp);
+  const timeLimitAction = getValueIn(item, 'timeLimitAction', ns.adlcp);
+
+  // v.2004
+  const completionThreshold = getValueIn(item, 'completionThreshold', ns.adlcp);
+
+  // v.1.2
+  const masteryScore = getValueIn(item, 'masteryscore', ns.adlcp);
+  const maxTimeAllowed = getValueIn(item, 'maxTimeAllowed', ns.adlcp);
+
+  return Object.assign({
     timeLimitAction,
     maxTimeAllowed,
-    scaledPassingScore,
     masteryScore,
     completionThreshold,
-    objectives,
     launchData,
-  };
-};
+  }, parseSequencing(item));
+}
 
 export default {
   init(wrapper, rootUrl, options) {
@@ -82,7 +89,7 @@ export default {
         // Find version info and load API
 
         // Schema version
-        const sv = manifest.getElementsByTagName('schemaversion')[0].childNodes[0].nodeValue;
+        const sv = getValueIn(manifest, 'schemaversion');
         log('Schema version', sv);
         const schemaVersion = sv === '1.2' || sv === '1.1' ? '1.2' : '2004';
 
