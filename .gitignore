@@ -5,3 +5,4 @@ npm-debug.log
 /client/dist/resources/*
 !/client/dist/resources/advancedCalls2004
 !/client/dist/resources/beerHistory
+default

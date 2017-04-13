@@ -14,8 +14,20 @@ let error = 0;
 
 const valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 
-export const stringEndsWith = (str, suffix) =>
+const stringEndsWith = (str, suffix) =>
   str.length >= suffix.length && str.substr(str.length - suffix.length) === suffix;
+
+const isSameHost = (url) => {
+  if (!url) return false;
+  const matches = url.match(/^(?:https?:\/\/|\/\/)?([^\/]+)\//);
+  let domainport = matches && matches[1];
+  // if relative path
+  if (!domainport || domainport === '..' || domainport === '.') return true;
+  domainport = domainport.split(':');
+  if (window.location.hostname !== domainport[0]) return false;
+  if ((window.location.port || '80') !== (domainport[1] || '80')) return false;
+  return true;
+};
 
 // Check error functions
 const valueNameSecurityCheck = (name) => {
@@ -58,10 +70,12 @@ export default {
         console.log(...args);
       }
     };
+
     // Post - store cmi && results if the dataUrl is present
-    const sameHost = dataUrl && dataUrl.substr(location.host) > -1;
+    const sameHost = isSameHost(dataUrl);
+    log('Same host:', sameHost);
     const post = dataUrl
-      ? (storeCmi = true) =>
+      ? (storeCmi = true, sendResults = false) =>
         fetch(dataUrl, {
           headers: sameHost
           ? {
@@ -73,10 +87,10 @@ export default {
           method: 'POST',
           body: JSON.stringify({
             cmiString: storeCmi ? cmi.getJSONString() : '',
-            results: cmi.getResults(),
+            results: sendResults ? cmi.getResults() : null,
           }),
         })
-      : Promise.resolve;
+      : () => Promise.resolve();
 
     cmi.init(schemaVersion, initModel);
 
@@ -103,7 +117,7 @@ export default {
       if (typeof autoCommitInterval === 'number' && autoCommitInterval > 0) {
         log('Auto-commit enabled', setInterval);
         commitInterval = setInterval(() => {
-          console.log('Ai');// ?? TODO doesn't work(
+          // console.log('Ai');// ?? TODO doesn't work(
           /* const now = Date.now();
           if (now - lastCommit > autoCommitInterval * 1000) {
             API[fnms.Commit]();
@@ -135,7 +149,7 @@ export default {
         log('LMS Terminate');
         if (!stateCheck(112, 113)) return 'false';
 
-        post(cmi.exit().save).catch(log);
+        post(cmi.exit().save, true).catch(log);
 
         let callbackResult = 'true';
         if (callbacks && callbacks.onTerminate) { callbackResult = callbacks.onTerminate(); }
@@ -173,6 +187,7 @@ export default {
         if (!valueNameReadOnlyCheck(name)) return 'false';
 
         // TODO: _children + R/W permissions
+        // TODO: dpecial model interactions
         cmi.set(name, value);
         return 'true';
       };

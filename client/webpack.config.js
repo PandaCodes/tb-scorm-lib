@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 
-const libraryName = 'scormRte';
+const libraryName = 'scormRTE';
 
 module.exports = {
   entry: {

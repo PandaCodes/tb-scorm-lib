@@ -1,6 +1,7 @@
 // import 'whatwg-fetch';
 // import 'promise-polyfill';
 import scormApi from '../api/scorm-api';
+// import * as p from './deep-node-parser';
 
 const errorStrings = {
   PARSE_XML: 'Error occured while parsing imsmanifest.xml',
@@ -20,6 +21,7 @@ const log = (...args) => {
   }
 };
 
+// todo: agName = array, namespaces = :
 function getValueIn(node, tagName, namespace) {
   if (!node) return null;
   const tag = namespace
@@ -71,12 +73,13 @@ function parseItem(item) {
 
 export default {
   init(wrapper, rootUrl, options) {
+    // todo: debug parameters
     iframe = document.createElement('iframe');
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     document.getElementById(wrapper).appendChild(iframe);
     debug = options.debug;
-    return fetch(`${rootUrl}/imsmanifest.xml`)
+    return fetch(`${rootUrl}${rootUrl[rootUrl.length + 1] === '/' ? '' : '/'}imsmanifest.xml`)
       .then(responce => responce.text().then((xmlText) => {
         const parser = new DOMParser();
         // opera mini works bad with parseFromString
@@ -94,6 +97,10 @@ export default {
         const schemaVersion = sv === '1.2' || sv === '1.1' ? '1.2' : '2004';
 
         // namespaces
+        /* p.addNamespaces({
+          imsss: p.getAttributeIn(manifest, 'manifest', 'xmlns:imsss'),
+          adlcp: p.getAttributeIn(manifest, 'manifest', 'xmlns:adlcp')
+        });*/
         const manifestTag = manifest.getElementsByTagName('manifest')[0];
         ns.imsss = manifestTag ? manifestTag.getAttribute('xmlns:imsss') : '';
         ns.adlcp = manifestTag ? manifestTag.getAttribute('xmlns:adlcp') : '';
