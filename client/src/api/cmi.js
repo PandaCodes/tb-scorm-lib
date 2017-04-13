@@ -6,20 +6,23 @@ let schema = '2004';
 const cmiDefault = {
   1.2: {
     'cmi.core.lesson_mode': 'normal',
-    // 'cmi.core.credit': 'credit',
+    'cmi.core.credit': 'credit',
     'cmi.core.entry': 'ab-initio',
     'cmi.core.lesson_status': 'not attempted',
     'cmi.core.lesson_location': '',
+    'cmi.core.total_time': 0,
+    'cmi.student_data.time_limit_action': 'continue,no message',
   },
   2004: {
     'cmi._version': pkg.version,
     'cmi.mode': 'normal',
-    // 'cmi.credit': 'credit',
+    'cmi.credit': 'credit',
     'cmi.entry': 'ab-initio',
     'cmi.success_status': 'unknown',
     'cmi.completion_status': 'unknown',
     'cmi.location': '',
     'cmi.total_time': 0,
+    'cmi.time_limit_action': 'continue,no message',
     // 'cmi.interactions._count': '0',
   },
 };
@@ -55,29 +58,12 @@ const cmiNames = {
 };
 
 function parseTime() {
-  let time = cmi[cmiNames[schema].session_time];
+  const time = cmi[cmiNames[schema].session_time];
   if (schema === '1.2') {
     return time.split(':').reduceRight((accT, t) => (accT * 1) + (t * 60));
   }
-  time = time.slice(2);
-  let h = 0;
-  let m = 0;
-  let s = 0;
-  const hi = time.indexOf('H');
-  if (hi > -1) {
-    h = time.slice(0, hi);
-    time = time.slice(hi + 1);
-  }
-  const mi = time.indexOf('M');
-  if (mi > -1) {
-    m = time.slice(0, mi);
-    time = time.slice(mi + 1);
-  }
-  const si = time.indexOf('S');
-  if (si > -1) {
-    s = time.slice(0, si);
-  }
-  return (h * 3600) + (m * 60) + (s * 1);
+  const [, h, m, s] = time.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)$/);
+  return ((h || 0) * 3600) + ((m || 0) * 60) + ((s || 0) * 1);
 }
 
 function createModel({
