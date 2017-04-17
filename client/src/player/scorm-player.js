@@ -123,4 +123,10 @@ export default {
         });
       }));
   },
+  next() {
+
+  },
+  prev() {
+
+  },
 };

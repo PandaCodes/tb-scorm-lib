@@ -56,6 +56,7 @@ const stateCheck = (errBefore, errAfter) => {
 export default {
   init({
     dataUrl,
+    postHeaders, // ?? TODO: is that bad?
     schemaVersion = '2004',
     debug = false,
     autoCommitInterval = -1, // in seconds
@@ -73,21 +74,24 @@ export default {
 
     // Post - store cmi && results if the dataUrl is present
     const sameHost = isSameHost(dataUrl);
+    const headers = sameHost
+      ? Object.assign({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }, postHeaders)
+      : postHeaders;
     log('Same host:', sameHost);
     const post = dataUrl
       ? (storeCmi = true, sendResults = false) =>
         fetch(dataUrl, {
-          headers: sameHost
-          ? {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          }
-          : {},
-          credintials: sameHost ? 'include' : 'omit',
+          headers,
+          credentials: 'same-origin',
           method: 'POST',
           body: JSON.stringify({
-            cmiString: storeCmi ? cmi.getJSONString() : '',
-            results: sendResults ? cmi.getResults() : null,
+            scorm_stat: {  // TODO: beauty
+              cmiString: storeCmi ? cmi.getJSONString() : '',
+              results: sendResults ? cmi.getResults() : null,
+            },
           }),
         })
       : () => Promise.resolve();
@@ -95,11 +99,15 @@ export default {
     cmi.init(schemaVersion, initModel);
 
     const loadCmi = dataUrl ?
-      fetch(dataUrl, { headers: { Accept: 'application/json' } })
+      fetch(dataUrl, {
+        headers: { Accept: 'application/json' },
+        credentials: 'same-origin',
+      })
       .then(responce => responce.json())
-      .then((json) => {
-        log('Fetched info from server', json);
-        cmi.restore(json.cmiString, json.data);
+      .then(json => json.scorm_stat)
+      .then((scormStat) => {
+        log('Fetched info from server', scormStat);
+        cmi.restore(scormStat.cmiString, scormStat.data);
       })
       .catch(log)
       : Promise.resolve();
