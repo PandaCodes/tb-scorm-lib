@@ -81,8 +81,9 @@ export default {
       }, postHeaders)
       : postHeaders;
     log('Same host:', sameHost);
+    log(dataUrl);
     const post = dataUrl
-      ? (storeCmi = true, sendResults = false) =>
+      ? (storeCmi = true) =>
         fetch(dataUrl, {
           headers,
           credentials: 'same-origin',
@@ -90,7 +91,7 @@ export default {
           body: JSON.stringify({
             scorm_stat: {  // TODO: beauty
               cmiString: storeCmi ? cmi.getJSONString() : '',
-              results: sendResults ? cmi.getResults() : null,
+              results: cmi.getResults(),
             },
           }),
         })
@@ -157,7 +158,7 @@ export default {
         log('LMS Terminate');
         if (!stateCheck(112, 113)) return 'false';
 
-        post(cmi.exit().save, true).catch(log);
+        post(cmi.exit().save).catch(log);
 
         let callbackResult = 'true';
         if (callbacks && callbacks.onTerminate) { callbackResult = callbacks.onTerminate(); }
@@ -206,7 +207,7 @@ export default {
 
         // TODO: Errors (like "Bad connection, sorry..")
         post().catch((e) => { error = 1000; });
-
+        log('after POST');
         let callbackResult = 'true';
         if (callbacks && callbacks.onCommit) { callbackResult = callbacks.onCommit(); }
         if (callbackResult === 'false') return 'false';

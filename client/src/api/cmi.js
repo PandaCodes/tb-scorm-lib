@@ -57,8 +57,55 @@ const cmiNames = {
   },
 };
 
+function getStatus(n) {
+  let completionStatus;
+  let successStatus;
+  if (schema === '1.2') {
+    const lsKey = n ? `cmi.objectives.${n}.status` : 'cmi.core.lesson_status';
+    if (['browsed', 'incomplete', 'failed'].indexOf(cmi[lsKey]) >= 0) {
+      completionStatus = 'incomplete';
+    } else if (['passed', 'completed'].indexOf(cmi[lsKey]) >= 0) {
+      completionStatus = 'completed';
+    } else {
+      completionStatus = 'unknown';
+    }
+    successStatus = ['passed', 'failed']
+      .indexOf(cmi[lsKey]) >= 0 ? cmi[lsKey] : 'unknown';
+  } else {   // TODO badSchem error?
+    const prefix = n ? `cmi.objectives.${n}.` : 'cmi.';
+    completionStatus = cmi[`${prefix}completion_status`];
+    successStatus = cmi[`${prefix}success_status`];
+  }
+  return [completionStatus, successStatus];
+}
+// Alias
+const getObjectiveStatus = getStatus;
+
+function getObjectives() {
+  const count = cmi['cmi.objectives._count'];
+  const objectives = [];
+  if (!count || Number.isInteger(count)) return objectives;
+  for (let i = 0; i < n; i++) {
+    const [completionStatus, successStatus] = getObjectiveStatus(i);
+    objectives.push({
+      id: cmi[`cmi.objectives.${i}.id`],
+      score: {
+        raw: cmi[`cmi.objectives.${i}.score.raw`],
+        min: cmi[`cmi.objectives.${i}.score.min`],
+        max: cmi[`cmi.objectives.${i}.score.max`],
+        //scaled
+      },
+      completion_status: completionStatus,
+      success_status: successStatus,
+      description: cmi[`cmi.objectives.${i}.description`] || '',
+    });
+  }
+  return objectives;
+}
+
 function parseTime() {
   const time = cmi[cmiNames[schema].session_time];
+  if (!time) return 0;
   if (schema === '1.2') {
     return time.split(':').reduceRight((accT, t) => (accT * 1) + (t * 60));
   }
@@ -95,7 +142,7 @@ function createModel({
     model[cmiNames[schema].learner_name] = learnerName;
   }
   if (totalTime) {
-    model[cmiNames[schema].total_time] = totalTime;
+    model[cmiNames[schema].total_time] = totalTime; // TODO!
   }
   if (launchData) {
     model['cmi.launch_data'] = launchData;
@@ -129,23 +176,17 @@ export const get = name => cmi[name];
 export const set = (name, value) => { cmi[name] = value; };
 
 export function getResults() {
+  console.log('results get');
   const cmiN = cmiNames[schema];
-  let completionStatus;
-  let successStatus;
-  if (schema === '1.2') {
-    if (['browsed', 'incomplete', 'failed'].indexOf(cmi['cmi.core.completion_status']) >= 0) {
-      completionStatus = 'incomplete';
-    } else if (['passed', 'completed'].indexOf(cmi['cmi.core.completion_status']) >= 0) {
-      completionStatus = 'completed';
-    } else {
-      completionStatus = 'unknown';
-    }
-    successStatus = ['passed', 'failed']
-      .indexOf(cmi['cmi.core.lesson_status']) >= 0 ? cmi['cmi.core.lesson_status'] : 'unknown';
-  } else {
-    completionStatus = cmi['cmi.completion_status'];
-    successStatus = cmi['cmi.success_status'];
-  }
+  const [completionStatus, successStatus] = getStatus();
+
+  console.log('results get end');
+
+  console.log('stat', completionStatus, successStatus);
+  // console.log('lal', parseTime());
+
+  // const objectives = getObjectives();
+  // console.log('objvs', JSON.stringify(objectives));
   return {
     score_raw: cmi[cmiN.score_raw],
     score_max: cmi[cmiN.score_max],
@@ -154,6 +195,7 @@ export function getResults() {
     total_time: cmi[cmiN.total_time],
     success_status: successStatus,
     completion_status: completionStatus,
+    objectives: getObjectives(),
   };
 }
 
