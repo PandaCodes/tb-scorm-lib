@@ -84,8 +84,9 @@ const getObjectiveStatus = getStatus;
 function getObjectives() {
   const count = cmi['cmi.objectives._count'];
   const objectives = [];
-  if (!count || Number.isInteger(count)) return objectives;
-  for (let i = 0; i < n; i++) {
+  console.log(count);
+  if (!count || !Number.isInteger(count)) return objectives;
+  for (let i = 0; i < count; i += 1) {
     const [completionStatus, successStatus] = getObjectiveStatus(i);
     objectives.push({
       id: cmi[`cmi.objectives.${i}.id`],
@@ -173,20 +174,19 @@ export function restore(storedCmiString = '', data = {}) {
 }
 
 export const get = name => cmi[name];
-export const set = (name, value) => { cmi[name] = value; };
+export const set = (name, value) => {
+  // Got new objective
+  if (/^cmi.objectives\.([1-9]\d*)\.id$/.test(name) && !cmi[name]) {
+    cmi['cmi.objectives._count'] = (cmi['cmi.objectives._count'] || 0) + 1;
+  }
+
+  cmi[name] = value;
+};
 
 export function getResults() {
-  console.log('results get');
   const cmiN = cmiNames[schema];
   const [completionStatus, successStatus] = getStatus();
 
-  console.log('results get end');
-
-  console.log('stat', completionStatus, successStatus);
-  // console.log('lal', parseTime());
-
-  // const objectives = getObjectives();
-  // console.log('objvs', JSON.stringify(objectives));
   return {
     score_raw: cmi[cmiN.score_raw],
     score_max: cmi[cmiN.score_max],
