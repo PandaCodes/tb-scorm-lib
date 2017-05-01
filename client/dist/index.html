@@ -8,7 +8,7 @@
   
     window.onload = function() {
       console.log(scormRTE)
-      scormRTE.init('scorm_player', 'https://tb-scorm-lib-akam.c9users.io/resources/sok',
+      scormRTE.init('scorm_player', 'https://tb-scorm-lib-akam.c9users.io/resources/onefile2004',
       {
         dataUrl : 'https://tb-scorm-lib-akam.c9users.io:8081/api/scorm/results',
         debug: true,
@@ -24,5 +24,7 @@
 <body>
 
   <div style="width:100%; height: 700px" id="scorm_player"></div>
+  <button onclick="scormRTE.previous()">Prev</button>
+  <button onclick="scormRTE.continue()">Next</button>
 </body>
 </html>

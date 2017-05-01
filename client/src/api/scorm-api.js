@@ -207,7 +207,7 @@ export default {
 
         // TODO: Errors (like "Bad connection, sorry..")
         post().catch((e) => { error = 1000; });
-        log('after POST');
+
         let callbackResult = 'true';
         if (callbacks && callbacks.onCommit) { callbackResult = callbacks.onCommit(); }
         if (callbackResult === 'false') return 'false';

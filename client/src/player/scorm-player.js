@@ -1,6 +1,7 @@
 // import 'whatwg-fetch';
 // import 'promise-polyfill';
 import scormApi from '../api/scorm-api';
+import OrganizationTree from './organization-tree';
 // import * as p from './deep-node-parser';
 
 const errorStrings = {
@@ -10,9 +11,9 @@ const errorStrings = {
 let manifest = null;
 let iframe = null;
 let resources = null;
-let items = null;
+let organizationTree = null;
+let rootUrl = null;
 let debug = false;
-let currentItem = null;
 const ns = {};
 
 const log = (...args) => {
@@ -71,15 +72,24 @@ function parseItem(item) {
   }, parseSequencing(item));
 }
 
+function getItemSrcPath(item) {
+  const idRef = item.getAttribute('identifierref');
+  const parameters = item.getAttribute('parameters') || '';
+  const resource = [].find.call(resources, res => res.getAttribute('identifier') === idRef);
+  const relativePath = resource.getAttribute('href');
+  return `${rootUrl}/${relativePath}${parameters}`;
+}
+
 export default {
-  init(wrapper, rootUrl, options) {
+  init(wrapper, url, options) {
+    rootUrl = url[url.length - 1] === '/' ? url.slice(0, -1) : url;
     // todo: debug parameters
     iframe = document.createElement('iframe');
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     document.getElementById(wrapper).appendChild(iframe);
     debug = options.debug;
-    return fetch(`${rootUrl}${rootUrl[rootUrl.length + 1] === '/' ? '' : '/'}imsmanifest.xml`)
+    return fetch(`${rootUrl}/imsmanifest.xml`)
       .then(responce => responce.text().then((xmlText) => {
         const parser = new DOMParser();
         // opera mini works bad with parseFromString
@@ -97,19 +107,17 @@ export default {
         const schemaVersion = sv === '1.2' || sv === '1.1' ? '1.2' : '2004';
 
         // namespaces
-        /* p.addNamespaces({
-          imsss: p.getAttributeIn(manifest, 'manifest', 'xmlns:imsss'),
-          adlcp: p.getAttributeIn(manifest, 'manifest', 'xmlns:adlcp')
-        });*/
         const manifestTag = manifest.getElementsByTagName('manifest')[0];
         ns.imsss = manifestTag ? manifestTag.getAttribute('xmlns:imsss') : '';
         ns.adlcp = manifestTag ? manifestTag.getAttribute('xmlns:adlcp') : '';
+
         // <resourses>
         resources = manifest.getElementsByTagName('resources')[0].getElementsByTagName('resource');
-        // <organization>
-        items = manifest.getElementsByTagName('organization')[0].getElementsByTagName('item');
 
-        currentItem = items[0];
+        // <organization>
+        organizationTree = new OrganizationTree(manifest.getElementsByTagName('organization')[0]);
+        const currentItem = organizationTree.current();
+
         const initModel = Object.assign({}, options.initModel || {}, parseItem(currentItem));
 
         return scormApi.init(Object.assign({}, options, {
@@ -117,16 +125,35 @@ export default {
           initModel,
           callbacks: { onTerminate: () => { iframe.src = ''; } }, // todo: what if... (check time sequencing) + callback from options
         })).then(() => {
-          const firstIdRef = currentItem.getAttribute('identifierref');
-          const firstRes = [].find.call(resources, res => res.getAttribute('identifier') === firstIdRef);
-          iframe.src = `${rootUrl}/${firstRes.getAttribute('href')}`;
+          iframe.src = getItemSrcPath(currentItem);
         });
       }));
   },
-  next() {
+  previous() {
+    const prevItem = organizationTree.shiftPrev();
+    if (!prevItem) throw new Error('No previous item provided');
+    iframe.src = getItemSrcPath(prevItem);
+  },
+  continue() {
+    const nextItem = organizationTree.shiftNext();
+    if (!nextItem) throw new Error('No next item provided');
+    iframe.src = getItemSrcPath(nextItem);
+  },
+  exit() {
 
   },
-  prev() {
-
+  abandon() {
+  },
+  hasPrevious() {
+    return organizationTree.hasPrev();
+  },
+  hasContinue() {
+    return organizationTree.hasNext();
+  },
+  hasExit() {
+    return false;
+  },
+  hasAbandon() {
+    return false;
   },
 };
