@@ -12,6 +12,7 @@ const cmiDefault = {
     'cmi.core.lesson_location': '',
     'cmi.core.total_time': 0,
     'cmi.student_data.time_limit_action': 'continue,no message',
+    'cmi.interactions._count': 0,
   },
   2004: {
     'cmi._version': pkg.version,
@@ -23,7 +24,7 @@ const cmiDefault = {
     'cmi.location': '',
     'cmi.total_time': 0,
     'cmi.time_limit_action': 'continue,no message',
-    // 'cmi.interactions._count': '0',
+    'cmi.interactions._count': 0,
   },
 };
 const cmiNames = {
@@ -176,10 +177,14 @@ export function restore(storedCmiString = '', data = {}) {
 export const get = name => cmi[name];
 export const set = (name, value) => {
   // Got new objective
-  if (/^cmi.objectives\.([1-9]\d*)\.id$/.test(name) && !cmi[name]) {
+  if (/^cmi\.objectives\.([1-9]\d*|0)\.id$/.test(name) && !cmi[name]) {
     cmi['cmi.objectives._count'] = (cmi['cmi.objectives._count'] || 0) + 1;
   }
-
+   // Got new interaction
+  if (/^cmi.interactions\.([1-9]\d*|0)\.id$/.test(name) && !cmi[name]) {
+    console.log('int ID');
+    cmi['cmi.interactions._count'] = (cmi['cmi.interactions._count'] || 0) + 1;
+  }
   cmi[name] = value;
 };
 
@@ -191,6 +196,7 @@ export function getResults() {
     score_raw: cmi[cmiN.score_raw],
     score_max: cmi[cmiN.score_max],
     score_min: cmi[cmiN.score_min],
+    score_scaled: cmi['cmi.score.scaled'], // 2004 only
     session_time: parseTime(),
     total_time: cmi[cmiN.total_time],
     success_status: successStatus,

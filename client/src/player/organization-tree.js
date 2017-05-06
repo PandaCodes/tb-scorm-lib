@@ -34,8 +34,6 @@ export default class OrganizationTree {
     };
     this._root = parseItemTree(organizationTag, null, 0);
     this._pointer = findFirstTerminal(this._root);
-
-    console.log('root', this._root, this._pointer);
   }
 
   current() {
