@@ -85,7 +85,6 @@ const getObjectiveStatus = getStatus;
 function getObjectives() {
   const count = cmi['cmi.objectives._count'];
   const objectives = [];
-  console.log(count);
   if (!count || !Number.isInteger(count)) return objectives;
   for (let i = 0; i < count; i += 1) {
     const [completionStatus, successStatus] = getObjectiveStatus(i);

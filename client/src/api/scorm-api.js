@@ -10,7 +10,7 @@ const STATE = {
 };
 
 let state = null;
-let error = 0;
+let error2004 = 0;
 
 const valueNameSecurityCheckRe = /^(cmi||adl)\.(\w|\.)+$/;
 
@@ -31,26 +31,26 @@ const isSameHost = (url) => {
 
 // Check error functions
 const valueNameSecurityCheck = (name) => {
-  error = name.search(valueNameSecurityCheckRe) === 0 ? 0 : 401;
-  return error === 0;
+  error2004 = name.search(valueNameSecurityCheckRe) === 0 ? 0 : 401;
+  return error2004 === 0;
 };
 // TODO
 const valueNameReadOnlyCheck = (name) => {
-  error = 0;
+  error2004 = 0;
   if (stringEndsWith(name, '._children')) {
-    error = 403;
+    error2004 = 403;
   }
-  return error === 0;
+  return error2004 === 0;
 };
 const stateCheck = (errBefore, errAfter) => {
   if (state === STATE.NOT_INITIALIZED) {
-    error = errBefore;
+    error2004 = errBefore;
   } else if (state === STATE.TERMINATED) {
-    error = errAfter;
+    error2004 = errAfter;
   } else {
-    error = 0;
+    error2004 = 0;
   }
-  return error === 0;
+  return error2004 === 0;
 };
 
 export default {
@@ -117,37 +117,38 @@ export default {
       if (callbacks && callbacks.preInitialize) { callbacks.preInitialize(); }
 
       const errorStrings = d.getErrorStrings(schemaVersion);
+      const errorCodes = d.getErrorCodes(schemaVersion);
       const fnms = d.getFunctionNames(schemaVersion);
       const API = {};
 
       // Auto commit
-      let lastCommit = Date.now();
+      /* let lastCommit = Date.now();
       let commitInterval = null;
       if (typeof autoCommitInterval === 'number' && autoCommitInterval > 0) {
         log('Auto-commit enabled', setInterval);
         commitInterval = setInterval(() => {
           // console.log('Ai');// ?? TODO doesn't work(
-          /* const now = Date.now();
+          const now = Date.now();
           if (now - lastCommit > autoCommitInterval * 1000) {
             API[fnms.Commit]();
-          }*/
+          }
         }, autoCommitInterval * 100);
-      }
+      }*/
 
       // SCO RTE functions
       API[fnms.Initialize] = () => {
         log('LMS Initialize');
         if (state === STATE.RUNNING || state === STATE.TERMINATED) {
-          error = 103;
+          error2004 = 103;
           return 'false';
         }
 
         state = STATE.RUNNING;
-        error = 0;
+        error2004 = 0;
         let callbackResult = 'true';
         if (callbacks && callbacks.onInitialize) { callbackResult = callbacks.onInitialize(); }
         if (callbackResult === 'false') {
-          error = 102;
+          error2004 = 102;
           return 'false';
         }
 
@@ -163,11 +164,11 @@ export default {
         let callbackResult = 'true';
         if (callbacks && callbacks.onTerminate) { callbackResult = callbacks.onTerminate(); }
         if (callbackResult === 'false') {
-          error = 111;
+          error2004 = 111;
           return 'false';
         }
 
-        clearInterval(commitInterval);
+        // clearInterval(commitInterval); ----------- auto-commit
         state = STATE.TERMINATED;
 
         return 'true';
@@ -182,7 +183,7 @@ export default {
         let retval = cmi.get(name);
         if (typeof (retval) === 'undefined') {
           retval = '';
-          error = 403;
+          if (schemaVersion === '2004') error2004 = 403;
         }
 
         log('LMS GetValue returns: ', retval);
@@ -206,13 +207,13 @@ export default {
         if (!stateCheck(142, 143)) return 'false';
 
         // TODO: Errors (like "Bad connection, sorry..")
-        post().catch((e) => { error = 1000; });
+        post().catch((e) => { error2004 = 1000; });
 
         let callbackResult = 'true';
         if (callbacks && callbacks.onCommit) { callbackResult = callbacks.onCommit(); }
         if (callbackResult === 'false') return 'false';
 
-        lastCommit = Date.now();
+        // lastCommit = Date.now(); --------------- auto-commit
         return 'true';
       };
 
@@ -228,6 +229,7 @@ export default {
       };
 
       API[fnms.GetLastError] = () => {
+        const error = errorCodes[error2004] || error2004;
         if (error !== 0) log('LMS GetLastError return', error);
         return error;
       };

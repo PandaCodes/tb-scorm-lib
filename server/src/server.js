@@ -26,6 +26,7 @@ app.get('/api/scorm/results', (req, res) => {
   res.set('Access-Control-Allow-Headers', '*');
   res.set("Access-Control-Allow-Origin", "*");  // becouse of PORT difference..
   res.set('Content-Type', 'application/json');
+  // cache = {"scorm_stat":{"id":17,"cmiString":"","data":{"total_time":0.0},"success":false,"complete":false,"user_id":1,"scorm_package_id":5,"username":"","email":"","scorm_name":"","time_spent":" \u0026mdash; ","type":"ScormStat","score":0,"score_percent":0,"finished_at":0,"finished_time":" \u0026mdash; "}};
   res.send(JSON.stringify(cache));
   res.end();
 });

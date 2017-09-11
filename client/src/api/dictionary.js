@@ -1,6 +1,5 @@
 const errorCodes = {
   1.2: {
-
   },
   2004: {
     0: 0,
@@ -88,6 +87,7 @@ const errorStrings = {
   },
 };
 export const getErrorStrings = schemaVersion => errorStrings[schemaVersion];
+export const getErrorCodes = schemaVersion => errorCodes[schemaVersion];
 
 const functionNames = {
   2004: {
