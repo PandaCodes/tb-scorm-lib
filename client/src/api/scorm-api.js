@@ -130,7 +130,7 @@ export default {
           /* const now = Date.now();
           if (now - lastCommit > autoCommitInterval * 1000) {
             API[fnms.Commit]();
-          }*/
+          } */
         }, autoCommitInterval * 100);
       }
 
