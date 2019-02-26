@@ -7,3 +7,4 @@ npm-debug.log
 !/client/dist/resources/beerHistory
 default
 .idea
+.DS_Store
