@@ -5,7 +5,7 @@ const libraryName = 'scormRTE';
 module.exports = {
   entry: {
     //'scorm-api' : ['./src/api/scorm-api.js'],
-    'scorm-rte' : ['./node_modules/@babel/polyfill/dist/polyfill.min.js', './src/player/scorm-player.js']
+    'scorm-rte' : ['./src/player/scorm-player.js']
   },
   output: {
     path: __dirname + '/dist',
