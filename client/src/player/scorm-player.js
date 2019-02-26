@@ -1,5 +1,6 @@
 // import 'whatwg-fetch';
 // import 'promise-polyfill';
+import 'babel-polyfill';
 import scormApi from '../api/scorm-api';
 import OrganizationTree from './organization-tree';
 // import * as p from './deep-node-parser';
