@@ -4,6 +4,7 @@
   "description": "'Libs for SCORM interaction with player and lms'",
   "main": "gulpfile.js",
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "babel-polyfill": "^6.26.0",
     "whatwg-fetch": "^2.0.3"
   },
