@@ -1,8 +1,5 @@
 // import 'whatwg-fetch';
 // import 'promise-polyfill';
-import '../polyfills/children';
-import '../polyfills/fetch';
-import '../polyfills/assign';
 import scormApi from '../api/scorm-api';
 import OrganizationTree from './organization-tree';
 // import * as p from './deep-node-parser';
