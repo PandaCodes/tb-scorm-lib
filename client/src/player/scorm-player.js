@@ -72,10 +72,25 @@ function parseItem(item) {
   }, parseSequencing(item));
 }
 
+/*eslint-disable */
+function findResourceByIdRef(resourcesList, idRef) {
+  log('resources list', resourcesList);
+  for (let i = 0; i < length; i++) {
+    var resource = resourcesList[i];
+    log('index - ', i, 'curId - ', resource.getAttribute('identifier'));
+    if (resource.getAttribute('identifier') === idRef) {
+      return resource;
+    }
+  }
+}
+/*eslint-enable */
+
 function getItemSrcPath(item) {
   const idRef = item.getAttribute('identifierref');
   const parameters = item.getAttribute('parameters') || '';
-  const resource = [].find.call(resources, res => res.getAttribute('identifier') === idRef);
+  log('idRef', idRef);
+  const resource = findResourceByIdRef(resources, idRef);
+  log('resource', resource);
   const relativePath = resource.getAttribute('href');
   return `${rootUrl}/${relativePath}${parameters}`;
 }
