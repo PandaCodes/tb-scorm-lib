@@ -123,15 +123,9 @@ export default {
         return scormApi.init(Object.assign({}, options, {
           schemaVersion,
           initModel,
-          callbacks: {
-            onTerminate: () => {
-              iframe.src = '';
-              iframe.srcdoc = '';
-            },
-          }, // todo: what if... (check time sequencing) + callback from options
+          callbacks: { onTerminate: () => { iframe.src = ''; } }, // todo: what if... (check time sequencing) + callback from options
         })).then(() => {
           iframe.src = getItemSrcPath(currentItem);
-          iframe.srcdoc = getItemSrcPath(currentItem);
         });
       }));
   },
@@ -139,13 +133,11 @@ export default {
     const prevItem = organizationTree.shiftPrev();
     if (!prevItem) throw new Error('No previous item provided');
     iframe.src = getItemSrcPath(prevItem);
-    iframe.srcdoc = getItemSrcPath(prevItem);
   },
   continue() {
     const nextItem = organizationTree.shiftNext();
     if (!nextItem) throw new Error('No next item provided');
     iframe.src = getItemSrcPath(nextItem);
-    iframe.srcdoc = getItemSrcPath(nextItem);
   },
   exit() {
 
