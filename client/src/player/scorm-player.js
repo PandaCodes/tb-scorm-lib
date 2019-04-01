@@ -72,18 +72,18 @@ function parseItem(item) {
   }, parseSequencing(item));
 }
 
-/*eslint-disable */
+
 function findResourceByIdRef(resourcesList, idRef) {
   log('resources list', resourcesList);
-  for (let i = 0; i < length; i++) {
-    var resource = resourcesList[i];
+  // переводим HTMLCollection в массив
+  const toArray = [].slice.call(resourcesList);
+  // используем filter, потому что find не работает в ie11
+  return toArray.filter((resource, i) => {
     log('index - ', i, 'curId - ', resource.getAttribute('identifier'));
-    if (resource.getAttribute('identifier') === idRef) {
-      return resource;
-    }
-  }
+    return resource.getAttribute('identifier') === idRef;
+  })[0]; // возвращаем первый элемент массива
 }
-/*eslint-enable */
+
 
 function getItemSrcPath(item) {
   const idRef = item.getAttribute('identifierref');
