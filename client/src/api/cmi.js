@@ -111,7 +111,7 @@ function parseTime() {
   if (schema === '1.2') {
     return time.split(':').reduceRight((accT, t) => (accT * 1) + (t * 60));
   }
-  const [, h, m, s] = time.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)$/);
+  const [, h, m, s] = time.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?/);
   return ((h || 0) * 3600) + ((m || 0) * 60) + ((s || 0) * 1);
 }
 
